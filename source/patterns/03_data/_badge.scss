@@ -1,0 +1,44 @@
+
+/* Badge **************************/
+
+.Badge {
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 10px;
+    min-width: 20px;
+    padding: 1px 5px;
+    position: relative;
+    text-align: center;
+}
+
+.Button .Badge {
+    top: -1px;
+}
+
+.IconBadge {
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+}
+
+.IconBadge_number {
+    background-color: #499acd;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    min-width: 18px;
+    padding: 1px 5px;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    text-shadow: 1px 1px #369;
+    top: -12px;
+}
+
+.IconBadge span.fa {
+    font-size: 20px;
+}

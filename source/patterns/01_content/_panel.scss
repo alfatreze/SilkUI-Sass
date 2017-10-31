@@ -1,0 +1,46 @@
+/* Panel **************************/
+
+.Panel {
+    border: 1px solid #ccc;
+    min-height: 100px;
+}
+
+.Panel_header,
+.Panel_footer {
+    border-bottom: 1px solid #ccc;
+    display: table;
+    padding: 10px;
+    width: 100%;
+}
+
+.Panel_header> {
+    div {
+        width: 60%;
+    }
+    .Panel__actions {
+        width: 100%;
+    }
+}
+
+.Panel_content {
+    padding: 10px;
+    -servicestudio-min-height: 150px;
+}
+
+.Panel_footer {
+    border-bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.Panel__title.Heading3 {
+    display: table-cell;
+    font-style: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.Panel__actions {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}

@@ -1,0 +1,124 @@
+/*
+    File: Patterns_SilkUI
+    Version: 10.0.707
+/*
+
+
+/* Text Classes **************************/
+// originally from useful classes section
+
+// Generate text classes
+// $name, $value(font-size, line-height)
+$headings: (
+    Heading1: (30px, 30px),
+    Heading2: (20px, 20px),
+    Heading3: (18px, 18px),
+    Heading4: (15px, 15px),
+);
+
+@each $name, $value in $headings{
+	.#{$name} {
+        font-size: nth($value, 1);
+        font-weight: bold;
+        line-height: nth($value, 2);
+	}
+} 
+
+span {
+    &.Heading1,
+    &.Heading2,
+    &.Heading3,
+    &.Heading4 {
+        display: block;
+    }
+}
+
+// Text Styles
+
+.Bold {
+    font-weight: bold;
+}
+
+.Italic {
+    font-style: italic !important;
+}
+
+.Bold.Italic {
+    font-style: italic !important;
+    font-weight: bold !important;
+}
+
+.Underline {
+    display: inline;
+    text-decoration: underline !important;
+}
+
+.Text_small {
+    font-size: .8em !important;
+}
+
+.Text_large {
+    font-size: 1.2em !important;
+}
+
+.Text_uppercase {
+    text-transform: uppercase !important;
+}
+
+.Text_shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.Text_Note {
+    color: #888;
+    font-size: 12px;
+}
+
+.Text_Error {
+    color: #c7331f;
+}
+
+.Note {
+    color: #888;
+}
+
+.Code {
+    font-family: monospace;
+    font-size: .9em;
+}
+
+/*------------------------------------*\
+        $2. Text formating
+\*-------------------------------------*/
+
+.Text_NoWrap {
+    white-space: nowrap;
+}
+
+.Text_overflow {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Text_left {
+    text-align: left;
+}
+
+.Text_center {
+    text-align: center;
+}
+
+.Text_right {
+    text-align: right;
+}
+
+.Text_justify {
+    text-align: justify;
+}
+
+.Text_AlignBaseline {
+    /* Empty class that needs to be applied to text to align it with inputs and buttons in Google Chrome 
+  (create spans that reset vertical-align to baseline)*/
+}

@@ -1,0 +1,102 @@
+
+/* Wizard **************************/
+
+.WizardParent {
+    border: 1px solid #e2e2e2;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+}
+
+.WizardStep {
+    background: #fff;
+    display: table-cell;
+    font-weight: 600;
+    line-height: 38px;
+    padding-right: 20px;
+    position: relative;
+    text-align: center;
+    width: 1%;
+    -servicestudio-display: inline-block;
+    -servicestudio-width: 20%;
+    &.ActiveStep {
+        background: #e2e2e2;
+        color: #fff;
+        font-weight: bold;
+    }
+    &.Past {
+        background: #fff;
+    }
+    a {
+        display: block;
+        line-height: 38px;
+        text-align: center;
+        &:link {
+            display: block;
+            line-height: 38px;
+            text-align: center;
+            color: #333;
+        }
+        color: #333;
+        &[disabled="disabled"] {
+            color: #333;
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+    &:after {
+        border-right: 1px solid #e2e2e2;
+        border-top: 1px solid #e2e2e2;
+        content: "";
+        height: 38px;
+        position: absolute;
+        right: 8px;
+        top: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 38px;
+        z-index: 1;
+    }
+    &:last-of-type:after {
+        background: none;
+    }
+    &:before {
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent;
+        border-top: 20px solid #fff;
+        content: "";
+        height: 0;
+        left: -20px;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+    &:first-of-type:before {
+        border: none;
+        margin-left: 0;
+    }
+    &.Past:before {
+        border-bottom-color: #fff;
+        border-top-color: #fff;
+    }
+    &.ActiveStep:before {
+        border-bottom-color: #e2e2e2;
+        border-top-color: #e2e2e2;
+    }
+    &.LastStep:after,
+    &.ActiveStep:after,
+    &.HideArrow:after,
+    &:last-of-type:after {
+        border: 0;
+        content: "";
+    }
+}
+
+
+/* after: right arrow on wizard step **************************/
+
+
+/* before: left "inverted" arrow on wizard step **************************/
+

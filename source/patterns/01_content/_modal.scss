@@ -1,0 +1,112 @@
+/* Modal **************************/
+
+.Modal {
+    display: block;
+    z-index: 100;
+    -servicestudio-display: block;
+    -servicestudio-padding-top: 40px;
+    -servicestudio-position: relative;
+    -servicestudio-z-index: 14;
+}
+
+body.ModalOpened {
+    .Modal {
+        display: block;
+    }
+    .ModalBackground {
+        background-color: rgba(0, 0, 0, 0.15);
+        display: block;
+    }
+}
+
+.ModalBackground {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    z-index: 10;
+    -servicestudio-position: static;
+}
+
+.phone .ModalBackground {
+    display: none;
+}
+
+body.ModalOpened .ModalContainer {
+    display: block;
+    -webkit-transform: translateX(-50%) translateY(0) translateZ(0);
+    -ms-transform: translateX(-50%) translateY(0) translateZ(0);
+    transform: translateX(-50%) translateY(0) translateZ(0);
+}
+
+.ModalContainer {
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    border: 1px solid #dddedf;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    bottom: 0;
+    box-shadow: 0 1px 5px 2px rgba(50, 50, 50, 0.1);
+    display: block;
+    left: 50%;
+    max-width: 800px;
+    padding: 30px 20px;
+    position: fixed;
+    text-align: center;
+    -webkit-transform: translateX(-50%) translateY(100%) translateZ(0);
+    -ms-transform: translateX(-50%) translateY(100%) translateZ(0);
+    transform: translateX(-50%) translateY(100%) translateZ(0);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    width: 100%;
+    z-index: 11;
+    -servicestudio--webkit-transform: none;
+    -servicestudio-display: block;
+    -servicestudio-left: 0;
+    -servicestudio-margin-left: auto;
+    -servicestudio-margin-right: auto;
+    -servicestudio-position: relative;
+    -servicestudio-transform: none;
+    table {
+        &.EditRecord,
+        &.ShowRecord {
+            border: 0;
+            text-align: left;
+        }
+    }
+    &.done {
+        bottom: 0;
+    }
+    .Heading1 {
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+}
+
+.ModalMessage {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.ModalOpened {
+    overflow: hidden;
+    .calendar,
+    .calendarPattern {
+        z-index: 9999;
+    }
+}
+
+
+/* Responsive Context **************************/
+
+.phone .ModalContainer {
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 22;
+    -webkit-overflow-scrolling: touch;
+}

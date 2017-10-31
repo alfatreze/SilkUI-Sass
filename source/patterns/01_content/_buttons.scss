@@ -1,0 +1,20 @@
+/* ButtonsArea **************************/
+
+.Buttons {
+    display: table;
+    padding: 10px 0;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.Buttons_Left {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.Buttons_Right {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}

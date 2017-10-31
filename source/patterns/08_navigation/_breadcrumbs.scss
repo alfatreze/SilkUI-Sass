@@ -1,0 +1,14 @@
+
+/* Breadcrumbs **************************/
+
+.Breadcrumbs {
+    font-size: .8em;
+    margin-bottom: 15px;
+    div {
+        -servicestudio-min-width: 100px;
+    }
+}
+
+.phone .Breadcrumbs div:first-child span {
+    display: none;
+}

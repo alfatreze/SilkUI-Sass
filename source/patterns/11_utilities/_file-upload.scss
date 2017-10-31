@@ -1,0 +1,53 @@
+
+/* File Upload **************************/
+
+.FileUpload {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+.FileUpload_Button,
+.FileUpload_Label {
+    display: inline-block;
+    line-height: 32px;
+    -servicestudio-margin: 0 15px;
+    -servicestudio-min-width: 100px;
+}
+
+.FileUpload_Button .Button {
+    margin-left: 0;
+}
+
+.FileUpload_Label {
+    display: inline-block;
+    margin-top: 0;
+    padding: 0 10px;
+    position: relative;
+}
+
+.FileUpload_Widget {
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -servicestudio-z-index: -1;
+    input[type=file] {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.FileUpload.active .FileUpload_Label {
+    color: #999;
+}

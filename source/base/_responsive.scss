@@ -1,0 +1,15 @@
+/*------------------------------------*\
+      $9. Responsive Classes
+\*-------------------------------------*/
+
+.desktop .HiddenOnDesktop,
+.tablet .HiddenOnTablet,
+.phone .HiddenOnPhone {
+    display: none !important;
+    -servicestudio-display: none !important;
+}
+
+.desktop .ShowOnlyOnResponsiveTable,
+.tablet.landscape .ShowOnlyOnResponsiveTable {
+    display: none;
+}

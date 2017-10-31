@@ -1,0 +1,544 @@
+/*------------------------------------*\
+        $4. Buit-in widgets
+\*-------------------------------------*/
+
+.Filters_Wrapper {
+    background: rgb(230, 230, 230);
+    border-radius: 2px;
+    line-height: 34px;
+    padding: 10px;
+}
+
+table {
+    &.EditRecord tr td,
+    &.ShowRecord tr td {
+        padding-right: 20px;
+    }
+}
+
+.EditRecord {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.EditRecord_Caption {
+    color: #666;
+    padding: 7px 10px 0 0;
+    vertical-align: top;
+}
+
+.EditRecord_Value {
+    line-height: 22px;
+    padding: 5px 0;
+    vertical-align: top;
+}
+
+.EditRecord_Buttons {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    vertical-align: baseline;
+    .Button {
+        padding-bottom: 8px;
+        padding-top: 8px;
+        vertical-align: baseline;
+    }
+}
+
+.ShowRecord_Caption {
+    color: #999;
+    padding: 4px 10px 4px 0;
+}
+
+.ShowRecord_Value {
+    padding: 4px 0;
+}
+
+.EditRecord .Heading2,
+.ShowRecord .Heading2,
+.EditRecord .Heading3,
+.ShowRecord .Heading3 {
+    margin-bottom: 10px;
+}
+
+.TableRecords_Header {
+    border-bottom: 2px solid #c2c2c2;
+    color: #999;
+    padding: 5px 0 10px 10px;
+    a {
+        color: #999;
+        &:link,
+        &:visited {
+            color: #999;
+        }
+    }
+}
+
+.desktop {
+    .TableRecords>tbody>tr:hover {
+        background: #fafcff;
+        td {
+            background: #fafcff;
+        }
+    }
+    .EditableTable>tbody>tr:hover td {
+        background: #fafcff;
+    }
+}
+
+.TableRecords {
+    background: #fff;
+    border-bottom: 1px solid #c2c2c2;
+    border-top: 2px solid #c2c2c2;
+    margin-top: 20px;
+    padding: 5px 0 0 0;
+}
+
+
+/* If is inside a Panel_content without padding **************************/
+
+.Panel_content.nopadding .TableRecords {
+    border: 0;
+}
+
+.TableRecords_OddLine,
+.TableRecords_EvenLine {
+    border-bottom: 1px solid #c2c2c2;
+    padding: 7px 0 7px 10px;
+}
+
+.desktop {
+    .TableRecords_OddLine:first-child,
+    .TableRecords_EvenLine:first-child,
+    .TableRecords_Header:first-child {
+        padding-left: 20px;
+    }
+}
+
+.tablet {
+    .TableRecords_OddLine:first-child,
+    .TableRecords_EvenLine:first-child,
+    .TableRecords_Header:first-child {
+        padding-left: 20px;
+    }
+}
+
+.TableRecords_OddLine:last-child,
+.TableRecords_EvenLine:last-child,
+.TableRecords_Header:last-child {
+    padding-right: 20px;
+}
+
+.TableRecords_TopNavigation {
+    padding: 5px 0;
+}
+
+.TableRecords_BottomNavigation {
+    margin-top: 15px;
+}
+
+.RecordPicture {
+    border: 1px solid #eaeaea;
+    max-width: 138px;
+}
+
+.RecordPicture_Wrapper {
+    max-width: 138px;
+    .RecordPicture {
+        display: block;
+    }
+}
+
+.TableRecords {
+    .RecordPicture {
+        max-height: 40px;
+    }
+    &:not(.NoResponsive) div.TableRecords_Label {
+        display: none;
+    }
+}
+
+
+/* TableRecordsResponsiveExpandable **************************/
+
+.tablet.portrait .TableRecords:not(.NoResponsive) .TableRecords_Label,
+.phone .TableRecords:not(.NoResponsive) .TableRecords_Label {
+    color: #999;
+    display: block;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label,
+.phone .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label {
+    display: inline-block;
+    /* for master details with checkboxes*/
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label:first-child,
+.phone .TableRecords:not(.NoResponsive)>*>*>td:first-child .TableRecords_Label:first-child {
+    display: none;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive),
+.phone .TableRecords:not(.NoResponsive) {
+    padding: 0;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        border-bottom: none;
+        box-sizing: border-box;
+        display: none;
+        float: left;
+        padding: 5px;
+        width: 100%;
+        -servicestudio-display: none !important;
+    }
+}
+
+.phone .TableRecords:not(.NoResponsive)>*>*>td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        border-bottom: none;
+        box-sizing: border-box;
+        display: none;
+        float: left;
+        padding: 5px;
+        width: 100%;
+        -servicestudio-display: none !important;
+    }
+}
+
+
+/* no hidden for .ResponsiveTableRecords **************************/
+
+.tablet.portrait .TableRecordsResponsive>.TableRecords td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: block;
+    }
+}
+
+.phone .TableRecordsResponsive>.TableRecords td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: block;
+    }
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        border-top: 1px dotted #ccc;
+        cursor: pointer;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        -servicestudio-display: block !important;
+    }
+}
+
+.phone .TableRecords:not(.NoResponsive)>*>*>td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        border-top: 1px dotted #ccc;
+        cursor: pointer;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        -servicestudio-display: block !important;
+    }
+}
+
+
+/* no pointer for .TableRecordsResponsive **************************/
+
+.tablet.portrait .TableRecordsResponsive>.TableRecords td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        cursor: default;
+    }
+}
+
+.phone .TableRecordsResponsive>.TableRecords td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        cursor: default;
+    }
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive) tr:first-child td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        border: none;
+    }
+}
+
+.phone .TableRecords:not(.NoResponsive) tr:first-child td {
+    &.TableRecords_OddLine:first-child,
+    &.TableRecords_EvenLine:first-child {
+        border: none;
+    }
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>thead,
+.phone .TableRecords:not(.NoResponsive)>thead {
+    display: none;
+    -servicestudio-display: none !important;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td *,
+.phone .TableRecords:not(.NoResponsive)>*>*>td * {
+    text-align: left;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon .fa-fw,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Post .Post_icon .fa-fw,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .UserInitials,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .UserInitials,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Progress span,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Progress span,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_number,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_number,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_label,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Counter .Counter_label,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_icon,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_icon,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_text,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIcon_text,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_icon,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_icon,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_label,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileIconText_label,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TilleIconText_text,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TilleIconText_text,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_number,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_number,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_text,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tile .TileNumber_text,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep div,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep div,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep a,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .WizardParent .WizardStep a,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Tabs .Tabs__tab,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Tabs .Tabs__tab,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Blank_row>div,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Blank_row>div,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Blank_wrapper>div,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Blank_wrapper>div {
+    text-align: center;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Panel .Panel__actions,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Panel .Panel__actions,
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td .Buttons .Buttons_Right,
+.phone .TableRecords:not(.NoResponsive)>*>*>td .Buttons .Buttons_Right {
+    text-align: right;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: block;
+        -servicestudio-display: block !important;
+    }
+}
+
+.phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: block;
+        -servicestudio-display: block !important;
+    }
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:first-child:before,
+.phone .TableRecords:not(.NoResponsive)>*>*>td:first-child:before {
+    color: #aaa;
+    content: "\f0dd";
+    float: right;
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td:last-child:before,
+.phone .TableRecords:not(.NoResponsive)>*>*>td:last-child:before {
+    content: "";
+    /* hide the icon there is only one column (first and last child are the same) */
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive)>*>*>td[colspan]:first-child:before,
+.phone .TableRecords:not(.NoResponsive)>*>*>td[colspan]:first-child:before {
+    content: "";
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:first-child:before,
+.phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:first-child:before {
+    content: "\f0de";
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:last-child:before,
+.phone .TableRecords:not(.NoResponsive) tr.TableRecords_ExpandedRow td:last-child:before {
+    content: "";
+    /* hide the icon there is only one column (first and last child are the same) */
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive).Expanded td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: table-cell;
+        -servicestudio-display: table-cell !important;
+    }
+}
+
+.phone .TableRecords:not(.NoResponsive).Expanded td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        display: table-cell;
+        -servicestudio-display: table-cell !important;
+    }
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive).Expanded td:first-child:before,
+.phone .TableRecords:not(.NoResponsive).Expanded td:first-child:before {
+    display: none;
+    -servicestudio-display: none !important;
+}
+
+.tablet.portrait .TableRecords:not(.NoResponsive).Expanded td:first-child .TableRecords_Label:first-child,
+.phone .TableRecords:not(.NoResponsive).Expanded td:first-child .TableRecords_Label:first-child {
+    display: table-cell;
+}
+
+
+/* - EditableTable NoResponsive - */
+
+.Page {
+    &.tablet .EditableTable.NoResponsive thead,
+    &.phone .EditableTable.NoResponsive thead {
+        display: table-header-group;
+    }
+    &.tablet .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.OnEdit) td:first-child:before,
+    &.phone .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.OnEdit) td:first-child:before {
+        display: none;
+    }
+}
+
+body .Page {
+    &.tablet .EditableTable.NoResponsive>tbody>tr:last-child,
+    &.phone .EditableTable.NoResponsive>tbody>tr:last-child {
+        display: none;
+    }
+}
+
+.Page {
+    &.tablet .EditableTable.NoResponsive tr.Selected div.ColumnHeader,
+    &.phone .EditableTable.NoResponsive tr.OnEdit div.ColumnHeader {
+        display: none;
+    }
+    &.tablet .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.Selected) td:first-child,
+    &.phone .EditableTable.NoResponsive tbody tr:not(.RowControlGroup):not(.Selected) td:first-child {
+        border-bottom: 1px solid #ddd;
+    }
+    &.tablet .EditableTable.NoResponsive tr.Selected td,
+    &.phone .EditableTable.NoResponsive tr.Selected td,
+    &.tablet .EditableTable.NoResponsive .EditableTable tbody td,
+    &.phone .EditableTable.NoResponsive .EditableTable tbody td,
+    &.tablet .EditableTable.NoResponsive tbody td,
+    &.phone .EditableTable.NoResponsive tbody td {
+        display: table-cell;
+    }
+    &.tablet .EditableTable.NoResponsive tr,
+    &.phone .EditableTable.NoResponsive tr {
+        display: table-row;
+    }
+    &.tablet .EditableTable.NoResponsive tr td:first-child,
+    &.phone .EditableTable.NoResponsive tr td:first-child {
+        display: table-cell;
+    }
+}
+
+
+
+///// Moved from useful classes
+
+/* Edit Records / Show Records for Phone and Tablet */
+
+/* First Row on tablet and phone **************************/
+
+.tablet table {
+    &.EditRecord tr:first-child td,
+    &.ShowRecord tr:first-child td {
+        padding-top: 5px;
+    }
+}
+
+.phone table {
+    &.EditRecord tr:first-child td,
+    &.ShowRecord tr:first-child td {
+        padding-top: 5px;
+    }
+}
+
+.tablet table {
+    &.EditRecord tr td,
+    &.ShowRecord tr td {
+        padding-right: 0;
+    }
+}
+
+.phone table {
+    &.EditRecord tr td,
+    &.ShowRecord tr td {
+        padding-right: 0;
+    }
+}
+
+
+/* Last Row on tablet and phone **************************/
+
+.tablet table {
+    &.EditRecord tr:last-child td,
+    &.ShowRecord tr:last-child td {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+}
+
+.phone table {
+    &.EditRecord tr:last-child td,
+    &.ShowRecord tr:last-child td {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+}
+
+
+/* Colummns on tablet and phone **************************/
+
+.tablet .EditRecord td,
+.phone .EditRecord td,
+.tablet .ShowRecord td,
+.phone .ShowRecord td {
+    display: block;
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+
+/* Last column on tablet and phone **************************/
+
+.tablet table.EditRecord tr td:last-child,
+.phone table.EditRecord tr td:last-child,
+.tablet table.ShowRecord tr td:last-child,
+.phone table.ShowRecord tr td:last-child {
+    padding-top: 5px;
+}
+
+.tablet td.EditRecord_Caption:first-child+.EditRecord_Value,
+.phone td.EditRecord_Caption:first-child+.EditRecord_Value {
+    padding-right: 0;
+}

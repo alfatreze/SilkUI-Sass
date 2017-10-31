@@ -1,0 +1,98 @@
+/*------------------------------------*\
+        $5. Validation
+\*-------------------------------------*/
+
+.InputMandatorySymbol {
+    display: none;
+    /* No "*" after input */
+}
+
+.MandatoryCaption:after {
+    color: #bf1601;
+    content: "*";
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0 5px 5px 3px;
+    position: absolute;
+}
+
+.Prompt {
+    color: #bbb;
+}
+
+.Form {
+    input.Not_Valid,
+    textarea.Not_Valid,
+    select.Not_Valid {
+        border: 1px solid #bf1601;
+        border-radius: 0;
+    }
+}
+
+input.Not_Valid,
+textarea.Not_Valid,
+select.Not_Valid {
+    border: 1px solid #bf1601;
+    border-radius: 0;
+}
+
+.Form textarea.Not_Valid,
+textarea.Not_Valid {
+    &:focus {
+        padding: 10px 12px;
+    }
+    padding: 10px 12px;
+}
+
+input.Not_Valid {
+    padding: 10px 12px;
+}
+
+.ValidationMessage {
+    color: #bf1601;
+    display: block;
+    font-size: 11px;
+}
+
+input {
+    &[type="text"].Not_Valid,
+    &[type="password"].Not_Valid,
+    &[type="datetime"].Not_Valid,
+    &[type="datetime-local"].Not_Valid,
+    &[type="date"].Not_Valid,
+    &[type="month"].Not_Valid,
+    &[type="time"].Not_Valid,
+    &[type="week"].Not_Valid,
+    &[type="number"].Not_Valid,
+    &[type="email"].Not_Valid,
+    &[type="url"].Not_Valid,
+    &[type="search"].Not_Valid,
+    &[type="tel"].Not_Valid,
+    &[type="color"].Not_Valid {
+        border: 1px solid #bf1601;
+        padding: 0 12px;
+    }
+}
+
+.select2-container.Not_Valid .select2-choice {
+    border: 1px solid #bf1601;
+}
+
+input {
+    &[type="text"].Not_Valid:focus,
+    &[type="password"].Not_Valid:focus,
+    &[type="datetime"].Not_Valid:focus,
+    &[type="datetime-local"].Not_Valid:focus,
+    &[type="date"].Not_Valid:focus,
+    &[type="month"].Not_Valid:focus,
+    &[type="time"].Not_Valid:focus,
+    &[type="week"].Not_Valid:focus,
+    &[type="number"].Not_Valid:focus,
+    &[type="email"].Not_Valid:focus,
+    &[type="url"].Not_Valid:focus,
+    &[type="search"].Not_Valid:focus,
+    &[type="tel"].Not_Valid:focus,
+    &[type="color"].Not_Valid:focus {
+        border: 1px solid #bf1601;
+    }
+}

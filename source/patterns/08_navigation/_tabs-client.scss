@@ -1,0 +1,146 @@
+
+
+/* TabsClient **************************/
+
+.Tabs {
+    border: 1px solid #ccc;
+    border-top: none;
+    min-height: 80px;
+}
+
+.Tabs_header {
+    background: #efefef;
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.desktop .Tabs_header,
+.tablet .Tabs_header {
+    display: table;
+}
+
+.Tabs__tab {
+    background: #e4e4e4;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 0;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    display: table-cell;
+    padding: 5px 10px;
+    text-align: center;
+    transition: background-color .3s ease;
+    vertical-align: middle;
+    -servicestudio-float: left;
+    &:hover {
+        background: #fff;
+    }
+    &.active {
+        background: #fff;
+        border-bottom-color: #fff;
+        border-top: 0;
+        cursor: default;
+    }
+    &:first-child {
+        border-left: 0;
+    }
+}
+
+.Tabs_body {
+    border: 0;
+    border-top: 0;
+    margin-top: 0;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+.Tabs__content {
+    display: none;
+    height: 0;
+    margin-top: 0;
+    opacity: 0;
+    -servicestudio-height: auto;
+    -servicestudio-opacity: 1;
+    -servicestudio-overflow: visible;
+    &.active {
+        display: block;
+        height: auto;
+        opacity: 1;
+    }
+}
+
+.Tabs__Loading {
+    padding: 25px 40px;
+}
+
+.Tabs_Input {
+    display: none;
+    --servicestudio--display: block;
+}
+
+.phone .Tabs_header,
+.tablet .Tabs_header {
+    display: block;
+    line-height: 36px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.phone .Tabs__tab,
+.tablet .Tabs__tab {
+    height: 100%;
+    min-width: 100px;
+    text-align: center;
+    width: 1%;
+    /* hack to make tabs adjust and still overflow if needed*/
+}
+
+.phone .Tabs__tab.active+.phone .Tabs__tab,
+.tablet .Tabs__tab.active+.tablet .Tabs__tab {
+    border-left: 0;
+}
+
+.phone .Tabs__tab.active:first-child,
+.tablet .Tabs__tab.active:first-child {
+    border-left: none;
+}
+
+.phone .Tabs__tab:first-child,
+.tablet .Tabs__tab:first-child {
+    border-left-width: 1px;
+}
+
+.phone .Tabs__content,
+.tablet .Tabs__content {
+    display: none;
+    height: 0;
+    margin-top: 0;
+    opacity: 0;
+    -servicestudio-height: auto;
+    -servicestudio-opacity: 1;
+    -servicestudio-position: relative;
+}
+
+.phone .Tabs__content.active,
+.tablet .Tabs__content.active {
+    display: block;
+    height: auto;
+    opacity: 1;
+}
+
+
+/* TabsClient inside Panel **************************/
+
+.Panel_content.nopadding .Tabs {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}

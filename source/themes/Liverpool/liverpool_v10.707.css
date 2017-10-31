@@ -1,0 +1,855 @@
+/* 
+    File: Patterns_Liverpool
+    
+    1. Imports
+    2.1 Patterns > Content
+    2.2 Patterns > Controls
+    2.3 Patterns > Data
+    2.4 Patterns > Development
+    2.5 Patterns > Email
+    2.6 Patterns > Layout
+    2.7 Patterns > Mobile
+    2.8 Patterns > Navigation
+    2.9 Patterns > Responsive
+    2.10 Patterns > Structure
+    2.11 Patterns > Utilities
+    3. Usefull Classes
+    4. Buit-in widgets    
+*/
+
+
+/*------------------------------------*\
+              $1. Imports
+\*-------------------------------------*/
+
+
+/* Moved font import to theme template (starter app) */
+
+
+/*------------------------------------*\
+      $2.1 Patterns > Content
+\*------------------------------------*/
+
+
+/* Accordion **************************/
+
+.Accordion {
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+}
+
+.AccordionVertical {
+    background: #fff;
+}
+
+
+/* Accordion Harrow **************************/
+
+.Accordion .fa-angle-down:before {
+    padding-left: 1px;
+}
+
+
+/* Alerts **************************/
+
+.Alert.Info {
+    background-color: #aabdcf;
+    border-color: #aabdcf;
+    color: #333;
+}
+
+.Alert.Success {
+    background-color: #acc965;
+    border-color: #acc965;
+    color: #333;
+}
+
+.Alert.Error {
+    background-color: #900;
+    border-color: #900;
+    color: #fff;
+}
+
+.Alert.Warning {
+    background-color: #f2c94e;
+    border-color: #f2c94e;
+    color: #333;
+}
+
+
+/* Balloon ******/
+
+.Balloon {
+    border: 1px solid #ccc;
+}
+
+
+/* BlankSlate **************************/
+
+.Blank {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+
+/* Card **************************/
+
+.Card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+
+/* Panel **************************/
+
+.Panel {
+    background-color: #fff;
+}
+
+.Panel_content {
+    border: none;
+}
+
+.Panel_footer {
+    background-color: #f7f7f7;
+}
+
+
+/* Post **************************/
+
+.Post {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d0d0d0;
+    padding: 5px;
+}
+
+
+/* Tooltip **************************/
+
+.tooltip_style {
+    background-color: #393939;
+}
+
+
+/*------------------------------------*\
+      $2.2 Patterns > Controls
+\*------------------------------------*/
+
+
+/* ButtonGroup **************************/
+
+.ButtonGroup_button.Button {
+    background-color: #fcfcfc;
+    border-color: #ccc;
+    border-left: 0;
+    border-right: 1px solid #cbcbcb;
+    color: #171717;
+    height: 34px;
+    line-height: 32px;
+    padding: 0 10px;
+}
+
+.ButtonGroup_button.Button:hover,
+.ButtonGroup_button.Button.active,
+.ButtonGroup_button.Button:active {
+    background: #e6e6e6;
+    border-color: #cbcbcb;
+}
+
+.ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 4px;
+    border-left: 1px solid #cbcbcb;
+    border-top-left-radius: 4px;
+}
+
+.ButtonGroup_button.Button:last-child {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+/* override the border button rule on hover **************************/
+
+.desktop .ButtonGroup .Button:hover {
+    background: #e6e6e6;
+    border: 1px solid #ccc;
+    border-left: 0;
+    box-shadow: none;
+}
+
+.desktop .ButtonGroup .Button:first-child:hover {
+    border: 1px solid #ccc;
+}
+
+
+/* override rule for active/selected option over hover state **************************/
+
+.desktop .ButtonGroup_button.Button:active,
+.tablet .ButtonGroup_button.Button:active,
+.phone .ButtonGroup_button.Button:active {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, .25) inset;
+}
+
+
+/* override rule active state over hover state **************************/
+
+.desktop .ButtonGroup_button.Button.active,
+.tablet .ButtonGroup_button.Button.active,
+.phone .ButtonGroup_button.Button.active {
+    background: #ccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+
+/* Responsive Context **************************/
+
+.phone .ButtonGroup {
+    box-shadow: none;
+}
+
+.phone .ButtonGroup_button.Button {
+    border-left: 1px solid #ccc;
+}
+
+.phone .ButtonGroup_button.Button:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.phone .ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.phone .ButtonGroup_button.Button.active {
+    border-right-width: 1px;
+}
+
+.phone .NoResponsive>.ButtonGroup .ButtonGroup_button.Button {
+    border-left-width: 0px;
+}
+
+.phone .NoResponsive>.ButtonGroup .ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 3px;
+    border-left-width: 1px;
+    border-top-right-radius: 0;
+}
+
+.phone .NoResponsive>.ButtonGroup .ButtonGroup_button.Button:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 0px;
+}
+
+
+/* Calendar **************************/
+
+.pika-table th {
+    border-bottom: 0;
+}
+
+.pika-prev:after,
+.pika-next:after {
+    color: #ca081e;
+}
+
+.pika-prev,
+.pika-next {
+    height: 48px;
+}
+
+.pika-title {
+    border-bottom: 2px solid #ca081e;
+}
+
+.is-selected .pika-button {
+    background-color: #ca081e;
+}
+
+.has-event .pika-button:after {
+    background-color: #ca081e;
+}
+
+.pika-lendar .Calendar-navBtn {
+    height: 48px;
+}
+
+
+/* Calendar DEPRECATED **************************/
+
+.Calendar-dayNames {
+    border-bottom: 0;
+    border-top: 2px solid #ca081e;
+}
+
+.Calendar-navBtn>div {
+    color: #ca081e;
+}
+
+.Calendar-day-selected,
+.Calendar-day-selected:hover {
+    background: #ca081e;
+    color: #fff;
+}
+
+.Calendar-time-down,
+.Calendar-time-up,
+.Calendar-time-am {
+    color: #ca081e;
+}
+
+
+/* Dropdown **************************/
+
+.DropdownMenu .PH>a {
+    color: #a4a4a4;
+}
+
+.DropdownMenu .PH>a:hover {
+    color: #ca081e;
+}
+
+.open>.DropdownMenu {
+    border-radius: 4px;
+}
+
+
+/* Dropdown: ButtonDropdown **************************/
+
+.ButtonDropdown_text,
+.ButtonDropdown_icon {
+    color: #000;
+    line-height: 30px;
+    margin-left: 3px;
+}
+
+.tablet .ButtonDropdown_text,
+.tablet .ButtonDropdown_icon,
+.phone .ButtonDropdown_text,
+.phone .ButtonDropdown_icon {
+    line-height: 36px;
+}
+
+
+/* Dropdown: IconDropdown **************************/
+
+.IconDropdown_button.Button {
+    margin-left: 0;
+    min-width: 35px;
+    padding: 0 10px;
+}
+
+
+/* Select2 **************************/
+
+.select2-dropdown-open .select2-choice,
+.select2-container .select2-choice {
+    box-shadow: none;
+    height: 34px;
+    line-height: 30px;
+}
+
+.select2-container .select2-choice .select2-arrow,
+.select2-container .select2-choice div {
+    border-left: 1px solid #ddd;
+}
+
+.select2-search input[type="text"] {
+    margin-top: 4px;
+}
+
+.select2-container .select2-choice .select2-arrow b,
+.select2-container .select2-choice div b {
+    background: url("/WebPatterns/img/select2.png") no-repeat 0 3px;
+}
+
+.select2-search input[type="text"]:focus {
+    border: 1px solid #ddd;
+}
+
+.select2-dropdown-open.select2-drop-above .select2-choice {
+    border-bottom-color: #ddd;
+}
+
+select:focus,
+input[type="text"]:focus {
+    border: 1px solid #949494;
+}
+
+.select2-container .select2-choice {
+    border-radius: 0;
+}
+
+.select2-container-multi.select2-container-active .select2-choices {
+    border: 1px solid #949494;
+}
+
+.select2-container-multi .select2-choices {
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, .075);
+}
+
+
+/* Toggle **************************/
+
+.ToggleButton {
+    border-color: #999;
+    border-radius: 4px;
+}
+
+.ToggleButton.changed {
+    border-color: #999;
+}
+
+.ToggleButton_label:after,
+.ToggleButton_label.changed:after {
+    border-radius: 4px;
+    height: 20px;
+    top: 3px;
+    width: 20px;
+}
+
+.ToggleButton_label.changed:after {
+    left: 26px;
+}
+
+
+/*------------------------------------*\
+      $2.3 Patterns > Data
+\*------------------------------------*/
+
+
+/* Badge **************************/
+
+.IconBadge_number {
+    background-color: #e73d25;
+    border: 2px solid #f2f2f2;
+    text-shadow: 1px 1px #c0392b;
+}
+
+
+/*------------------------------------*\
+      $2.8 Patterns > Navigation
+\*------------------------------------*/
+
+
+/*  Breadcrumbs **************************/
+
+.Title .Breadcrumbs {
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: -32px;
+}
+
+
+/* NavigationBar: Horizontal **************************/
+
+.NavigationBar a,
+.NavigationBar a:link,
+.NavigationBar a:visited {
+    color: #c7c7c7;
+}
+
+.NavigationBar a.Active {
+    color: #3e5154;
+}
+
+.NavigationBar a:after,
+.NavigationBar a:link:after {
+    background-color: #c7c7c7;
+    content: "";
+}
+
+.NavigationBar a.Active:after {
+    background-color: #e83e26;
+}
+
+.NavigationBar a.Active:not(.IE8):before {
+    border-bottom: 4px solid #e83e26;
+    content: "";
+}
+
+
+/* Responsive Context */
+
+.desktop .NavigationBar a:hover {
+    text-decoration: none;
+}
+
+.desktop .NavigationBar a:hover,
+.desktop .NavigationBar a:link:hover {
+    color: #3e5154;
+}
+
+.desktop .NavigationBar a:hover:after,
+.desktop .NavigationBar a:link:hover:after {
+    background-color: #e83e26;
+}
+
+
+/* NavigationBar: Vertical **************************/
+
+.NavigationBar.Vertical a.Active,
+.NavigationBar.Vertical a:link.Active {
+    border-color: #e83e26;
+}
+
+.NavigationBar.Vertical a.Active:not(.IE8):before {
+    border-left: 4px solid #e83e26;
+}
+
+
+/* Responsive Context **************************/
+
+.desktop .NavigationBar.Vertical a:hover,
+.desktop .NavigationBar.Vertical a:link:hover {
+    border-color: #e83e26;
+}
+
+.phone .NavigationBar .InlineDropdown:active:after,
+.phone .NavigationBar .InlineDropdown:link:active:after,
+.tablet .NavigationBar .InlineDropdown:active:after,
+.tablet .NavigationBar .InlineDropdown:link:active:after,
+.phone .NavigationBar a:active:after,
+.phone .NavigationBar a:link:active:after,
+.tablet .NavigationBar a:active:after,
+.tablet .NavigationBar a:link:active:after {
+    background-color: #e83e26;
+}
+
+
+/* SectionIndex **************************/
+
+.SectionIndex.vertical a.active,
+.SectionIndex.vertical a:hover {
+    border-bottom: medium none;
+    border-left-color: #ca081e;
+}
+
+.SectionIndex a.active,
+.SectionIndex a:hover {
+    border-bottom: 2px solid #ca081e;
+    color: #ca081e;
+    text-decoration: none;
+}
+
+
+/* TabsClient **************************/
+
+.Tabs {
+    background: #fff;
+}
+
+.Tabs_body {
+    background-color: #fff;
+}
+
+.Tabs__tab {
+    background-color: #f4f4f4;
+    border-bottom-color: #ccc;
+    line-height: 30px;
+}
+
+.Tabs__tab.active {
+    background-color: #fff;
+    border-bottom: none;
+    border-top: 1px solid #ccc;
+}
+
+.Tabs__tab:hover {
+    background-color: #fff;
+}
+
+.Tabs_body {
+    padding: 20px;
+}
+
+.Tabs .PH:empty {
+    display: none;
+}
+
+.Panel .Tabs__tab {
+    border-top: none;
+}
+
+.TabsServer {
+    border-color: #ccc;
+}
+
+.TabsServer a,
+.TabsServer a:link,
+.TabsServer a:visited {
+    background-color: #e6e6e6;
+    border-color: #ccc;
+    color: #333;
+    line-height: 30px;
+}
+
+.TabsServer a:hover,
+.TabsServer a:active,
+.TabsServer a.Active {
+    background-color: #f2f2f2;
+    border-bottom-color: #f2f2f2;
+    color: #333;
+}
+
+.TabsServer a:hover {
+    background-color: #f2f2f2;
+    border-color: #ccc;
+}
+
+
+/* Wizard **************************/
+
+.WizardStep {
+    background-color: #c2c2c2;
+}
+
+.WizardStep:before {
+    border-bottom-color: #c2c2c2;
+    border-top-color: #c2c2c2;
+}
+
+.WizardStep a,
+.WizardStep a:link,
+.WizardStep a:visited {
+    color: #fff;
+}
+
+.WizardStep.ActiveStep {
+    background: #e83e26;
+    font-weight: bold;
+}
+
+.WizardStep.ActiveStep:before {
+    border-bottom-color: #e83e26;
+    border-top-color: #e83e26;
+}
+
+.WizardStep.Past {
+    background-color: #d43e27;
+}
+
+.WizardStep.Past:before {
+    border-color: #d43e27;
+}
+
+.WizardStep.Past:after {
+    border-right: 1px solid #900;
+    border-top: 1px solid #900;
+}
+
+.WizardStep:after {
+    border-right: 1px solid #efefef;
+    border-top: 1px solid #efefef;
+}
+
+
+/*------------------------------------*\
+      $3 Usefull Classes
+\*------------------------------------*/
+
+
+/* Buttons **************************/
+
+.Buttons {
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.Button,
+a.Button {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    color: #2e3136;
+}
+
+.Button:hover,
+a.Button:hover {
+    box-shadow: none;
+}
+
+.Button:visited,
+.Button:link {
+    color: #2e3136;
+    font-size: 14px;
+}
+
+.Button:active {
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, .25);
+}
+
+.Button.ButtonDefault,
+.Button.Is_Default {
+    background-color: #e73d25;
+    border: 1px solid #d43e27;
+    border-color: #e73d25;
+    color: #fff;
+    text-shadow: none;
+}
+
+.desktop .Button.ButtonDefault:hover,
+.Button.Button.Is_Default:hover {
+    background-color: #a42b1a;
+    border-color: #a42b1a;
+}
+
+
+/*  Remove additional spacing (padding) added by the FF browser  **************************/
+
+.Button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.Button.Cancel,
+a.ActionDelete {
+    background-color: transparent;
+    border-color: #999;
+    color: #4c4c4c;
+}
+
+.Button.Success {
+    background-color: #819744;
+    color: #fff;
+}
+
+.Button.Neutral {
+    background-color: #fcfcfc;
+}
+
+.Button.Danger {
+    background-color: #623f38;
+    border-color: #623f38;
+    color: #fff;
+}
+
+.Button.Link {
+    background-color: transparent;
+    border-color: transparent;
+    color: #e83e26;
+}
+
+.Button.Small:visited,
+.Button.Small:link {
+    font-size: 11px;
+    height: 26px;
+    line-height: 24px;
+}
+
+.Button.Loading:before,
+.Button.Loading[disabled]:before,
+.Button.Loading:disabled:before {
+    background-image: url(/WebPatterns/img/loading_liverpool_red.gif);
+}
+
+.Button.Is_Default.Loading:before,
+.Button.Is_Default.Loading[disabled]:before,
+.Button.Is_Default.Loading:disabled:before,
+.Button.ButtonDefault.Loading:before,
+.Button.ButtonDefault.Loading[disabled]:before,
+.Button.ButtonDefault.Loading:disabled:before {
+    background-image: url(/WebPatterns/img/loading_liverpool_white.gif);
+}
+
+
+/* Responsive Context **************************/
+
+.desktop .Button:hover,
+.desktop a.Button:hover {
+    background-color: #e6e6e6;
+    border-color: #4c4c4c;
+    box-shadow: 0 0 1px 0 rgba(50, 50, 50, .75);
+}
+
+.desktop .Button:active,
+.desktop a.Button:active {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, .25) inset;
+}
+
+.desktop .Button.Cancel:hover {
+    background-color: #e0e1e3;
+    border-color: #999;
+    color: #4c4c4c;
+}
+
+.desktop .Button.Success:hover {
+    background-color: #acc469;
+}
+
+.desktop .Button.Danger:hover {
+    background-color: #9e5141;
+    border-color: #9e5141;
+}
+
+.desktop .Button.Link:hover {
+    background-color: transparent;
+    border-color: #e83e26;
+    color: #e83e26;
+}
+
+.phone .Button,
+.tablet .Button,
+.phone a.Button,
+.tablet a.Button {
+    padding-top: 0;
+}
+
+
+/* Text Classes **************************/
+
+.Heading1 {
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.Heading2 {
+    font-size: 22px;
+    line-height: 1.25;
+}
+
+.Heading3 {
+    font-size: 18px;
+    line-height: 1.11;
+}
+
+.Label {
+    border-radius: 0;
+    margin: 0 5px;
+}
+
+
+/* OS PopUps **************************/
+
+div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+    background: #ca081e;
+}
+
+
+/*------------------------------------*\
+        $4. Buit-in widgets
+\*-------------------------------------*/
+
+
+/* filter form **************************/
+
+.Filters_Wrapper .Button {
+    margin-left: 10px;
+}
+
+
+/* ExcludeFromPickers: Accordion, AccordionVertical, active, ActiveStep, Blank, Breadcrumbs, ButtonDropdown_icon, ButtonDropdown_text, ButtonGroup, 
+ButtonGroup_button, Buttons, calendarPattern, Card, changed, day, daynames, desktop, disabled, DropdownMenu, hilite, IconBadge_number, 
+IconDropdown_button, IE8, InlineDropdown, Is_Default, Loading, mini, name, NavigationBar, Neutral, open, Panel, Panel_content, Panel_footer, 
+Past, PH, phone, Post, SectionIndex, select2-choice, select2-container, selected, tablet, Tabs, Tabs__tab, Tabs_body, TabsServer, Title,
+TitleMonth, TitleYear, ToggleButton, ToggleButton_label, tooltip_style, Vertical, WizardStep */

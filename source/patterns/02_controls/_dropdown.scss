@@ -1,0 +1,95 @@
+/* Dropdown **************************/
+
+.DropdownMenu {
+    background-color: #fff;
+    border-color: #c6c6c6;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 3px #c6c6c6;
+    display: none;
+    left: 0;
+    min-width: 120px;
+    position: absolute;
+    text-align: left;
+    top: 115%;
+    z-index: 15;
+    -servicestudio-position: relative;
+    .PH>a {
+        color: #125f90;
+        display: block;
+        line-height: 32px;
+        padding-left: 10px;
+        padding-right: 10px;
+        white-space: nowrap;
+        &:hover {
+            background-color: #efefef;
+            color: #499acd;
+            text-decoration: none;
+        }
+    }
+}
+
+.open>.DropdownMenu {
+    display: block;
+}
+
+.DropdownMenu {
+    &.arrangeHorizontal {
+        left: auto;
+        right: 0;
+    }
+    &.arrangeVertical {
+        bottom: 102%;
+        top: auto;
+    }
+}
+
+
+/* Dropdown: ButtonDropdown **************************/
+
+.ButtonDropdown {
+    position: relative;
+}
+
+.ButtonDropdown_button.Button {
+    margin-left: 0;
+    min-width: 90px;
+    padding: 0 10px;
+}
+
+.ButtonDropdown_text {
+    -servicestudio-min-width: 50px;
+}
+
+
+/* Dropdown: InlineDropdown **************************/
+
+.InlineDropdown {
+    position: relative;
+}
+
+.InlineDropdown_label {
+    cursor: pointer;
+    min-width: 50px;
+}
+
+.InlineDropdown+.InlineDropdown {
+    margin-left: 20px;
+}
+
+
+/* Dropdown: IconDropdown **************************/
+
+.IconDropdown {
+    position: relative;
+}
+
+.IconDropdown_button.Button {
+    margin-left: 0;
+    min-width: 35px;
+    padding: 0 10px;
+    span.fa {
+        margin-left: 0;
+    }
+}

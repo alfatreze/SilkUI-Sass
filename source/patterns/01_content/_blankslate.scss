@@ -1,0 +1,47 @@
+/* BlankSlate **************************/
+
+.Blank {
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    display: table;
+    height: 200px;
+    padding-bottom: 10px;
+    width: 100%;
+    &.FullHeight {
+        height: 100%;
+        min-height: 200px;
+    }
+}
+
+.Blank_row {
+    display: table-row;
+}
+
+.Blank_wrapper {
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+}
+
+.Blank_icon {
+    color: #d0d0d0;
+    display: table-cell;
+    font-size: 80px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.Blank_desc {
+    margin-top: 10px;
+}
+
+.Blank_action {
+    margin-top: 20px;
+    .Button {
+        margin-left: 0;
+    }
+}
+
+.Blank .fa-fw {
+    width: auto;
+}

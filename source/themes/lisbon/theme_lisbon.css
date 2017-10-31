@@ -1,0 +1,1650 @@
+/*
+    To override a style copy and paste it to 
+    the application theme and then modify it
+
+    1. General Properties
+    2. Structure
+    3. Text formating
+    4. Forms
+    5. Built-in widgets
+    6. RichWidgets
+    7. Login
+    
+*/
+
+
+/*------------------------------------*\
+              $1. General Properties
+\*-------------------------------------*/
+
+html,
+body,
+form,
+.Page {
+    height: 100%;
+    position: relative;
+}
+
+body,
+select,
+textarea,
+input {
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.43;
+}
+
+body {
+    background-color: #edf1f3;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+}
+
+a,
+a:link,
+a:visited {
+    color: #c3a300;
+    -webkit-transition: color 100ms ease;
+    transition: color 100ms ease;
+}
+
+.desktop a:hover,
+.desktop a:link:hover,
+.desktop a:visited:hover {
+    color: #b39501;
+    text-decoration: none;
+}
+
+div[onclick] {
+    cursor: pointer;
+    /* add a pointer cursor when the div has a click event */
+}
+
+.OSAutoMarginTop {
+    margin-top: 20px;
+}
+
+
+/*------------------------------------*\
+              $2. Structure
+\*-------------------------------------*/
+
+
+/* Header ******************************/
+
+.Header {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    -servicestudio-position: absolute;
+}
+
+.Header_center {
+    position: relative;
+}
+
+.tablet .Header_center.ThemeGrid_Container,
+.phone .Header_center.ThemeGrid_Container {
+    padding: 0;
+}
+
+.Header_background {
+    background-color: rgb(45, 50, 60);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.Page.UseHeaderFade .Header .Header_background {
+    display: none;
+}
+
+
+/* Menu */
+
+.Header_Menu,
+.Header_Menu .ListRecords {
+    display: inline-block;
+    -servicestudio-min-width: 200px;
+}
+
+
+/* Extra menu content - login info, search, etc */
+
+.Others_Menu {
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+}
+
+.desktop.small.UseSidebar .Others_Menu {
+    margin-right: 55px;
+}
+
+.tablet.UseSidebar .Others_Menu {
+    margin-right: 40px;
+}
+
+.phone .Others_Menu {
+    display: none;
+}
+
+.Header_Menu a,
+.Header_Menu a:link,
+.Header_Menu a:visited {
+    color: #fff;
+}
+
+.Header_Menu a:hover,
+.Header_Menu a:link:hover,
+.Header_Menu a:visited:hover {
+    color: #dab702;
+}
+
+
+/* Button Menu */
+
+a.Header_ButtonMenu {
+    color: #fff;
+    display: none;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+}
+
+.desktop a.Header_ButtonMenu {
+    color: #dab702;
+}
+
+.tablet a.Header_ButtonMenu,
+.phone a.Header_ButtonMenu {
+    display: block;
+    width: 50px;
+}
+
+.Page.active .Header_ButtonMenu {
+    color: #dab702;
+}
+
+
+/* Search - LoginInfo - Logout | PHONE Rules */
+
+.phone .Others_Menu {
+    display: block;
+    margin-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+.phone .Application_Menu .Others_Menu a:link,
+.phone .Application_Menu .Others_Menu a:visited {
+    padding: 0;
+}
+
+.phone .Application_Menu .Others_Menu .Header_Search {
+    margin-left: 30px;
+    margin-right: 0;
+}
+
+.phone .Application_Menu .Others_Menu .Login_Info {
+    width: 100%;
+}
+
+.phone .Application_Menu .Others_Menu .Login_Info a {
+    display: none;
+}
+
+.phone .Application_Menu .Others_Menu .Login_Info .Logout_Icon a {
+    display: block;
+}
+
+.phone .Application_Menu .Others_Menu .Login_Info .Logout_Icon {
+    position: absolute;
+    right: 15px;
+}
+
+
+/* Button Sidebar */
+
+a.Header_ButtonSidebar {
+    color: #fff;
+    display: none;
+    float: right;
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+}
+
+.desktop.small.UseSidebar a.Header_ButtonSidebar,
+.tablet.UseSidebar a.Header_ButtonSidebar {
+    display: block;
+}
+
+
+/* Sidebar **********************************/
+
+.Sidebar {
+    border-left: 1px solid #ddd;
+    height: 100%;
+    padding: 20px 10px;
+    position: fixed;
+    right: -320px;
+    top: 50px;
+    width: 300px;
+    -servicestudio-bottom: 0;
+    -servicestudio-height: auto;
+    -servicestudio-position: absolute;
+}
+
+.desktop .Sidebar,
+.desktop.hd .Sidebar,
+.desktop.big .Sidebar {
+    right: 0;
+}
+
+.desktop.small .Sidebar,
+.tablet .Sidebar {
+    background-color: #edf1f3;
+    right: -300px;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+}
+
+.desktop.small .Sidebar.open,
+.tablet .Sidebar.open {
+    -webkit-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    transform: translateX(-300px);
+}
+
+.ie8.desktop.small .Sidebar.open {
+    right: 0;
+}
+
+.phone .Sidebar {
+    position: relative;
+    right: 0;
+    width: 100%;
+}
+
+.SectionWebsite_title {
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.Title_Section.Transparent .SectionWebsite_title {
+    color: #333;
+}
+
+.Title_Section.Silver .SectionWebsite_title {
+    color: #333;
+}
+
+.Title_Section.White .SectionWebsite_title {
+    color: #333;
+}
+
+.Title_Section.Yellow .SectionWebsite_title {
+    color: #fff;
+}
+
+.SectionWebsite {
+    text-align: center;
+}
+
+.SectionWebsite.UsePadding {
+    padding: 40px 0;
+}
+
+.SectionWebsite .Card {
+    color: #333;
+}
+
+.SectionWebsite .Panel {
+    color: #333;
+}
+
+.SectionWebsite .AccordionVertical {
+    color: #333;
+}
+
+.SectionWebsite .SectionExpandable {
+    color: #333;
+}
+
+.SectionWebsite .Box {
+    color: #fff;
+}
+
+.SectionWebsite .Box.Silver {
+    color: #333;
+}
+
+.SectionWebsite .Box.White {
+    color: #333;
+}
+
+.SectionWebsite .Box.Transparent {
+    color: #fff;
+}
+
+.SectionWebsite.Silver .Box.Transparent {
+    color: #333;
+}
+
+.SectionWebsite.Transparent .Box.Transparent {
+    color: #333;
+}
+
+.SectionWebsite.White .Box.Transparent {
+    color: #333;
+}
+
+.SectionWebsite.Silver .Section {
+    color: #333;
+}
+
+.SectionWebsite.Transparent .Section {
+    color: #333;
+}
+
+.Website .ThemeGrid_Container {
+    max-width: 1280px;
+}
+
+.Website .MainContent {
+    margin: 0;
+    min-height: inherit;
+    padding: 0;
+    -servicestudio-min-height: 800px !important;
+    /* push the footer down on preview */
+}
+
+.Website .Footer {
+    background-color: inherit;
+    height: auto;
+    padding: 0;
+    position: static;
+    width: auto;
+}
+
+
+/* APP Title */
+
+.Header_Title {
+    float: left;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -servicestudio-min-width: 100px;
+}
+
+.phone .Header_Title {
+    left: 60px;
+    position: absolute;
+    right: 60px;
+    text-align: center;
+}
+
+.Application_Title a,
+.Application_Title a:link,
+.Application_Title a:visited,
+.Application_Title a:hover {
+    color: #fff;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.Header .Application_Title img {
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+
+/* Responsive Context */
+
+.tablet .Application_Title,
+.phone .Application_Title {
+    padding: 0;
+}
+
+
+/* Menu ***************************************/
+
+
+/* item menu */
+
+.Menu_TopMenu {
+    position: relative;
+}
+
+.Menu_TopMenus {
+    width: 100%;
+}
+
+
+/* hover menu */
+
+.Menu_TopMenu a:hover {
+    color: #fff;
+}
+
+
+/* link/button menu */
+
+.Menu_TopMenu a:link,
+.Menu_TopMenu a:visited,
+.Menu_TopMenu a {
+    color: rgba(255, 255, 255, .75);
+    display: inline-block;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.tablet .Menu_TopMenu a,
+.phone .Menu_TopMenu a {
+    text-align: left;
+}
+
+
+/* pointer */
+
+.Menu_TopMenu .Menu_DropDownArrow {
+    border-top-color: #fff;
+    opacity: .5;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.Menu_DropDownButton.open .Menu_TopMenu .Menu_DropDownArrow {
+    border-top-color: #dab702;
+    opacity: 1;
+    -webkit-transform: rotate(180deg) translateY(2px);
+    -ms-transform: rotate(180deg) translateY(2px);
+    transform: rotate(180deg) translateY(2px);
+}
+
+
+/* active menu */
+
+.Menu_TopMenuActive {
+    background-color: rgba(0, 0, 0, .1);
+    border-top: 3px solid #dab702;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .5);
+    height: 49px;
+    line-height: 44px;
+}
+
+.Menu_DropDownButton.open .Menu_TopMenu a {
+    color: #fff;
+}
+
+
+/* active menus */
+
+.Menu_TopMenuActive a:link,
+.Menu_TopMenuActive a:visited,
+a.Menu_SubMenuItemActive:link,
+a.Menu_SubMenuItemActive:visited {
+    color: #fff;
+}
+
+
+/* submenu item */
+
+.Menu_DropDownPanel {
+    background-color: #454952;
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .2);
+}
+
+
+/* reset any inherit styles (e.g.: ChicagoMobile -> Chicago) */
+
+div.Menu_DropDownPanel a,
+div.Menu_DropDownPanel a:link,
+div.Menu_DropDownPanel a:visited {
+    color: #717578;
+    height: auto;
+}
+
+div.Menu_DropDownPanel a:hover,
+div.Menu_DropDownPanel a:link:hover,
+div.Menu_DropDownPanel a:visited:hover {
+    color: #dab702;
+}
+
+
+/* submenu */
+
+.Menu_DropDownPanel a.Menu_SubMenuItem,
+.Menu_DropDownPanel a.Menu_SubMenuItem:link,
+.Menu_DropDownPanel a.Menu_SubMenuItem:visited {
+    color: rgba(255, 255, 255, .75);
+    display: block;
+    padding: 3px 20px;
+}
+
+
+/* hover submenu item */
+
+.Menu_DropDownPanel a.Menu_SubMenuItem:hover,
+.Menu_DropDownPanel a.Menu_SubMenuItem.Menu_SubMenuItemActive {
+    background-color: #444;
+    color: #dab702;
+}
+
+
+/* Menu tablet and phone */
+
+.tablet .Application_Menu,
+.phone .Application_Menu {
+    background: #2d323c;
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 49px;
+    /* Enable hardware acceleration */
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    /* Animate the menu when opening and closing */
+    -webkit-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    width: 250px;
+    /* reduce animation flickering */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.phone .Application_Menu {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.tablet .Application_Menu .Menu_TopMenu,
+.phone .Application_Menu .Menu_TopMenu {
+    border-top-width: 1px;
+    margin: 0;
+    padding: 0 0;
+    width: 100%;
+}
+
+.tablet .Application_Menu .Menu_DropDownButton.open .Menu_TopMenu,
+.phone .Application_Menu .Menu_DropDownButton.open .Menu_TopMenu {
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .3);
+}
+
+.tablet.active .Application_Menu,
+.phone.active .Application_Menu {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.tablet.active .Menu_Container,
+.phone.active .Menu_Container {
+    margin-bottom: 44px;
+    right: 0;
+    width: 100%;
+}
+
+.tablet .Application_Menu .Menu_DropDownButton,
+.phone .Application_Menu .Menu_DropDownButton {
+    display: block;
+    position: relative;
+}
+
+.tablet .Application_Menu a,
+.phone .Application_Menu a,
+.tablet .Application_Menu a:link,
+.phone .Application_Menu a:link,
+.phone .Application_menu a:visited,
+.phone .Application_menu a:visited {
+    border: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    -webkit-transform: translateX(-300px) scale(.5);
+    -ms-transform: translateX(-300px) scale(.5);
+    transform: translateX(-300px) scale(.5);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    width: 100%;
+}
+
+.tablet.active .Application_Menu a,
+.phone.active .Application_Menu a,
+.tablet.active .Application_Menu a:link,
+.phone.active .Application_Menu a:link,
+.tablet.active .Application_Menu a:visited,
+.phone.active .Application_Menu a:visited {
+    -webkit-transform: translateX(0) scale(1);
+    -ms-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+}
+
+.tablet .Application_Menu .Menu_DropDownPanel,
+.phone .Application_Menu .Menu_DropDownPanel {
+    background-color: rgba(0, 0, 0, .3);
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    position: static;
+}
+
+.phone .Application_Menu .Menu_DropDownArrow,
+.tablet .Application_Menu .Menu_DropDownArrow {
+    position: absolute;
+    right: 14px;
+    top: 21px;
+}
+
+.Logout_Icon {
+    border-radius: 50%;
+    text-align: center;
+    width: 22px;
+}
+
+.Header_Search {
+    display: inline-block;
+    margin-right: 20px;
+    min-width: 100px;
+}
+
+
+/* User */
+
+.Login_Info,
+.AppSwitcherContainer,
+a.Login_Info_Username,
+a.Login_Info_Username:link,
+a.Login_Info_Username:visited {
+    color: #333;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.Login_Info_Logout {
+    font-size: 22px;
+}
+
+.Login_Info_Logout:before,
+.Login_Info_Username:before,
+.AppSwitcherContainer:before,
+.AppSwitcherLink[disabled="disabled"]:before {
+    color: #b3b3b3;
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.Login_Info_Username:before {
+    content: "\f007";
+    /* fa-user at http://fortawesome.github.io/Font-Awesome/icons/ */
+}
+
+.Login_Info_Logout:before {
+    content: "\f011";
+    /* fa-power-off at http://fortawesome.github.io/Font-Awesome/icons/ */
+    margin-right: 0;
+}
+
+
+/* Responsive Context */
+
+.tablet .Login_Info_Logout:before,
+.phone .Login_Info_Logout:before {
+    font-size: 20px;
+}
+
+
+/* Content *********************************************/
+
+.Page>.Content {
+    padding-top: 0;
+}
+
+
+/* If we use sidebar */
+
+.desktop:not(.small).UseSidebar .Content {
+    margin-right: 300px;
+}
+
+
+/* Title Page ************/
+
+.Title_Section {
+    background-color: #fff;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: inset 0 -1px 2px rgba(0, 0, 0, .15);
+    color: #333;
+    margin-top: 0;
+    padding: 80px 20px 30px 20px;
+}
+
+.Title_Section.Black {
+    background-color: #131819;
+    color: #fff;
+}
+
+.Title_Section.Blue {
+    background-color: #0074c1;
+    color: #fff;
+}
+
+.Title_Section.Transparent {
+    background-color: transparent;
+}
+
+.Title_Section.White {
+    background-color: #fff;
+}
+
+.Title_Section.Yellow {
+    background-color: #dab702;
+    color: #fff;
+}
+
+.Title_Section.Orange {
+    background-color: #da6802;
+    color: #fff;
+}
+
+.Title_Section.Red {
+    background-color: #d01a1a;
+    color: #fff;
+}
+
+.Title_Section.DarkRed {
+    background-color: #b10000;
+    color: #fff;
+}
+
+.Title_Section.Plum {
+    background-color: #c32b87;
+    color: #fff;
+}
+
+.Title_Section.DarkPlum {
+    background-color: #970263;
+    color: #fff;
+}
+
+.Title_Section.Green {
+    background-color: #388e3c;
+    color: #fff;
+}
+
+.Title_Section.LightGreen {
+    background-color: #64be68;
+    color: #fff;
+}
+
+.Title_Section.Turquoise {
+    background-color: #00b0c1;
+    color: #fff;
+}
+
+.Title_Section.DarkBlue {
+    background-color: #194968;
+    color: #fff;
+}
+
+.Title_Section.Silver {
+    background-color: #dadbde;
+}
+
+.Title_Section.Gray {
+    background-color: #79868a;
+    color: #fff;
+}
+
+.Title_Section.BackgroundFixed {
+    background-attachment: fixed;
+}
+
+.tablet .Title_Section.BackgroundFixed,
+.phone .Title_Section.BackgroundFixed {
+    background-attachment: scroll;
+}
+
+.UseSidebar .Title_Section {
+    margin: 70px 20px 0 20px;
+    padding: 20px;
+}
+
+.Title_Section .Title {
+    line-height: 40px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+}
+
+.Title_Section .Actions {
+    line-height: 32px;
+    text-align: right;
+    width: 50%;
+}
+
+.Title_Section .Actions a {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.Title_Section .Actions a:first-child {
+    margin-left: 0;
+}
+
+.phone.portrait .Actions {
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.phone.portrait .Actions .Button {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.phone.portrait .Actions .Button:last-child {
+    margin-bottom: 0;
+}
+
+.phone .Title_Section .Title {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.phone .Title_Section .Actions,
+.phone .Title_Section a.ActionAdd,
+.phone .Title_Section a.ActionEdit,
+.phone .Title_Section a.ActionDelete,
+.phone .Title_Section a.ActionChange {
+    width: 100%;
+}
+
+
+/* To work with old applications */
+
+.Title_Links {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* Main Content ****************************/
+
+.MainContent {
+    min-height: 100%;
+    padding: 20px;
+    padding-bottom: 60px;
+    -servicestudio-min-height: 350px;
+}
+
+.Page.active .MainContent {
+    pointer-events: none;
+}
+
+
+/* Footer **********************************/
+
+.Footer {
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    -servicestudio-width: auto;
+}
+
+.Footer a,
+.Footer a:link,
+.Footer a:visited {
+    color: #dab702;
+    font-size: 12px;
+}
+
+.MainPopup {
+    background: #fff;
+    display: table-cell;
+    padding: 14px 16px;
+    vertical-align: top;
+}
+
+.MainPopup .Button.ThemeGrid_MarginGutter {
+    margin-left: 10px;
+}
+
+.ThemeGrid_Container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+html .ThemeGrid_Container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.OSInlineClear {
+    /* This style will never be used in runtime.
+  When applied in Service Studio, it will prevent the style 'OSInline' from being
+  automatically applied to divs and tables with widths != (fill parent) */
+}
+
+
+/*------------------------------------*\
+              $3. Text formatting
+\*-------------------------------------*/
+
+
+/*------------------------------------*\
+              $4. Forms
+\*-------------------------------------*/
+
+textarea,
+select,
+input {
+    font-size: 14px;
+}
+
+html input {
+    height: 34px;
+}
+
+
+/* radio and checkbox override rules */
+
+html input[type="radio"],
+html input[type="checkbox"] {
+    background-color: transparent;
+    box-shadow: none !important;
+    height: 20px;
+}
+
+input[type="checkbox"]:after {
+    border: 3px solid #333;
+    border-right: 0;
+    border-top: 0;
+    height: 5px;
+    left: 20%;
+    top: 23%;
+    width: 11px;
+}
+
+
+/* Checkboxes and Radio Buttons */
+
+input[type="radio"]:before,
+input[type="checkbox"]:before {
+    box-shadow: none;
+}
+
+
+/* force padding to center vertically on Firefox */
+
+select {
+    box-shadow: none;
+    height: 32px;
+    padding: 4px 6px;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    border: 0;
+}
+
+.Form:not(.ReadOnly) {
+    cursor: text;
+}
+
+select.ReadOnly {
+    cursor: pointer;
+}
+
+.Form input.ReadOnly:not(.Not_Valid),
+.Form textarea.ReadOnly:not(.Not_Valid),
+.Form select.ReadOnly:not(.Not_Valid) {
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.Form input.ReadOnly:not(.Not_Valid):focus,
+.Form textarea.ReadOnly:not(.Not_Valid):focus,
+.Form select.ReadOnly:not(.Not_Valid):focus {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    font-size: 12px;
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    font-size: 12px;
+    line-height: 30px;
+    vertical-align: initial;
+}
+
+textarea,
+select {
+    line-height: 20px;
+}
+
+.ie8 select {
+    padding: 6px;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+    border-color: #aaa;
+    box-shadow: none;
+}
+
+.Form input.ReadOnly:not(.Not_Valid),
+.Form textarea.ReadOnly:not(.Not_Valid),
+.Form select.ReadOnly:not(.Not_Valid) {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.Form textarea.ReadOnly[readonly="readonly"],
+.Form textarea.ReadOnly[disabled="disabled"],
+.Form select.ReadOnly[disabled="disabled"],
+.Form input.ReadOnly[readonly="readonly"],
+.Form input.ReadOnly[disabled="disabled"],
+.Form input[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form input[readonly="readonly"].ReadOnly:not(.Not_Valid),
+.Form textarea[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form textarea[readonly="readonly"].ReadOnly:not(.Not_Valid),
+.Form select[disabled="disabled"].ReadOnly:not(.Not_Valid),
+.Form select[readonly="readonly"].ReadOnly:not(.Not_Valid),
+textarea[disabled="disabled"],
+textarea[readonly="readonly"],
+select[disabled="disabled"],
+input[readonly="readonly"],
+input[disabled="disabled"] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+
+/* All focus disabled inputs - maintain same style*/
+
+input[disabled="disabled"][type="text"]:focus,
+input[disabled="disabled"][type="password"]:focus,
+textarea[disabled="disabled"]:focus,
+textarea[readonly="readonly"]:focus,
+select[disabled="disabled"]:focus,
+input[readonly="readonly"]:focus,
+input[disabled="disabled"]:focus,
+.Form input[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+.Form input[disabled="disabled"].ReadOnly:not(.Not_Valid):focus,
+.Form textarea[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+.Form textarea[disabled="disabled"].ReadOnly:not(.Not_Valid):focus,
+.Form select[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+.Form select[disabled="disabled"].ReadOnly:not(.Not_Valid):focus {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.Form input.ReadOnly,
+.Form textarea.ReadOnly,
+.Form select.ReadOnly {
+    font-size: 12px;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !important;
+}
+
+input[type="radio"].ReadOnly,
+input[type="checkbox"].ReadOnly,
+.Form input.ReadOnly[disabled="disabled"][type="radio"],
+.Form input.ReadOnly[readonly="readonly"][type="radio"],
+.Form input.ReadOnly[disabled="disabled"][type="checkbox"],
+.Form input.ReadOnly[readonly="readonly"][type="checkbox"],
+.Form input[type="radio"].ReadOnly,
+.Form input[type="checkbox"].ReadOnly {
+    background-color: transparent;
+    border-width: 0;
+}
+
+
+/* Not_Valid handling style */
+
+.Form input.Not_Valid,
+.Form select.Not_Valid,
+.Form textarea.Not_Valid,
+input.Not_Valid,
+select.Not_Valid,
+textarea.Not_Valid {
+    border-radius: 4px;
+}
+
+.ie input[type="radio"],
+.ie input[type="checkbox"],
+.ie .Form input[type="radio"],
+.ie .Form input[type="checkbox"] {
+    border-radius: 0;
+}
+
+.Form textarea.Not_Valid:focus,
+.Form textarea.Not_Valid,
+textarea.Not_Valid:focus,
+textarea.Not_Valid {
+    font-size: 12px;
+    padding: 10px 12px;
+}
+
+select.Not_Valid:focus,
+input.Not_Valid:focus,
+textarea.Not_Valid:focus {
+    border: 1px solid #bf1601;
+}
+
+.Form input[type="checkbox"].Not_Valid,
+.Form input[type="radio"].Not_Valid,
+input[type="checkbox"].Not_Valid,
+input[type="radio"].Not_Valid {
+    border: transparent;
+    padding: 0;
+}
+
+.Form input.ReadOnly,
+.Form textarea.ReadOnly {
+    background: #fff;
+}
+
+
+/*------------------------------------*\
+              $5. Buit-in widgets
+\*-------------------------------------*/
+
+a.ListNavigation_PageNumber:link,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis,
+a.ListNavigation_Previous:link,
+a.ListNavigation_Next:link {
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 0;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding: 6px 20px;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.TableRecords_Header {
+    border-bottom: solid 1px #eee;
+    color: #999;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.TableRecords>tbody>tr:hover {
+    background: #fff;
+}
+
+.TableRecords {
+    background-color: #fff;
+    border: 1px solid #dadbde;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, .5);
+    padding: 5px 0 0;
+}
+
+.TableRecords_OddLine,
+.TableRecords_EvenLine {
+    border-bottom: none;
+}
+
+.TableRecords_OddLine {
+    background-color: #fafafa;
+}
+
+.TableRecords_OddLine:first-child,
+.TableRecords_EvenLine:first-child,
+.TableRecords_Header:first-child {
+    padding-left: 20px;
+}
+
+.TableRecords_OddLine,
+.TableRecords_EvenLine {
+    border-bottom: 1px solid #eee;
+    padding: 5px 10px;
+}
+
+.TableRecords_OddLine:not(:first-child),
+.TableRecords_EvenLine:not(:first-child) {
+    border-left: 1px solid #eee;
+}
+
+.EditableTable thead td {
+    color: #333;
+    font-weight: bold;
+}
+
+.EditableTable {
+    border: 1px solid #ddd;
+}
+
+.EditableTable thead tr th {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.EditableTable tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.EditableTable tbody tr:not(.RowControlGroup) td {
+    border-bottom: 1px solid #ddd;
+}
+
+td.RowWithAddAction {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: none;
+    padding: 0;
+}
+
+td.RowWithAddAction a {
+    padding: 10px 0 10px 22px;
+}
+
+.EditableTable tr.RowControlGroup a:hover {
+    color: #dab702;
+}
+
+.EditableTable tr.RowControlGroup a {
+    color: #b39501;
+}
+
+
+/*------------------------------------*\
+              $6. RichWidgets
+\*-------------------------------------*/
+
+
+/* Accordion Harrow */
+
+.fa-angle-down:before {
+    padding-left: 1px;
+}
+
+
+/* Feedback Message*/
+
+.Feedback_Message_Wrapper {
+    margin-top: 102px;
+}
+
+
+/* Feedback Message **************************/
+
+div.Feedback_Message_Info:before,
+div.Feedback_Message_Success:before,
+div.Feedback_Message_Error:before,
+div.Feedback_Message_Warning:before {
+    font-size: 20px;
+    left: 15px;
+    top: 9px;
+}
+
+div.Feedback_Message_Success {
+    background-color: #dff0d8;
+    border: 1px solid #cbe0ba;
+    color: #346b35;
+}
+
+div.Feedback_Message_Success a.Feedback_Message_Wrapper_Close {
+    opacity: 1;
+}
+
+div.Feedback_Message_Success a.Feedback_Message_Wrapper_Close:after {
+    color: #346b35;
+}
+
+div.Feedback_Message_Success:before {
+    color: #7dc62b;
+}
+
+div.Feedback_Message_Error {
+    background-color: #f5e7e7;
+    border: 1px solid #ead8d8;
+    color: #843534;
+}
+
+div.Feedback_Message_Error a.Feedback_Message_Wrapper_Close {
+    opacity: 1;
+}
+
+div.Feedback_Message_Error a.Feedback_Message_Wrapper_Close:after {
+    color: #843557;
+}
+
+div.Feedback_Message_Error:before {
+    color: #e58d8d;
+}
+
+div.Feedback_Message_Warning {
+    background-color: #fcf8e3;
+    border: 1px solid #f1deb6;
+    color: #8a6d3b;
+}
+
+div.Feedback_Message_Warning a.Feedback_Message_Wrapper_Close {
+    opacity: 1;
+}
+
+div.Feedback_Message_Warning a.Feedback_Message_Wrapper_Close:after {
+    color: #8a6d3b;
+}
+
+div.Feedback_Message_Warning:before {
+    color: #eabd30;
+}
+
+div.Feedback_Message_Info {
+    background-color: #fcf8e3;
+    border: 1px solid #f1deb6;
+    color: #8a6d3b;
+}
+
+div.Feedback_Message_Info a.Feedback_Message_Wrapper_Close {
+    opacity: 1;
+}
+
+div.Feedback_Message_Info a.Feedback_Message_Wrapper_Close:after {
+    color: #8a6d3b;
+}
+
+div.Feedback_Message_Info:before {
+    color: #eabd30;
+}
+
+div.Feedback_Message_Wrapper {
+    left: 0;
+    z-index: 9;
+}
+
+div.Feedback_Message_Error,
+div.Feedback_Message_Success,
+div.Feedback_Message_Warning,
+div.Feedback_Message_Info {
+    border-radius: 3px;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: normal;
+    max-width: 100%;
+    min-width: 300px;
+    padding: 10px 40px 10px 40px;
+    word-break: break-word;
+    -webkit-backface-visibility: hidden;
+}
+
+a.Feedback_Message_Wrapper_Close {
+    color: #000;
+    opacity: .3;
+    right: 10px;
+    top: 8px;
+}
+
+.tablet a.Feedback_Message_Wrapper_Close,
+.phone a.Feedback_Message_Wrapper_Close {
+    pointer-events: none;
+}
+
+div.Feedback_Message_Error .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Warning .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Info .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Success .Feedback_Message_Wrapper_Close:after {
+    color: #000;
+    content: "\f00d";
+    /* fa-times at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    text-align: right;
+}
+
+a.Feedback_Message_Wrapper_Close:hover {
+    opacity: .6;
+}
+
+.tablet a.Feedback_Message_Wrapper_Close,
+.phone a.Feedback_Message_Wrapper_Close {
+    pointer-events: none;
+}
+
+
+/* Ajax Loading */
+
+.Feedback_AjaxWait {
+    background-color: white;
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    bottom: 0;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+    color: #cba900;
+    font-size: 12px;
+    height: 60px;
+    padding: 16px 20px 10px 20px;
+    right: 20px;
+}
+
+.Feedback_AjaxWait .Loader {
+    background: url(/SilkUIFramework/img/loading_lisbon_yellow.gif) no-repeat;
+    height: 16px;
+    position: relative;
+    text-indent: -9999em;
+    width: 16px;
+}
+
+
+/* Burguer */
+
+.fa-bars {
+    cursor: pointer;
+}
+
+.MenuSlider_IsOpen .LoginInfo {
+    font-size: 30px;
+}
+
+.Filters_Wrapper {
+    background: #fff;
+    border-radius: 0;
+    line-height: 32px;
+    padding: 10px;
+}
+
+.Filters_Wrapper .Button {
+    margin-left: 10px;
+}
+
+.Search_wrapper input[type="text"] {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+    height: 32px;
+    line-height: 30px;
+    padding-left: 30px;
+}
+
+.Search_wrapper input[type="text"]:focus {
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.Search_wrapper:after {
+    left: 10px;
+    top: 9px;
+}
+
+
+/* Search inside header */
+
+.Header .Search_wrapper input[type="text"] {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 30px;
+    color: #fff;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    width: 100px;
+}
+
+.Header .Search_wrapper input[type="text"]:focus {
+    border: 1px solid rgba(255, 255, 255, .3);
+    width: 200px;
+}
+
+.Header .Search_wrapper:after {
+    color: #cdcdcd;
+    left: 10px;
+    pointer-events: none;
+}
+
+
+/*------------------------------------*\
+        $7. Login
+\*-------------------------------------*/
+
+
+/* login container **************************/
+
+.Login {
+    background-color: #666;
+    background-image: radial-gradient(circle 497px at 16.42% 87.08%, rgba(255, 255, 255, .2) 0%, transparent 100%), radial-gradient(circle 242px at 21.53% 91.67%, #222731 0%, #222731 100%);
+    color: #fff;
+    height: 100%;
+    min-height: 280px;
+    position: absolute;
+    width: 100%;
+    -servicestudio-min-height: 600px;
+    -servicestudio-position: fixed;
+}
+
+.Login_Box {
+    padding-top: 20px;
+}
+
+.phone .Login_Box {
+    left: 50%;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.Login__Logo {
+    padding-bottom: 10px;
+}
+
+.Login_background {
+    -servicestudio-min-height: 600px;
+}
+
+.Login_background img {
+    -servicestudio-height: 100%;
+    -servicestudio-width: 100%;
+}
+
+
+/* Form **************************/
+
+.Login__Form {
+    background-color: transparent;
+    padding: 20px 20px;
+}
+
+.phone .Login_Footer {
+    padding: 15px 0;
+}
+
+
+/* ExcludeFromPickers: ActionAdd, ActionChange, ActionDelete, ActionEdit, Actions, Application_Menu, Badge, Breadcrumbs, BreadcrumbsContainer, 
+Content, ControlActions, desktop, EditableTable, EditRecord, EditRecord_Buttons, fa, Feedback_AjaxWait, Feedback_Message_Error, 
+Feedback_Message_Info, Feedback_Message_Success, Feedback_Message_Warning, Feedback_Message_Wrapper, Feedback_Message_Wrapper_Close, 
+Filters_Wrapper, Footer, Form, Header, Header__activity, Header__loginInfo, Header_buttonMenu, Header_search, Header_title, Header_user, 
+HeaderPage, ie, ie10, ie11, ie8, InEditMode, ListNavigation_CurrentPageNumber, ListNavigation_DisabledNext, ListNavigation_DisabledPrevious, 
+ListNavigation_Ellipsis, ListNavigation_Next, ListNavigation_PageNumber, ListNavigation_Previous, Loader, Login__Form, Login__Logo, Login_Box, 
+Login_Footer, Login_Text, LoginInfo, LoginInfo_username, MainContent, MainPopup, Menu, Menu_DropDownArrow, Menu_DropDownButton, Menu_DropDownPanel, 
+Menu_SubItemsPlaceholder, Menu_SubMenuItem, Menu_SubMenuItemActive, Menu_TopMenu, Menu_TopMenuActive, Menu_TopMenus, menuOpen, MenuSlider_Toggler, 
+mini, Not_Valid, OnEdit, open, OSAutoMarginTop, OSInlineClear, Page, phone, portait, Responsive, RowControlGroup, RowWithAddAction, select2-choice, 
+select2-container, Selected, ShowRecord, SmartInput_Undo, TableRecords, TableRecords_EvenLine, TableRecords_Header, TableRecords_OddLine, tablet, 
+ThemeGrid_Container, ThemeGrid_MarginGutter, ThemeGrid_Width12, ThemeGrid_Wrapper, Title, Title_Section */

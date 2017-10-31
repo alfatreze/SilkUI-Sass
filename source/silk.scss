@@ -1,0 +1,50 @@
+
+
+// config
+@import 'base/functions';
+@import 'base/variables';
+
+// definition 
+@import 'base/resets';
+@import 'base/general';
+@import 'base/typography';
+@import 'base/colors';
+
+@import 'elements/forms';
+@import 'elements/validation';
+ 
+@import 'patterns/01_content/00_defs';
+
+@import 'widgets/widgets'; 
+
+
+
+// Unsure if it needs to be included for processing by the outsystems platform
+
+/* ExcludeFromPickers: AccordionVertical, AccordionVertical___icon, button, AccordionVertical___title, AccordionVertical__content, 
+AccordionVertical__header, AccordionVertical_item, active, Active, ActiveStep, ActiveStep:before, ampm, arrangeHorizontal, arrangeVertical, 
+Auto, autoHeight, Badge, Balloon, Balloon__heading, Balloon_content, Balloon_footer, Blank, Blank_action, Blank_desc, Blank_icon, Blank_row, 
+Blank_wrapper, BottomMenu__text, BottomMenu_item, BottomMenu_wrapper, Box, Breadcrumbs, ButtonDropdown, ButtonDropdown_button, ButtonDropdown_text, 
+ButtonGroup, ButtonGroup_button, Buttons, Buttons_Left, Buttons_Right, calendar, calendarPattern, CalendarPopup, CalendarWrapper, Card, Card_Actions, 
+Card_Image, Card_Text, Card_Title, CardLeftImage, CardSimple, CardSimpleImage, Cell1, Cell2, changed, colon, colSpan8, Column, Columns, Counter, 
+Counter_label, Counter_number, Counter_row, day, desktop, disabled, done, DropdownMenu, EditableTable, EditRecord, EditRecord_Buttons, EditRecord_Caption, 
+EditRecord_Value, emptycell, emptyrow, Error, fa, fa-angle-left, fa-angle-right, fa-fw, Feedback_AjaxWait, Feedback_AjaxWait_CursorProgress, Feedback_Message_Error, 
+Feedback_Message_Info, Feedback_Message_Success, Feedback_Message_Warning, Feedback_Message_Wrapper_Close, Filters_Wrapper, firefox, Form, form-top, hilite, hour, Icon, 
+IconBadge, IconBadge_number, IconDropdown, IconDropdown_button, IconTrigger, ie, ie8, ie9, InfoTooltip, InlineDropdown, InlineDropdown_icon, InlineDropdown_label, 
+InputMandatorySymbol, ios, Is_Default, js_open, Label, LabelValues, LastStep, ListItem, ListItemContent, ListItemGroup, ListItemToggle, ListNavigation_DisabledNext, 
+ListNavigation_DisabledPrevious:before, ListNavigation_Next, ListNavigation_Previous:before, ListRecords, Loading, MandatoryCaption, mini, minute, mob_BreakAll, Modal, 
+ModalBackground, ModalContainer, ModalMessage, ModalOpened, name, NavigationBar, nopadding, notclose, open, OSAutoMarginTop, os-internal-Popup, os-internal-ui-dialog, 
+os-internal-ui-dialog-title, os-internal-ui-dialog-titlebar, othermonth, oweekend, owl-buttons, owl-carousel, owl-controls, owl-item, owl-next, owl-page, owl-prev, 
+owl-theme, owl-wrapper, owl-wrapper-outer, Page, PageHide, PageOverlay, PageOverlayLoader, PageOverlayShow, Panel, Panel__actions, Panel__title, Panel_content, Panel_footer,
+Panel_header, Past, PH, PH_Preview, phone, portrait, Post, Post__date, Post__description, Post_content, Post_icon, Progress, Progress_bar, Prompt, silkui_TableRecords_Label, 
+RecordPicture, RecordPicture_Wrapper, Row, rowhilite, rwd_debug, Search_wrapper, SearchNavigation_frame, Section, Section__actions, Section__title, Section_Actions, 
+Section_content, Section_header, SectionExpandable, SectionExpandable__icon, SectionExpandable__title, SectionExpandable_content, SectionExpandable_header, SectionIndex, 
+Separator, ShowRecord, ShowRecord_Caption, ShowRecord_Value, Slider, Slider_currentvalue, Slider_currentvalue2, Slider_InputNumber, Slider_InputNumber2, Slider_maxvalue, 
+Slider_minvalue, Slider_values, SliderContainer, SliderRange, TableRecords, TableRecords_BottomNavigation, TableRecords_EvenLine, TableRecords_Header, TableRecords_Label, 
+TableRecords_OddLine, TableRecords_OddRow, TableRecords_TopNavigation, TableRecordsResponsive, tablet, TableVerticalAlign, Tabs, Tabs__content, Tabs__Loading, Tabs__tab, 
+Tabs_body, Tabs_header, Tabs_TabBody, Tabs_TabOff, Tabs_TabOn, Tabs_Wrapper, Tile, TileIcon, TileIcon_icon, TileIcon_text, TileIconText_icon, TileIconText_right, TileNumber_number, 
+TileNumber_text, title, TitleMonth, TitleYear, ToggleButton, ToggleButton_label, tooltip_style, tooltip-content, tooltipster-arrow-border, tooltipster-arrow-bottom, tooltipster-arrow-bottom-left, 
+tooltipster-arrow-bottom-right, tooltipster-content, tooltipstered, ui-slider-handle, ui-slider-handle:before, ui-slider-range, ui-state-active, UserInitials, ValidationMessage, 
+Vertical, WizardParent, WizardStep, os-internal-ui-autocomplete, active, balloon, Expanded, ListNavigation_CurrentPageNumber, ListNavigation_DisabledPrevious,
+ListNavigation_Ellipsis, ListNavigation_PageNumber, ListNavigation_Previous, os-internal-ui-state-hover, weekend, Panel__Actions, TableRecords_ExpandedRow, time, off, on*/
+

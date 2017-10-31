@@ -1,0 +1,1784 @@
+/*
+    
+    To override a style copy and paste it to 
+    the application theme and then modify it
+
+    File: DublinTheme
+
+    1. General Properties
+    2. Structure
+    3. Forms
+    4. Built-in widgets
+    5. RichWidgets
+    6. Login
+    7. Theme Grid
+    0. Studio Preview
+    
+*/
+
+
+/*------------------------------------*\
+        $1. General Properties
+\*-------------------------------------*/
+
+html,
+body {
+    background-color: #efefef;
+    color: #292929;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body,
+form,
+.Page {
+    height: 100%;
+}
+
+
+/* a links **************************/
+
+a,
+a:link,
+a:visited {
+    color: #125f90;
+    text-decoration: none;
+}
+
+a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[disabled="disabled"],
+a[disabled="disabled"]:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+div[onclick] {
+    cursor: pointer;
+    /* add a pointer cursor when the div has a click event */
+}
+
+.OSAutoMarginTop {
+    margin-top: 20px;
+}
+
+
+/*------------------------------------*\
+        $2. Structure
+\*-------------------------------------*/
+
+.ThemeGrid_Container {
+    position: relative;
+}
+
+
+/* header **************************/
+
+.Header {
+    background-color: #fff;
+    border-bottom: 1px solid #bbb;
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, .24);
+    color: #fff;
+    display: table;
+    height: 60px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    -servicestudio-position: static;
+}
+
+.phone .Header {
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: left 300ms ease;
+    transition: left 300ms ease;
+}
+
+
+/* button **************************/
+
+.Header .Button.Header_buttonMenu {
+    display: none;
+    font-size: 20px;
+    height: 36px;
+    line-height: 24px;
+    padding: 5px;
+    position: absolute;
+    top: 12px;
+    width: 38px;
+    z-index: 99;
+}
+
+.phone .Header .Button.Header_buttonMenu {
+    display: block;
+}
+
+.Header .Balloon_content {
+    display: none;
+}
+
+
+/* Application title **************************/
+
+.Header_title {
+    border-right: 1px solid #d5dbde;
+    height: 60px;
+    left: 0;
+    line-height: 54px;
+    padding-left: 30px;
+    position: absolute;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+    z-index: 2;
+}
+
+
+/* Responsive Context **************************/
+
+.Page.phone.MenuOpen .Header,
+.Page.phone.MenuOpen .Content.ThemeGrid_Wrapper {
+    left: 260px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.tablet .Header_title,
+.phone .Header_title {
+    border-right: none;
+}
+
+.phone .Header_title {
+    margin-left: 40px;
+}
+
+.Header_title a {
+    color: #2c4150;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.Header_title a img {
+    height: 18px;
+    margin-bottom: 4px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.Header_title a,
+.Header_title a:link,
+.Header_title a:visited,
+.Header_title a:hover {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+
+/* application search **************************/
+
+.Header_search {
+    display: table-cell;
+    left: 300px;
+    margin-top: 14px;
+    min-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    vertical-align: middle;
+    width: 100%;
+    -servicestudio-margin-top: 0;
+    -servicestudio-position: absolute;
+    -servicestudio-right: 250px;
+    -servicestudio-width: auto;
+}
+
+
+/* application user **************************/
+
+.Header_user {
+    display: table;
+    min-height: 60px;
+    padding-right: 20px;
+    position: absolute;
+    right: 0;
+    width: 240px;
+}
+
+.Header__activity {
+    color: #48687c;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.firefox .Header__activity {
+    height: 60px;
+    text-align: right;
+}
+
+.phone .Header__activity {
+    display: none;
+}
+
+.Header__loginInfo {
+    display: table-cell;
+}
+
+
+/* login info web block **************************/
+
+.LoginInfo {
+    color: #2d2b31;
+    font-size: 14px;
+    margin-top: 14px;
+    text-align: right;
+}
+
+.LoginInfo_username {
+    line-height: 32px;
+}
+
+.LoginInfo_username img {
+    border: 3px solid #dcddde;
+    border-radius: 32px;
+    height: 32px;
+    margin-right: 10px;
+    width: 32px;
+}
+
+
+/* 
+    *** Menu structure ***
+    
+    div.Header_Menu
+    - div.Application_Menu
+    - - div.Menu_TopMenus
+    - - - div.Menu_DropDownButton
+    - - - - div.Menu_TopMenu
+    - - - - - sapn.Menu_DropDownArrow
+    - - - - div.Menu_DropDownPanel
+    - - - - - div.Menu_SubItemsPlaceholder
+    - - - - - - a.Menu_SubMenuItem
+    
+*/
+
+
+/* Menu **************************/
+
+.Menu {
+    background: -webkit-linear-gradient(90deg, #001b31 0%, #2e4859 100%);
+    background: -moz-linear-gradient(90deg, #001b31 0%, #2e4859 100%);
+    background: -ms-linear-gradient(90deg, #001b31 0%, #2e4859 100%);
+    background: -o-linear-gradient(90deg, #001b31 0%, #2e4859 100%);
+    background: linear-gradient(0deg, #001b31 0%, #2e4859 100%);
+    background-color: #1e394c;
+    background-color: #2e4859;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 60px;
+    width: 300px;
+    z-index: 5;
+    -servicestudio-position: absolute;
+}
+
+.phone .Menu {
+    height: 100%;
+    left: -260px;
+    overflow-x: hidden;
+    top: 0;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: left 300ms ease;
+    transition: left 300ms ease;
+    width: 260px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.Page.phone.MenuOpen .Menu {
+    left: 0;
+}
+
+.desktop.small .Menu,
+.tablet .Menu {
+    display: block;
+    height: auto;
+    width: 120px;
+}
+
+
+/* login info  **************************/
+
+.Menu .LoginInfo {
+    display: none;
+}
+
+.phone .Menu .LoginInfo {
+    background-color: #355264;
+    color: #fff;
+    display: block;
+    margin-top: 0;
+    padding: 20px 20px 20px 25px;
+    text-align: left;
+    width: 260px;
+}
+
+.Application_Menu {
+    position: relative;
+    width: 100%;
+}
+
+.desktop.small .Application_Menu,
+.tablet .Application_Menu {
+    height: 100%;
+}
+
+.Menu_TopMenus {
+    width: 100%;
+}
+
+.Menu_TopMenu {
+    position: relative;
+}
+
+.Menu_TopMenu a:link,
+.Menu_TopMenu a:visited,
+.Menu_TopMenu a {
+    border-bottom: 1px solid #48687c;
+    border-left: 2px solid transparent;
+    box-shadow: -2px 1px 2px 0 rgba(50, 50, 50, .75);
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+.desktop.small .Menu_TopMenu a:link,
+.desktop.small .Menu_TopMenu a:visited,
+.desktop.small .Menu_TopMenu a,
+.tablet .Menu_TopMenu a:link,
+.tablet .Menu_TopMenu a:visited,
+.tablet .Menu_TopMenu a {
+    font-size: 11px;
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.desktop.small .Menu_TopMenu a span.fa,
+.tablet .Menu_TopMenu a span.fa {
+    display: block;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -15px;
+    position: relative;
+    top: 0;
+}
+
+.desktop.small.MenuHideIcons .Menu_TopMenu a span.fa,
+.tablet.MenuHideIcons .Menu_TopMenu a span.fa {
+    display: none;
+}
+
+
+/* remove shadow form de last link **************************/
+
+.Menu_TopMenu a:link:last-child,
+.Menu_TopMenu a:visited:last-child,
+.Menu_TopMenu a:last-child {
+    box-shadow: none;
+}
+
+
+/* style icon font **************************/
+
+.Menu_TopMenu a span.fa {
+    border: 2px solid #48687c;
+    border-radius: 34px;
+    height: 34px;
+    line-height: 30px;
+    margin-right: 10px;
+    width: 34px;
+}
+
+.desktop.small .Menu_TopMenu a span,
+.tablet .Menu_TopMenu a span {
+    left: 45px;
+    position: absolute;
+    top: 10px;
+}
+
+
+/* style hover/active menu **************************/
+
+.Menu_TopMenu:hover,
+.Menu_TopMenu:hover a .fa,
+.Menu_TopMenuActive a:link .fa,
+.Menu_TopMenuActive a:visited .fa,
+.Menu_DropDownPanel a.Menu_SubMenuItemActive,
+.Menu_DropDownPanel a.Menu_SubMenuItemActive:visited,
+.Menu_DropDownPanel a.Menu_SubMenuItemActive:link,
+.Menu_DropDownPanel a.Menu_SubMenuItem:hover {
+    background-color: #48687c;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.desktop.small .Menu_DropDownPanel a,
+.desktop.small .Menu_DropDownPanel a:link,
+.desktop.small .Menu_DropDownPanel a:visited,
+.tablet .Menu_DropDownPanel a,
+.tablet .Menu_DropDownPanel a:link,
+.tablet .Menu_DropDownPanel a:visited {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Menu_TopMenu a:hover,
+.Menu_TopMenu a:link:hover,
+.Menu_TopMenu a:visited {
+    border-left: 2px solid #d7a909;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.desktop.small .Menu_TopMenu .Menu_DropDownArrow,
+.tablet .Menu_TopMenu .Menu_DropDownArrow {
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #48687c;
+    border-top: 4px solid transparent;
+    right: 5px;
+}
+
+.desktop.small .Menu_TopMenu:hover .Menu_DropDownArrow,
+.tablet .Menu_TopMenu:hover .Menu_DropDownArrow {
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #d7a909;
+    border-top: 4px solid transparent;
+}
+
+.desktop.small .Menu_TopMenuActive .Menu_DropDownArrow,
+.desktop.small .Menu_TopMenuActive:hover .Menu_DropDownArrow,
+.tablet .Menu_TopMenuActive .Menu_DropDownArrow,
+.tablet .Menu_TopMenuActive:hover .Menu_DropDownArrow {
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #d7a909;
+    border-top: 4px solid transparent;
+}
+
+
+/* show submenu if active **************************/
+
+.Menu_TopMenuActive+.Menu_DropDownPanel:not(:Empty) {
+    display: block;
+}
+
+.desktop.small .Menu_TopMenuActive+.Menu_DropDownPanel:not(:Empty),
+.tablet .Menu_TopMenuActive+.Menu_DropDownPanel:not(:Empty) {
+    display: none;
+}
+
+
+/* style icon on hover **************************/
+
+.Menu_TopMenu:hover span.fa {
+    border-color: #d7a909;
+    color: #d7a909;
+}
+
+.Menu_TopMenu:hover .Menu_DropDownArrow {
+    border-top-color: #d7a909;
+}
+
+.Menu_TopMenu .Badge {
+    float: right;
+    top: 6px;
+    -servicestudio-float: none;
+    -servicestudio-position: absolute;
+    -servicestudio-right: 20px;
+    -servicestudio-top: 20px;
+}
+
+.desktop.small .Menu_TopMenu .Badge,
+.tablet .Menu_TopMenu .Badge {
+    display: none;
+}
+
+.Menu_TopMenuActive:hover a:link,
+.Menu_TopMenuActive a:link,
+.Menu_TopMenuActive:hover a:visited,
+.Menu_TopMenuActive a:visited,
+.Menu_TopMenuActive:hover a,
+.Menu_TopMenuActive a,
+.Menu_TopMenu:hover a,
+.Menu_TopMenu a {
+    color: #d7a909;
+}
+
+.Menu_TopMenuActive .Menu_DropDownArrow,
+.Menu_TopMenuActive:hover .Menu_DropDownArrow {
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid #48687c;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #d7a909;
+}
+
+.Menu_DropDownArrow {
+    display: -moz-inline-box;
+    display: inline-block;
+    height: 0;
+    margin-top: -5px;
+    padding-top: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 0;
+    border-width: 0;
+    border-style: solid dashed dashed;
+    border-top: 4px solid #48687c;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+    background-color: transparent;
+}
+
+.Menu_DropDownButton {
+    display: block;
+}
+
+.Menu_TopMenuActive a:link,
+.Menu_TopMenuActive a:visited {
+    background-color: #48687c;
+    border-left: 2px solid #d7a909;
+    box-shadow: -2px 1px 2px 0 rgba(50, 50, 50, .75);
+}
+
+.Menu_TopMenuActive a span.fa {
+    border-color: #d7a909;
+    color: #d7a909;
+}
+
+.MenuSlider_Toggler {
+    color: #fff;
+}
+
+.Menu_DropDownPanel {
+    background-color: #253b4a;
+    border: 0;
+    box-shadow: none;
+    display: none;
+    list-style: none;
+    margin: 0;
+    position: relative;
+}
+
+.desktop.small .Menu_DropDownPanel,
+.tablet .Menu_DropDownPanel {
+    bottom: 0;
+    height: 100%;
+    left: 120px;
+    position: fixed;
+    top: 60px;
+    z-index: 999;
+}
+
+.Menu_DropDownPanel a,
+.Menu_DropDownPanel a:link,
+.Menu_DropDownPanel a:visited {
+    background: none;
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: none;
+    clear: both;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    padding-left: 66px;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    white-space: nowrap;
+}
+
+
+/* remove border from last submenu **************************/
+
+.Menu_DropDownPanel a:last-child {
+    border-bottom: none;
+}
+
+
+/* hover submenu **************************/
+
+.Menu_DropDownPanel a:hover,
+.Menu_DropDownPanel a:link:hover,
+.Menu_DropDownPanel a:visited:hover {
+    background-color: #48687c;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.Menu_DropDownPanel a span.fa {
+    color: #d7a909;
+    margin-right: 8px;
+}
+
+a.Menu_SubMenuItem,
+.desktop a.Menu_SubMenuItem:hover,
+a.Menu_SubMenuItem:link,
+a.Menu_SubMenuItem:visited {
+    border-bottom: 0;
+    height: 32px;
+    padding: 0;
+    padding-left: 66px;
+    -servicestudio-padding-left: 20px;
+}
+
+.desktop.small .Menu_SubItemsPlaceholder,
+.tablet .Menu_SubItemsPlaceholder {
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 5px;
+    width: 180px;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Page content header **************************/
+
+.HeaderPage {
+    display: block;
+}
+
+.HeaderPage .BreadcrumbsContainer {
+    margin-bottom: 5px;
+    margin-left: 20px;
+    -servicestudio-margin-left: 0;
+}
+
+.HeaderPage .BreadcrumbsContainer .Breadcrumbs,
+.HeaderPage .BreadcrumbsContainer .Breadcrumbs a,
+.HeaderPage .BreadcrumbsContainer .Breadcrumbs span {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.phone .HeaderPage .BreadcrumbsContainer {
+    -servicestudio-padding-left: 10px;
+}
+
+.phone .HeaderPage .BreadcrumbsContainer>div span {
+    -servicestudio-display: none;
+}
+
+
+/* Page Title **************************/
+
+.Title {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.Title.Heading1 {
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-left: 20px;
+    -servicestudio-height: auto;
+    -servicestudio-min-height: 50px;
+}
+
+.tablet.portait .Title.Heading1,
+.tablet.mini .Title.Heading1 {
+    font-size: 22px;
+    position: relative;
+}
+
+.phone.portrait .Title.Heading1 {
+    border: none;
+    display: block;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    -servicestudio-padding-left: 10px;
+}
+
+.Title_Section {
+    margin-top: 34px;
+    position: relative;
+}
+
+
+/* Page actions **************************/
+
+.Actions {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 34px;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: auto;
+    -servicestudio-min-width: 100px;
+    -servicestudio-width: auto;
+}
+
+.phone.portrait .Actions {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.phone.portrait .Actions .Button {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.Actions a {
+    margin-left: 10px;
+}
+
+.Actions a:first-child {
+    margin-left: 0;
+}
+
+a.ActionAdd,
+a.ActionEdit,
+a.ActionDelete,
+a.ActionChange {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    height: 32px;
+    line-height: 30px;
+    margin-left: 10px;
+    min-width: 80px;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+}
+
+a.ActionAdd:hover,
+a.ActionEdit:hover,
+a.ActionDelete:hover,
+a.ActionChange:hover {
+    background-color: #efefef;
+}
+
+a.ActionAdd[disabled],
+a.ActionAdd:disable,
+a.ActionEdit[disabled],
+a.ActionEdit:disable,
+a.ActionDelete[disabled],
+a.ActionDelete:disable,
+a.ActionChange[disabled],
+a.ActionChange:disable {
+    background-color: #ccc;
+    box-shadow: none;
+    color: #999;
+}
+
+a.ActionAdd,
+a.ActionEdit,
+a.ActionChange {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #48687c;
+}
+
+a.ActionAdd {
+    background-color: #d7a909;
+    border-bottom: 2px solid #b79008;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    color: #fff;
+    text-shadow: none;
+}
+
+a.ActionAdd:hover {
+    background-color: #e9bd24;
+    border-bottom: 2px solid #c6a11f;
+}
+
+a.ActionDelete {
+    background-color: #bb5858;
+    border-bottom: 2px solid #9f4b4b;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #fff;
+}
+
+a.ActionDelete:hover {
+    background-color: #d56565;
+    border-bottom: 2px solid #b55656;
+}
+
+.Actions input.Button {
+    margin-left: 20px;
+}
+
+
+/* Wrapper content **************************/
+
+.Content.ThemeGrid_Wrapper {
+    left: 300px;
+    min-width: 20px;
+    overflow-x: hidden;
+    padding-top: 20px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    -servicestudio-min-width: 100%;
+    -servicestudio-padding-left: 320px;
+    -servicestudio-position: static;
+}
+
+.desktop.small .Content.ThemeGrid_Wrapper,
+.tablet .Content.ThemeGrid_Wrapper {
+    left: 120px;
+}
+
+.phone .Content.ThemeGrid_Wrapper {
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: left 300ms ease;
+    transition: left 300ms ease;
+    width: 100%;
+    -servicestudio-padding-left: 0;
+}
+
+
+/* Content **************************/
+
+.MainContent {
+    margin-left: 20px;
+    margin-right: 20px;
+    min-height: 20px;
+    padding-bottom: 30px;
+    -servicestudio-margin-left: 0;
+    -servicestudio-min-height: 400px !important;
+    -servicestudio-width: 100%;
+}
+
+.phone .MainContent {
+    -servicestudio-padding-left: 10px;
+    -servicestudio-padding-right: 10px;
+}
+
+.Page.MenuOpen .MainContent {
+    pointer-events: none;
+}
+
+
+/* footer **************************/
+
+.Footer {
+    background-color: transparent;
+    font-size: 12px;
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    top: 100%;
+    width: auto;
+    -servicestudio-width: 100%;
+}
+
+.phone .Footer {
+    display: none;
+}
+
+.MainPopup {
+    background: #fff;
+    display: table-cell;
+    padding: 14px 16px;
+    vertical-align: top;
+}
+
+.MainPopup .Button.ThemeGrid_MarginGutter {
+    margin-left: 10px;
+}
+
+.OSInlineClear {
+    /* This style will never be used in runtime.
+  When applied in Service Studio, it will prevent the style 'OSInline' from being
+  automatically applied to divs and tables with widths != (fill parent) */
+}
+
+
+/*------------------------------------*\
+        $3. Forms
+\*-------------------------------------*/
+
+textarea,
+select,
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 14px;
+}
+
+html input {
+    height: 34px;
+}
+
+
+/* radio and checkbox override rules **************************/
+
+html input[type="radio"],
+html input[type="checkbox"] {
+    background-color: transparent;
+    box-shadow: none !important;
+    height: 20px;
+}
+
+
+/* force padding to center vertically on Firefox **************************/
+
+select {
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: rgb(102, 102, 102);
+    height: 32px;
+    line-height: 1.43;
+    padding: 4px 8px;
+}
+
+.Form input.ReadOnly,
+.Form textarea.ReadOnly,
+.Form select.ReadOnly {
+    background-color: #fff;
+    border-bottom-color: #ccc;
+    border-color: #ccc;
+    border-left-color: #ccc;
+    border-radius: 4px;
+    border-right-color: #ccc;
+    border-top-color: #ccc;
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.Form input.Not_Valid.ReadOnly,
+.Form textarea.Not_Valid.ReadOnly,
+.Form select.Not_Valid.ReadOnly,
+.select2-container.Not_Valid .select2-choice {
+    border: 1px solid #bf1601;
+}
+
+.Form input.ReadOnly:not(.Not_Valid),
+.Form textarea.ReadOnly:not(.Not_Valid),
+.Form select.ReadOnly:not(.Not_Valid):focus {
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.Form a.SmartInput_Undo {
+    padding: 8px 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #999;
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.ie8 input[type="text"],
+.ie8 input[type="password"] {
+    line-height: 32px;
+}
+
+textarea:focus {
+    border: 1px solid #999;
+}
+
+input[type="radio"]:disabled:before,
+input[type="checkbox"]:disabled:before {
+    background: rgba(204, 204, 204, .1);
+}
+
+input[disabled="disabled"][type="text"]:focus,
+input[disabled="disabled"][type="password"]:focus,
+textarea[disabled="disabled"]:focus,
+textarea[readonly="readonly"]:focus,
+select[disabled="disabled"]:focus,
+input[readonly="readonly"]:focus,
+input[disabled="disabled"]:focus,
+.Form textarea[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+.Form textarea[disabled="disabled"].ReadOnly:not(.Not_Valid):focus {
+    border: 1px solid #ccc;
+}
+
+.Form input.Not_Valid,
+.Form select.Not_Valid,
+.Form textarea.Not_Valid,
+input.Not_Valid,
+select.Not_Valid,
+textarea.Not_Valid {
+    border-radius: 4px;
+}
+
+.ie input[type="radio"],
+.ie input[type="checkbox"],
+.ie .Form input[type="radio"],
+.ie .Form input[type="checkbox"] {
+    border-radius: 0;
+}
+
+select.Not_Valid:focus,
+input.Not_Valid:focus,
+textarea.Not_Valid:focus {
+    border: 1px solid #bf1601;
+}
+
+.Form input[type="checkbox"].Not_Valid,
+.Form input[type="radio"].Not_Valid,
+input[type="checkbox"].Not_Valid,
+input[type="radio"].Not_Valid {
+    border: transparent;
+    padding: 0;
+}
+
+.Form input.ReadOnly,
+.Form textarea.ReadOnly,
+.Form select.ReadOnly {
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+}
+
+select:not(.Not_Valid):focus {
+    border: 1px solid #999;
+}
+
+
+/*------------------------------------*\
+        $4. Buit-in widgets
+\*-------------------------------------*/
+
+
+/* filter form **************************/
+
+.Filters_Wrapper {
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    line-height: 34px;
+    padding: 20px;
+}
+
+.Filters_Wrapper .Button {
+    margin-left: 10px;
+}
+
+.phone .Filters_Wrapper input[type="text"] {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.phone .Filters_Wrapper input.Button.Is_Default {
+    margin-left: 0;
+}
+
+
+/* editable table **************************/
+
+.EditableTable {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.EditableTable thead td {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.EditableTable tbody tr:not(.RowControlGroup) td {
+    border-bottom: 1px solid #ddd;
+}
+
+.EditableTable tr.Selected td {
+    background-color: #fafcff;
+}
+
+.EditableTable tr.OnEdit+tr.RowControlGroup .ControlActions,
+.EditableTable tr.Selected+tr.RowControlGroup .ControlActions {
+    background: #fafcff;
+    border: 1px solid #ddd;
+    border-top: 2px solid #fafcff;
+    /* same as background */
+    left: 50%;
+    margin-left: -82px;
+    margin-top: -2px;
+    padding: 6px;
+}
+
+.EditableTable tr.RowControlGroup a {
+    color: #125f90;
+    cursor: pointer;
+    display: none;
+    width: 50px;
+}
+
+td.RowWithAddAction {
+    border-bottom: 0;
+}
+
+td.RowWithAddAction i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+body .EditableTable input:not(.InEditMode),
+body .EditableTable textarea:not(.InEditMode),
+body .EditableTable select:not(.InEditMode) {
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* Submit Button */
+
+.EditRecord_Buttons .Button {
+    line-height: 15px;
+}
+
+
+/* Header **************************/
+
+.TableRecords_Header {
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px 0 10px 10px;
+    text-transform: uppercase;
+}
+
+
+/* table **************************/
+
+table.EditRecord,
+table.ShowRecord {
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+
+/* First row **************************/
+
+table.EditRecord tr:first-child td,
+table.ShowRecord tr:first-child td {
+    padding-top: 20px;
+}
+
+
+/* All columns **************************/
+
+table.EditRecord tr td,
+table.ShowRecord tr td {
+    padding-right: 20px;
+}
+
+
+/* First column **************************/
+
+table.EditRecord tr td:first-child,
+table.ShowRecord tr td:first-child {
+    padding-left: 20px;
+}
+
+
+/* Last Row **************************/
+
+table.EditRecord tr:last-child td,
+table.ShowRecord tr:last-child td {
+    padding-bottom: 20px;
+}
+
+
+/* First Column / first column - tablet and phone **************************/
+
+.tablet table.EditRecord tr:first-child td:first-child,
+.tablet table.ShowRecord tr:first-child td:first-child,
+.phone table.EditRecord tr:first-child td:first-child,
+.phone table.ShowRecord tr:first-child td:first-child {
+    padding-top: 20px;
+}
+
+.tablet table.EditRecord tr td,
+.tablet table.ShowRecord tr td,
+.phone table.EditRecord tr td,
+.phone table.ShowRecord tr td {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tablet td.EditRecord_Caption:first-child+.EditRecord_Value,
+.phone td.EditRecord_Caption:first-child+.EditRecord_Value {
+    padding-right: 20px;
+}
+
+
+/* Last Row / Last Column on tablet and phone **************************/
+
+.tablet table.EditRecord tr:last-child td:last-child,
+.tablet table.ShowRecord tr:last-child td:last-child,
+.phone table.EditRecord tr:last-child td:last-child,
+.phone table.ShowRecord tr:last-child td:last-child {
+    padding-bottom: 20px;
+}
+
+.TableRecords>tbody>tr>td a {
+    color: #48687c;
+    font-weight: 600;
+}
+
+.TableRecords {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.TableRecords tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.TableRecords_OddLine,
+.TableRecords_EvenLine {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.TableRecords_OddLine:first-child,
+.TableRecords_EvenLine:first-child,
+.TableRecords_Header:first-child {
+    padding-left: 20px;
+}
+
+
+/*------------------------------------*\
+        $5. RichWidgets
+\*-------------------------------------*/
+
+
+/* Feedback Message **************************/
+
+div.Feedback_Message_Info:before,
+div.Feedback_Message_Success:before,
+div.Feedback_Message_Error:before,
+div.Feedback_Message_Warning:before {
+    font-size: 20px;
+    left: 15px;
+    opacity: .5;
+    top: 9px;
+}
+
+div.Feedback_Message_Success {
+    background-color: #73a354;
+    border-color: #73a354;
+    border-radius: 0;
+    color: #333;
+}
+
+div.Feedback_Message_Error {
+    background-color: #bb5858;
+    border-color: #bb5858;
+    border-radius: 0;
+    color: #fff;
+}
+
+div.Feedback_Message_Warning {
+    background-color: #bba758;
+    border-color: #bba758;
+    border-radius: 0;
+    color: #333;
+}
+
+div.Feedback_Message_Info {
+    background-color: #5485a3;
+    border-radius: 0;
+    color: #333;
+}
+
+
+/* This margin-top:0px is for all pages without .Page in layout **************************/
+
+div.Feedback_Message_Wrapper {
+    left: 0;
+    margin-top: 0;
+    z-index: 9;
+}
+
+.Page div.Feedback_Message_Wrapper {
+    margin-top: 62px;
+}
+
+div.Feedback_Message_Error,
+div.Feedback_Message_Success,
+div.Feedback_Message_Warning,
+div.Feedback_Message_Info {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    line-height: normal;
+    max-width: 100%;
+    min-width: 300px;
+    padding: 10px 40px 10px 40px;
+    width: 100%;
+    word-break: break-word;
+    -webkit-backface-visibility: hidden;
+}
+
+a.Feedback_Message_Wrapper_Close {
+    color: #000;
+    opacity: .3;
+    right: 10px;
+    top: 8px;
+}
+
+.tablet a.Feedback_Message_Wrapper_Close,
+.phone a.Feedback_Message_Wrapper_Close {
+    pointer-events: none;
+}
+
+div.Feedback_Message_Error .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Warning .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Info .Feedback_Message_Wrapper_Close:after,
+div.Feedback_Message_Success .Feedback_Message_Wrapper_Close:after {
+    color: #000;
+    content: "\f00d";
+    /* fa-times at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    text-align: right;
+}
+
+a.Feedback_Message_Wrapper_Close:hover {
+    opacity: .6;
+}
+
+
+/* Ajax Loading **************************/
+
+.Feedback_AjaxWait {
+    -servicestudio-display: inline-block;
+    -servicestudio-position: static;
+}
+
+
+/* Pagination **************************/
+
+a.ListNavigation_PageNumber:link,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-radius: 4px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #48687c;
+    text-decoration: none;
+}
+
+a.ListNavigation_PageNumber:link:hover,
+span.ListNavigation_CurrentPageNumber:hover,
+span.ListNavigation_Ellipsis:hover {
+    background-color: #efefef;
+}
+
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_CurrentPageNumber:hover {
+    background-color: #ccc;
+    box-shadow: none;
+    color: #999;
+    cursor: default;
+}
+
+a.ListNavigation_Previous:link,
+a.ListNavigation_Next:link,
+span.ListNavigation_DisabledNext,
+span.ListNavigation_DisabledPrevious {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-radius: 4px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #48687c;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+a.ListNavigation_Previous:link:hover,
+a.ListNavigation_Next:link:hover,
+span.ListNavigation_DisabledNext:hover,
+span.ListNavigation_DisabledPrevious:hover {
+    background-color: #efefef;
+}
+
+
+/* Ajax Loading **************************/
+
+.Feedback_AjaxWait {
+    background-color: #fff;
+    border: 1px solid #dddedf;
+    border-radius: 4px;
+    bottom: 10px;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #48687c;
+    font-size: 12px;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 22px;
+    right: 25px;
+    z-index: 10000;
+}
+
+.ie .Feedback_AjaxWait:not(.ie11):not(.ie10) {
+    border: 1px solid #dddedf;
+    height: 70px;
+    padding-top: 0;
+    z-index: 10000;
+}
+
+.ie .Feedback_AjaxWait .Loader {
+    animation: none;
+    background: url("/SilkUIFramework/img/ajaxloader_new.gif") no-repeat;
+    background-position: 8px 9px;
+    height: 81%;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.Feedback_AjaxWait .Loader {
+    -webkit-animation: loader 1.3s infinite linear;
+    animation: loader 1.3s infinite linear;
+    border-radius: 50%;
+    font-size: 4px;
+    height: 1em;
+    margin-bottom: 20px;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    width: 1em;
+}
+
+@-webkit-keyframes loader {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 .2em #125f90, 2em -2em 0 0 #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 0 #125f90;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0 #125f90, 2em -2em 0 .2em #125f90, 3em 0 0 0 #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 0 #125f90, 3em 0 0 .2em #125f90, 2em 2em 0 0 #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 0 #125f90, 2em 2em 0 .2em #125f90, 0 3em 0 0 #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 0 #125f90, 0 3em 0 .2em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 0 #125f90, -2em 2em 0 .2em #125f90, -3em 0 0 0 #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    75% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 .2em #125f90, -2em -2em 0 0 #125f90;
+    }
+    87.5% {
+        box-shadow: 0 -3em 0 0 #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 0 #125f90, -2em -2em 0 .2em #125f90;
+    }
+}
+
+@keyframes loader {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 .2em #125f90, 2em -2em 0 0 #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 0 #125f90;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0 #125f90, 2em -2em 0 .2em #125f90, 3em 0 0 0 #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 0 #125f90, 3em 0 0 .2em #125f90, 2em 2em 0 0 #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 0 #125f90, 2em 2em 0 .2em #125f90, 0 3em 0 0 #125f90, -2em 2em 0 -.5em #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 0 #125f90, 0 3em 0 .2em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 -.5em #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 0 #125f90, -2em 2em 0 .2em #125f90, -3em 0 0 0 #125f90, -2em -2em 0 -.5em #125f90;
+    }
+    75% {
+        box-shadow: 0 -3em 0 -.5em #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 .2em #125f90, -2em -2em 0 0 #125f90;
+    }
+    87.5% {
+        box-shadow: 0 -3em 0 0 #125f90, 2em -2em 0 -.5em #125f90, 3em 0 0 -.5em #125f90, 2em 2em 0 -.5em #125f90, 0 3em 0 -.5em #125f90, -2em 2em 0 0 #125f90, -3em 0 0 0 #125f90, -2em -2em 0 .2em #125f90;
+    }
+}
+
+.Form .select2-container .select2-choice {
+    box-shadow: none;
+    height: 38px;
+    line-height: 38px;
+}
+
+.Form .select2-container:after {
+    top: 10px;
+}
+
+.Form .select2-container .select2-choice span {
+    font-weight: normal;
+    line-height: 34px;
+}
+
+
+/*------------------------------------*\
+        $6. Login
+\*-------------------------------------*/
+
+
+/* Feddback Message on Login **************************/
+
+.Page .Login+div+span div.Feedback_Message_Wrapper {
+    margin-top: 0;
+    width: 100% !important;
+}
+
+.Login_Footer {
+    background: -webkit-linear-gradient(90deg, #00152a 0%, #2d4657 100%);
+    background: -moz-linear-gradient(90deg, #00152a 0%, #2d4657 100%);
+    background: -ms-linear-gradient(90deg, #00152a 0%, #2d4657 100%);
+    background: -o-linear-gradient(90deg, #00152a 0%, #2d4657 100%);
+    background: linear-gradient(0deg, #00152a 0%, #2d4657 100%);
+    box-shadow: inset 2px 4px 5px 0 rgba(0, 0, 0, .41);
+    height: 20%;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+.tablet .Login_Footer,
+.phone .Login_Footer {
+    bottom: 0;
+    height: 50px;
+    padding-top: 15px;
+    position: fixed;
+}
+
+.Login_Footer a,
+.Login_Footer a:link,
+.Login_Footer a:visited {
+    color: #fff;
+}
+
+.Login__Form {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Login_Box {
+    top: 50%;
+}
+
+.Login__Logo {
+    padding-bottom: 0;
+}
+
+.Login_Text {
+    color: #606060;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/*------------------------------------*\
+        $7. Theme Grid
+\*-------------------------------------*/
+
+html .ThemeGrid_Container {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 320px;
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+}
+
+html .ThemeGrid_Wrapper {
+    min-width: 0;
+}
+
+html .Content.ThemeGrid_Wrapper {
+    padding-top: 20px;
+    top: 60px;
+}
+
+.phone .ThemeGrid_Container {
+    -servicestudio-padding-left: 0;
+}
+
+
+/* 12 columns **************************/
+
+html .ThemeGrid_Width12 {
+    width: auto;
+}
+
+
+/* 12 columns **************************/
+
+html .tablet .ThemeGrid_Width12 {
+    width: 100%;
+}
+
+html .tablet .ThemeGrid_Width12 {
+    margin-left: 0;
+}
+
+
+/*------------------------------------*\
+        $0. Studio Preview
+\*-------------------------------------*/
+
+
+/* header **************************/
+
+.Page.phone .Header__loginInfo,
+.Page.phone .Header__activity,
+.Page.phone .Header_search,
+.Page.tablet .Header_search {
+    -servicestudio-display: none;
+}
+
+
+/* wrapper **************************/
+
+.Page.phone .ThemeGrid_Wrapper {
+    -servicestudio-padding-left: 20px;
+}
+
+.Page.tablet .ThemeGrid_Wrapper {
+    -servicestudio-padding-left: 140px;
+}
+
+
+/* menu **************************/
+
+.Menu {
+    -servicestudio-min-height: 300px;
+    -servicestudio-min-height: 600px;
+}
+
+.Application_Menu {
+    -servicestudio-background: -webkit-linear-gradient(90deg, #001b31 0%, #2e4859 100%);
+}
+
+.tablet .Menu_TopMenu a:link,
+.tablet .Menu_TopMenu a:visited,
+.tablet .Menu_TopMenu a {
+    white-space: normal;
+    -servicestudio-padding: 20px;
+    -servicestudio-padding-left: 0;
+    -servicestudio-text-align: center;
+}
+
+.tablet .Menu_TopMenu a:link span.fa,
+.tablet .Menu_TopMenu a:visited span.fa,
+.tablet .Menu_TopMenu a span.fa {
+    -servicestudio-display: none;
+}
+
+
+/* ExcludeFromPickers: ActionAdd, ActionChange, ActionDelete, ActionEdit, Actions, Application_Menu, Badge, Breadcrumbs, BreadcrumbsContainer, , 
+Content, ControlActions, desktop, EditableTable, EditRecord, EditRecord_Buttons, fa, Feedback_AjaxWait, Feedback_Message_Error, 
+Feedback_Message_Info, Feedback_Message_Success, Feedback_Message_Warning, Feedback_Message_Wrapper, Feedback_Message_Wrapper_Close, 
+Filters_Wrapper, Footer, Form, Header, Header__activity, Header__loginInfo, Header_buttonMenu, Header_search, Header_title, Header_user, 
+HeaderPage, ie, ie10, ie11, ie8, InEditMode, ListNavigation_CurrentPageNumber, ListNavigation_DisabledNext, ListNavigation_DisabledPrevious, 
+ListNavigation_Ellipsis, ListNavigation_Next, ListNavigation_PageNumber, ListNavigation_Previous, Loader, Login__Form, Login__Logo, Login_Box, 
+Login_Footer, Login_Text, LoginInfo, LoginInfo_username, MainContent, MainPopup, Menu, Menu_DropDownArrow, Menu_DropDownButton, Menu_DropDownPanel, 
+Menu_SubItemsPlaceholder, Menu_SubMenuItem, Menu_SubMenuItemActive, Menu_TopMenu, Menu_TopMenuActive, Menu_TopMenus, menuOpen, MenuSlider_Toggler, 
+mini, Not_Valid, OnEdit, open, OSAutoMarginTop, OSInlineClear, Page, phone, portait, Responsive, RowControlGroup, RowWithAddAction, select2-choice, 
+select2-container, Selected, ShowRecord, SmartInput_Undo, TableRecords, TableRecords_EvenLine, TableRecords_Header, TableRecords_OddLine, tablet, 
+ThemeGrid_Container, ThemeGrid_MarginGutter, ThemeGrid_Width12, ThemeGrid_Wrapper, Title, Title_Section */

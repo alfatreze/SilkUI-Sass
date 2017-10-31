@@ -1,0 +1,138 @@
+/* Colors: Background and Text **************************/
+// originally from useful classes section
+
+// Neutrals List
+//    bg: background-color
+//    color: text on bg color
+//    text: .Page text color
+$color-map-neutrals: (
+    "transparent": (
+        bg: transparent,
+        color: #666
+        ),
+    "white": (
+        bg:#fff,
+        color: #333,
+        text: #fff
+        ),
+    "silver": (
+        bg:#ecf0f1,
+        color: #666,
+        text: #bdc3c7
+        ),
+    "gray": (
+        bg:#7f8c8d,
+        color: #fff,
+        text:#7f8c8d
+        ),
+    "black": (
+        bg:#333,
+        color: #fff,
+        text: #333
+        )
+);
+
+
+// Color List
+$color-map: (
+    "green": (
+        base: $color--green,
+        light: $color--green__light
+        ),
+    "yellow": ( 
+        base: $color--yellow 
+        ),
+    "orange": ( 
+        base: $color--orange 
+        ),
+    "red": (
+        base: $color--red,
+        dark: $color--red__dark
+        ),
+    "blue": (
+        base: $color--blue,
+        dark: $color--blue__dark
+        ),
+    "turquoise": ( 
+        base: $color--turquoise 
+        ),
+    "plum": (
+        base: $color--plum,
+        dark: $color--plum__dark 
+        )
+);
+
+
+// Generate Neutral Colors from map
+@each $name, $value in $color-map-neutrals{
+    // Use function to capitalize each word
+	.#{pascalize($name)} {
+        // Get nested map name and color from function
+        background-color: map-deep-get($color-map-neutrals,$name,bg);
+        color: map-deep-get($color-map-neutrals,$name,color);
+	}
+} 
+
+
+// Generate Background Colors from map
+@each $name, $value in $color-map{
+    // Remove hifens and Capitalize each word
+	.#{pascalize($name)} {
+        background-color: map-deep-get($color-map,$name,base);
+        color: $color--white;
+	}
+} 
+
+/* Page Text */
+// Generate Text Colors from Map
+
+// Why is only text white outside the .Page class ???
+// Consider removing the .Page classo so that any text color class can be used globally...
+
+.Text_white {
+    color: #fff;
+}
+
+@each $name, $value in $color-map-neutrals{
+    // Remove dashes
+    .Page .Text_#{remove-dash($name)}{
+        color: map-deep-get($color-map-neutrals,$name,text);
+    }
+} 
+
+
+@each $name, $value in $color-map{
+    // Remove dashes
+    .Page .Text_#{remove-dash($name)},
+
+    // write function to generate only if there are multiple dash separated words
+
+    // Generate camelCase
+    .Page .Text_#{camelize($name)}{
+        color: $value;
+    }
+}
+
+
+
+/* Chart Colors **************************/
+
+$color-map-chart: (
+    "Color1": $color-chart-1,
+    "Color2": $color-chart-2,
+    "Color3": $color-chart-3,
+    "Color4": $color-chart-4,
+    "Color5": $color-chart-5,
+    "Color6": $color-chart-6,
+    "Color7": $color-chart-7,
+    "Color8": $color-chart-8,
+    "Color9": $color-chart-9,
+    "Color10": $color-chart-10,
+);
+
+// Generate Chart Colors from map
+@each $name, $value in $color-map-chart{
+    .Chart_#{$name} {
+        color: $value;
+    }
+} 

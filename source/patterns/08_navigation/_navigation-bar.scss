@@ -1,0 +1,209 @@
+
+/* NavigationBar: Horizontal **************************/
+
+.NavigationBar {
+    .InlineDropdown .InlineDropdown_icon {
+        display: inline;
+    }
+    a {
+        border-bottom: transparent;
+        color: #999;
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 10px 15px;
+        position: relative;
+        &:link,
+        &:visited {
+            border-bottom: transparent;
+            color: #999;
+            display: inline-block;
+            margin-bottom: -1px;
+            padding: 10px 15px;
+            position: relative;
+        }
+        &.InlineDropdown {
+            cursor: pointer;
+        }
+        &.Active {
+            background: transparent;
+            color: #151515;
+            font-weight: 600;
+        }
+        &:after,
+        &:link:after {
+            background-color: #c7c7c7;
+            bottom: 0;
+            content: "";
+            height: 2px;
+            left: 1%;
+            position: absolute;
+            right: 1%;
+            width: 98%;
+        }
+        &.Active {
+            &:after {
+                background-color: #125f90;
+            }
+            &:not(.ie7):before,
+            &:not(.ie8):before {
+                border-bottom: 4px solid #125f90;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                bottom: 2px;
+                content: "";
+                height: 0;
+                left: 50%;
+                margin-left: -6px;
+                position: absolute;
+                width: 0;
+            }
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+/* Responsive Context **************************/
+
+.desktop .NavigationBar a {
+    &:hover,
+    &:link:hover {
+        color: #151515;
+    }
+    &:hover:after,
+    &:link:hover:after {
+        background-color: #125f90;
+    }
+}
+
+.phone .NavigationBar a {
+    &:active,
+    &:link:active {
+        color: #3e5154;
+    }
+}
+
+.tablet .NavigationBar a {
+    &:active,
+    &:link:active {
+        color: #3e5154;
+    }
+}
+
+.phone .NavigationBar a {
+    &:active:after,
+    &:link:active:after {
+        background-color: #125f90;
+    }
+}
+
+.tablet .NavigationBar a {
+    &:active:after,
+    &:link:active:after {
+        background-color: #125f90;
+    }
+}
+
+.phone .NavigationBar .InlineDropdown .DropdownMenu a:after,
+.tablet .NavigationBar .InlineDropdown .DropdownMenu a:after,
+.phone .NavigationBar .InlineDropdown .DropdownMenu a:active:after,
+.tablet .NavigationBar .InlineDropdown .DropdownMenu a:active:after {
+    background-color: transparent;
+}
+
+.phone .NavigationBar .InlineDropdown .DropdownMenu a,
+.tablet .NavigationBar .InlineDropdown .DropdownMenu a {
+    width: 100%;
+}
+
+.phone .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie7):before,
+.tablet .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie7):before,
+.phone .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie8):before,
+.tablet .NavigationBar .InlineDropdown .DropdownMenu .Active:not(.ie8):before {
+    border: none;
+}
+
+
+/* NavigationBar: Vertical **************************/
+
+.NavigationBar.Vertical a {
+    border-left: 2px solid #c7c7c7;
+    display: block;
+    margin-top: 2px;
+    padding: 10px 10px;
+    &:link {
+        border-left: 2px solid #c7c7c7;
+        display: block;
+        margin-top: 2px;
+        padding: 10px 10px;
+    }
+    &.Active,
+    &:link.Active {
+        border-color: #125f90;
+    }
+    &:after,
+    &:link:after {
+        content: none;
+    }
+    &.Active {
+        &:not(.ie7):before,
+        &:not(.ie8):before {
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid #125f90;
+            border-right: 0;
+            border-top: 4px solid transparent;
+            bottom: calc(50% - 6px);
+            left: 0;
+        }
+    }
+}
+
+
+/* Responsive Context **************************/
+
+.desktop .NavigationBar.Vertical a {
+    &:hover,
+    &:link:hover {
+        border-color: #125f90;
+    }
+}
+
+.phone .NavigationBar.Vertical .InlineDropdown {
+    &:after,
+    &:link:after {
+        background-color: #c7c7c7;
+        content: "";
+    }
+}
+
+.tablet .NavigationBar.Vertical .InlineDropdown {
+    &:after,
+    &:link:after {
+        background-color: #c7c7c7;
+        content: "";
+    }
+}
+
+.phone .NavigationBar.Vertical .InlineDropdown,
+.tablet .NavigationBar.Vertical .InlineDropdown {
+    border: none;
+    padding: 8px 6px;
+    &:link {
+        border: none;
+        padding: 8px 6px;
+    }
+}
+
+.phone .NavigationBar.Vertical,
+.tablet .NavigationBar.Vertical,
+.phone .NavigationBar.Vertical .InlineDropdown .InlineDropdown_label,
+.tablet .NavigationBar.Vertical .InlineDropdown .InlineDropdown_label {
+    min-width: 60px;
+}
+
+.phone .NavigationBar.Vertical .InlineDropdown .DropdownMenu a,
+.tablet .NavigationBar.Vertical .InlineDropdown .DropdownMenu a {
+    border: none;
+}

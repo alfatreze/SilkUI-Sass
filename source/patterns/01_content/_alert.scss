@@ -1,0 +1,33 @@
+/* Alert **************************/
+
+.Alert {
+    border: 1px solid #ccc;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px 10px 10px 35px;
+    position: relative;
+    width: 100%;
+    -servicestudio-background-color: #999;
+    span.fa {
+        font-size: 16px;
+        left: 10px;
+        position: absolute;
+        top: 12px;
+    }
+    &.Info {
+        background-color: #62b6d1;
+        border-color: #009bd0;
+    }
+    &.Success {
+        background-color: #a9c264;
+        border-color: #97ae58;
+    }
+    &.Error {
+        background-color: #e09d90;
+        border-color: #d87c69;
+    }
+    &.Warning {
+        background-color: #f5c459;
+        border-color: #c78e10;
+    }
+}

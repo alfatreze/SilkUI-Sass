@@ -1,0 +1,119 @@
+/*------------------------------------*\
+      UTILITIES
+
+      Modifiers and utilities to layout and fix content
+
+\*------------------------------------*/
+
+// Float Content 
+
+.Float_right {
+    float: right;
+}
+
+.Float_left {
+    float: left;
+}
+
+
+/* nicolasgallagher.com/micro-clearfix-hack **************************/
+
+.Clearfix {
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+    /* IE 6/7 only */
+    *zoom: 1;
+}
+
+
+
+
+
+// Completely prevent CSS Transitions
+.noTransition {
+    //-webkit-transition: none !important;
+    transition: none !important;
+}
+
+
+
+
+// Align Content 
+//----------------------------------------------
+
+/* Vertical align **************************/
+
+.Align_top {
+    vertical-align: top;
+}
+
+.Align_bottom {
+    vertical-align: bottom;
+}
+
+.Align_middle {
+    vertical-align: middle;
+}
+
+/* Table **************************/
+
+.TableVerticalAlign {
+    .Cell1,
+    .Cell2 {
+        padding: 3px;
+    }
+    .Cell1>input {
+        &[type="radio"],
+        &[type="checkbox"] {
+            display: block;
+        }
+    }
+    .Cell2>input {
+        &[type="radio"] {
+            display: block;
+        }
+        display: block;
+    }
+}
+
+
+// Margins
+//----------------------------------------------
+
+.First {
+    margin-left: 0 !important;
+}
+
+.Last {
+    margin-right: 0 !important;
+}
+
+
+// Media queries
+//----------------------------------------------
+
+@media print {
+    .Print_hidden {
+        display: none;
+    }
+}
+
+// Service Studio
+//----------------------------------------------
+.PH:empty,
+.Hidden,
+.Print_visible,
+.desktop .HiddenInDesktop {
+    display: none;
+}
+
+.PH_Preview {
+    -servicestudio-min-height: 40px;
+}

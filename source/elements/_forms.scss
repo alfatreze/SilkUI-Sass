@@ -1,0 +1,683 @@
+/*------------------------------------*\
+        $3. Forms
+\*-------------------------------------*/
+
+textarea,
+select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+input {
+    &[type="text"],
+    &[type="password"],
+    &[type="datetime"],
+    &[type="datetime-local"],
+    &[type="date"],
+    &[type="month"],
+    &[type="time"],
+    &[type="week"],
+    &[type="number"],
+    &[type="email"],
+    &[type="url"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="color"] {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+}
+
+.Form {
+    input.ReadOnly,
+    textarea.ReadOnly,
+    select.ReadOnly {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+}
+
+
+/* Overide System Styles */
+
+.Page {
+    &.ios {
+        textarea,
+        select {
+            -webkit-appearance: none;
+        }
+        input {
+            &[type="text"],
+            &[type="password"],
+            &[type="month"],
+            &[type="time"],
+            &[type="week"],
+            &[type="number"],
+            &[type="email"],
+            &[type="url"],
+            &[type="search"],
+            &[type="tel"],
+            &[type="color"] {
+                -webkit-appearance: none;
+            }
+            &[type="datetime"],
+            &[type="datetime-local"],
+            &[type="date"] {
+                padding-top: 10px;
+                -webkit-appearance: none;
+            }
+        }
+    }
+    &.android input {
+        &[type="datetime"],
+        &[type="datetime-local"],
+        &[type="date"] {
+            padding-top: 10px;
+            -webkit-appearance: none;
+        }
+    }
+}
+
+
+/* resposive tablet and phone **************************/
+
+.tablet input[type="text"],
+.phone input[type="text"],
+.tablet input[type="password"],
+.phone input[type="password"],
+.tablet input[type="datetime"],
+.phone input[type="datetime"],
+.tablet input[type="datetime-local"],
+.phone input[type="datetime-local"],
+.tablet input[type="date"],
+.phone input[type="date"],
+.tablet input[type="month"],
+.phone input[type="month"],
+.tablet input[type="time"],
+.phone input[type="time"],
+.tablet input[type="week"],
+.phone input[type="week"],
+.tablet input[type="number"],
+.phone input[type="number"],
+.tablet input[type="email"],
+.phone input[type="email"],
+.tablet input[type="url"],
+.phone input[type="url"],
+.tablet input[type="search"],
+.phone input[type="search"],
+.tablet input[type="tel"],
+.phone input[type="tel"],
+.tablet input[type="color"],
+.phone input[type="color"],
+.tablet select,
+.phone select {
+    height: 38px;
+}
+
+.tablet select,
+.phone select {
+    line-height: 28px;
+}
+
+input {
+    &[type="text"],
+    &[type="password"],
+    &[type="datetime"],
+    &[type="datetime-local"],
+    &[type="date"],
+    &[type="month"],
+    &[type="time"],
+    &[type="week"],
+    &[type="number"],
+    &[type="email"],
+    &[type="url"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="color"] {
+        height: 32px;
+        padding: 0 12px;
+    }
+    &[type=search] {
+        padding: 0 !important;
+        padding-left: 12px !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+    }
+}
+
+
+/* INPUT STYPE SEARCH */
+
+select {
+    height: 32px;
+    line-height: 30px;
+    padding: 0 8px;
+}
+
+textarea {
+    padding: 10px 12px;
+}
+
+input,
+textarea {
+    margin: 0;
+}
+
+input {
+    &[type=radio],
+    &[type=checkbox] {
+        margin-right: 5px;
+        padding: 0;
+    }
+    &[type=file] {
+        vertical-align: bottom;
+    }
+}
+
+
+/* Inputs, selects, textareas, radio buttons and checkboxes generic styling */
+
+.Form {
+    input.ReadOnly:not(.Not_Valid),
+    textarea.ReadOnly:not(.Not_Valid),
+    select.ReadOnly:not(.Not_Valid) {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    textarea.ReadOnly[readonly="readonly"],
+    input.ReadOnly[readonly="readonly"] {
+        cursor: text;
+    }
+}
+
+textarea[readonly="readonly"],
+input[readonly="readonly"] {
+    cursor: text;
+}
+
+.Form {
+    textarea.ReadOnly[disabled="disabled"],
+    select.ReadOnly[disabled="disabled"],
+    input.ReadOnly[disabled="disabled"] {
+        background-color: #f5f5f5;
+        background-image: none;
+        color: #999;
+        cursor: not-allowed;
+    }
+}
+
+textarea[disabled="disabled"],
+select[disabled="disabled"],
+input[disabled="disabled"] {
+    background-color: #f5f5f5;
+    background-image: none;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.Form {
+    input {
+        &[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+        &[disabled="disabled"].ReadOnly:not(.Not_Valid):focus {
+            border: 1px solid #ccc;
+        }
+    }
+    select {
+        &[readonly="readonly"].ReadOnly:not(.Not_Valid):focus,
+        &[disabled="disabled"].ReadOnly:not(.Not_Valid):focus {
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.ie {
+    a.SmartInput_Undo {
+        display: none;
+    }
+    .Form {
+        a.SmartInput_Undo,
+        select.SmartInput_Changed.ReadOnly+a.SmartInput_Undo {
+            display: none;
+        }
+    }
+}
+
+.Form {
+    select.SmartInput_Changed.ReadOnly+a.SmartInput_Undo {
+        display: none;
+    }
+    &:not(.WithTouchEvents) {
+        input.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil,
+        textarea.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil,
+        select.ReadOnly:hover:not(.SmartInput_Changed)+.SmartInput_Undo+.FormEditPencil {
+            display: none;
+        }
+    }
+    input {
+        &[type="checkbox"].Not_Valid,
+        &[type="radio"].Not_Valid {
+            border: transparent;
+            padding: 0;
+        }
+    }
+}
+
+
+/* Checkbox / Radio Button When Invalid */
+
+input {
+    &[type="checkbox"].Not_Valid,
+    &[type="radio"].Not_Valid {
+        border: transparent;
+        padding: 0;
+    }
+    &[type="checkbox"].Not_Valid:before,
+    &[type="radio"].Not_Valid:before {
+        border-color: #bf1601;
+    }
+    &[type="checkbox"] {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        width: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}
+
+
+/* Checkboxes **************************/
+
+.Form input[type="checkbox"] {
+    border-width: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+input[type="checkbox"] {
+    background-color: transparent;
+    vertical-align: initial;
+    &.ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+}
+
+.Form input {
+    &[type="checkbox"].ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+    &[type="radio"].SmartInput {
+        display: block;
+    }
+}
+
+input {
+    &[type="checkbox"] {
+        &:before {
+            background: #fff;
+            border-color: #ccc;
+            border-radius: 4px;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: inset 0 0 5px #ccc;
+            content: " ";
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+        &:checked:after {
+            opacity: 1;
+        }
+        &:after {
+            border: 2px solid #111;
+            border-right: 0;
+            border-top: 0;
+            content: " ";
+            display: block;
+            height: 6px;
+            left: 20%;
+            opacity: 0;
+            position: absolute;
+            top: 20%;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            width: 12px;
+        }
+        &:disabled {
+            &:checked:after {
+                border-color: #ccc;
+            }
+            &:before {
+                box-shadow: inset 0 0 5px #ccc;
+            }
+        }
+    }
+    &[type="radio"] {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        width: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &:before {
+            background: #fff;
+            border-color: #ccc;
+            border-radius: 20px;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: inset 0 0 5px #ccc;
+            content: " ";
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+        &:checked:after {
+            opacity: 1;
+        }
+        &:after {
+            background: #111;
+            border: 2px solid #111;
+            border-radius: 8px;
+            content: " ";
+            display: table;
+            height: 8px;
+            left: 25%;
+            opacity: 0;
+            position: absolute;
+            top: 25%;
+            width: 8px;
+        }
+    }
+}
+
+
+/* Disabled **************************/
+
+
+/* Radio Buttons **************************/
+
+.Form input[type="radio"] {
+    border-width: 0;
+}
+
+input[type="radio"] {
+    background-color: transparent;
+    vertical-align: initial;
+    &.ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+}
+
+.Form input {
+    &[type="radio"].ReadOnly {
+        background-color: transparent;
+        vertical-align: initial;
+    }
+    &[type="checkbox"].SmartInput {
+        display: inline-block;
+    }
+}
+
+
+/* Disabled **************************/
+
+input {
+    &[type="radio"]:disabled {
+        &:checked:after {
+            background: #ccc;
+            border-color: #ccc;
+        }
+        &:before {
+            box-shadow: inset 0 0 5px #ccc;
+        }
+        cursor: not-allowed;
+    }
+    &[type=checkbox]:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.Form {
+    input {
+        &[type="checkbox"]:disabled.ReadOnly,
+        &[type="radio"]:disabled.ReadOnly {
+            cursor: not-allowed;
+        }
+    }
+    select.ReadOnly {
+        background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+        background-position: right center;
+        background-repeat: no-repeat;
+        padding-right: 0;
+        text-indent: .01px;
+        text-overflow: "";
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}
+
+
+/* Select */
+
+select {
+    background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 0;
+    text-indent: .01px;
+    text-overflow: "";
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &[disabled="disabled"] {
+        background-image: url(/WebPatterns/img/arrowDeselected.png);
+    }
+}
+
+.Form select.ReadOnly[disabled="disabled"] {
+    background-image: url(/WebPatterns/img/arrowDeselected.png);
+}
+
+
+/* IE */
+
+.ie .Form select {
+    padding-right: 6px;
+    &.ReadOnly {
+        padding-right: 6px;
+    }
+}
+
+select[multiple="multiple"] {
+    background-image: none;
+    padding: 0;
+}
+
+.ios {
+    select {
+        line-height: 30px;
+    }
+    &.tablet select {
+        line-height: 20px;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#element {
+    color: green;
+}
+
+textarea {
+    overflow: auto;
+}
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.Search_wrapper {
+    font-family: FontAwesome;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    &:after {
+        color: #ccc;
+        content: "\f002";
+        font-size: 14px;
+        left: 15px;
+        position: absolute;
+        top: 11px;
+    }
+    input[type="text"] {
+        border-color: #ccc;
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: inset 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+        height: 35px;
+        line-height: 34px;
+        padding-left: 35px;
+    }
+}
+
+.SearchNavigation_frame {
+    background-color: #7fb809;
+    filter: alpha(opacity=0);
+    left: 0;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: translate3d(0, -60px, 0);
+    -ms-transform: translate3d(0, -60px, 0);
+    transform: translate3d(0, -60px, 0);
+    z-index: 1;
+}
+
+@-webkit-keyframes openSearch {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 41px, 0);
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes openSearch {
+    0% {
+        opacity: 0;
+        -ms-transform: translate3d(0, 41px, 0);
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes openSearch {
+    0% {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        transform: translate3d(0, 41px, 0);
+    }
+    50% {
+        filter: alpha(opacity=80);
+        opacity: .8;
+    }
+    100% {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+}
+
+.IconTrigger.js_open .fa {
+    color: #fff;
+}
+
+.js_open+.SearchNavigation_frame {
+    -webkit-animation: openSearch .4s;
+    animation: openSearch .4s;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transform: translate3d(0, 41px, 0);
+    -ms-transform: translate3d(0, 41px, 0);
+    transform: translate3d(0, 41px, 0);
+}
+
+.SearchNavigation_frame .Search_wrapper {
+    input[type="text"] {
+        border-color: rgba(0, 0, 0, 0.3);
+        border-style: solid;
+        border-width: 1px;
+        color: #ccc;
+        height: 40px;
+        padding-left: 35px;
+    }
+    &:after {
+        top: 14px;
+    }
+}
+
+
+/* exception on phone, set form 100% **************************/
+
+html {
+    .phone .Form.ThemeGrid_Width6,
+    .tablet.portrait .Form.ThemeGrid_Width6 {
+        width: 100%;
+    }
+}
+
+
+///// Moved from additional  classes
+fieldset {
+    border: 1px solid #ccc;
+    padding: 5px 10px 10px;
+}
+
+/* Platform Forms with mandatory */
+
+.Form label {
+    position: relative;
+    /* Use this because Mandatory Icon need parent with position relative */
+}
+
+
+/* Select 2 Inside Actions Placeholder */
+
+.Actions .select2-container {
+    text-align: left;
+}

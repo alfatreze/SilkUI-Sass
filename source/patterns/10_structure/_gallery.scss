@@ -1,0 +1,36 @@
+
+/* Gallery ***************************/
+
+.Gallery {
+    .GalleryWrapper {
+        margin-left: -10px;
+        -servicestudio-margin-left: 0;
+    }
+    .GalleryItem {
+        >span {
+            display: block;
+        }
+        display: inline-block;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        vertical-align: top;
+        -servicestudio-width: 100%;
+    }
+    .GalleryWrapper {
+        .ListRecords {
+            display: inline;
+        }
+        .GalleryItem {
+            .Box {
+                margin-bottom: 0;
+            }
+            >img {
+                width: 100%;
+            }
+            [class*="ThemeGrid_Width"] {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}

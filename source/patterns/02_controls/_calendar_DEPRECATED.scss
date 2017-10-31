@@ -1,0 +1,370 @@
+
+/* Calendar DEPRECATED **************************/
+
+.Calendar-topCont {
+    z-index: 19 !important;
+}
+
+.CalendarWrapper {
+    height: auto;
+    width: 100%;
+}
+
+.Calendar {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: default;
+    font-size: 12px;
+    line-height: 14px;
+    min-width: 250px;
+    position: relative;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Calendar-body {
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    line-height: 30px;
+}
+
+.Calendar table {
+    border-collapse: collapse;
+}
+
+.Calendar-dayNames table,
+.Calendar-bodyTable {
+    width: 100%;
+}
+
+
+/* month title */
+
+.Calendar-titleCont {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    width: 44% \9;
+    z-index: 9;
+}
+
+.Calendar-title>div {
+    display: inline-block;
+    display: block\9;
+    height: 50px;
+    line-height: 20px;
+    margin: auto;
+    padding-top: 5px;
+    width: 80%;
+}
+
+body>.Calendar-topCont .Calendar-title {
+    max-width: 110px;
+}
+
+
+/* buttons month and year */
+
+.Calendar-navBtn {
+    position: absolute;
+    top: 0;
+    width: 14.4%;
+}
+
+.ShowWeekNumbers {
+    .Calendar-navBtn,
+    .Calendar-prevMonth {
+        width: 12.5%;
+    }
+}
+
+.Calendar-navBtn>div {
+    color: #333;
+    cursor: pointer;
+    font-size: 30px;
+    height: 50px;
+    line-height: 42px;
+    width: 100%;
+}
+
+.Calendar-navDisabled,
+.topBar-navDisabled .Calendar-navBtn {
+    filter: alpha(opacity=30);
+    pointer-events: none;
+    opacity: .3;
+}
+
+.Calendar-navDisabled>div,
+.topBar-navDisabled .Calendar-navBtn>div {
+    color: #ccc !important;
+    /* ensure it's disabled */
+    cursor: default;
+}
+
+.Calendar-prevMonth {
+    border-right: 1px solid #ccc;
+    left: 14%;
+}
+
+.Calendar-nextMonth {
+    border-left: 1px solid #ccc;
+    left: 71.2%;
+}
+
+.ShowWeekNumbers .Calendar-nextMonth {
+    left: 75%;
+}
+
+.Calendar-prevYear {
+    border-right: 1px solid #ccc;
+    left: 0;
+}
+
+.Calendar-nextYear {
+    border-left: 1px solid #ccc;
+    left: 85.4%;
+}
+
+.ShowWeekNumbers .Calendar-nextYear {
+    left: 87.5%;
+}
+
+
+/* hidden menu select year and month */
+
+.Calendar-menu {
+    filter: alpha(opacity=85);
+    height: 100%;
+    left: 0;
+    opacity: .85;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Calendar days */
+
+.Calendar-dayNames {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.Calendar-day-disabled {
+    background: #f1f1f1 !important;
+    /* ensure it's disabled */
+    cursor: default !important;
+    /* ensure it's disabled */
+    filter: alpha(opacity=20) !important;
+    /* ensure it's disabled */
+    font-weight: normal !important;
+    /* ensure it's disabled */
+    opacity: .2 !important;
+    /* ensure it's disabled */
+    &:hover {
+        background: #f1f1f1 !important;
+        /* ensure it's disabled */
+        cursor: default !important;
+        /* ensure it's disabled */
+        filter: alpha(opacity=20) !important;
+        /* ensure it's disabled */
+        font-weight: normal !important;
+        /* ensure it's disabled */
+        opacity: .2 !important;
+        /* ensure it's disabled */
+    }
+}
+
+.Calendar-day-selected {
+    background: #666;
+    color: #fff !important;
+    &:hover {
+        background: #666;
+        color: #fff !important;
+    }
+}
+
+.Calendar-day-today {
+    font-weight: bold !important;
+}
+
+body>.Calendar-topCont {
+    .Calendar-day,
+    .Calendar-weekNumber {
+        border: 1px solid #fff;
+        color: #333;
+        height: 100%;
+        line-height: 30px;
+        position: relative;
+    }
+}
+
+.Calendar-dayNames div,
+.Calendar-bottomBar-today,
+.triggerTime,
+.triggerTimeBack {
+    border: 1px solid #fff;
+    color: #333;
+    height: 100%;
+    line-height: 30px;
+    position: relative;
+}
+
+
+/* Calendar bottom */
+
+.Calendar-bottomBar-today,
+.triggerTime,
+.triggerTimeBack {
+    opacity: .8;
+    padding: 0 20px;
+}
+
+body .triggerTimeBack {
+    height: 30px;
+    margin: auto;
+    max-width: 170px;
+}
+
+.Calendar-day:hover,
+.Calendar-bottomBar-today:hover,
+.triggerTime:hover,
+.triggerTimeBack:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.Calendar-bottomBar-today {
+    cursor: pointer;
+}
+
+.Calendar-bottomBar>table table {
+    margin: auto;
+}
+
+
+/* other months display */
+
+.Calendar-day-othermonth {
+    filter: alpha(opacity=70);
+    opacity: .7;
+}
+
+.Calendar-dayNames td {
+    opacity: .5;
+    width: 14.3%;
+}
+
+.Calendar-bodyTable .Calendar-weekNumber {
+    opacity: .5;
+}
+
+.CalendarWrapper {
+    .Calendar-topCont,
+    .Calendar,
+    .Calendar-bodyTable {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.ShowWeek {
+    width: 12.5% !important;
+    ~td {
+        width: 12.5% !important;
+    }
+    border-right: 1px solid #ccc;
+    opacity: .5;
+}
+
+.Calendar-week>td {
+    padding: 0;
+}
+
+.Calendar-day.Calendar-day-disabled.Calendar-day-selected {
+    color: #333 !important;
+    opacity: 0.7 !important;
+}
+
+
+/* Calendar time */
+
+.TimeContent {
+    background: #fff;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.Calendar-time-down,
+.Calendar-time-up,
+.Calendar-time-am {
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    display: table-cell;
+    font-size: 24px;
+    height: 50px;
+    margin: auto;
+    vertical-align: middle;
+    width: 50px;
+}
+
+.desktop {
+    .Calendar-time-down:hover,
+    .Calendar-time-up:hover,
+    .Calendar-time-am:hover {
+        color: #ccc;
+    }
+}
+
+.Calendar-time-am {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.Calendar-time {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 50px;
+    td {
+        padding: 5px;
+        text-align: center;
+        vertical-align: middle;
+        width: 60px;
+        &:empty {
+            display: none;
+        }
+    }
+}
+
+.Calendar-focusLink {
+    display: none;
+}
+
+.calTriggerOut {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 18;
+}
+
+.ios .calTriggerOut {
+    cursor: pointer;
+}

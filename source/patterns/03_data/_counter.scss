@@ -1,0 +1,62 @@
+
+/* Counter **************************/
+
+.Counter {
+    text-align: center;
+}
+
+.Counter_row {
+    height: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.Counter_number {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.Counter_label {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.Counter {
+    &.Auto {
+        height: 80px;
+        .Counter_number {
+            font-size: 24px;
+        }
+    }
+    &.Small {
+        height: 50px;
+        .Counter_number {
+            font-size: 18px;
+        }
+    }
+    &.Medium {
+        height: 80px;
+        .Counter_number {
+            font-size: 24px;
+        }
+    }
+    &.Large {
+        height: 160px;
+        .Counter_number {
+            font-size: 42px;
+        }
+    }
+}
+
+
+/* Counter: Small **************************/
+
+
+/* Counter: Medium **************************/
+
+
+/* Counter: Large **************************/

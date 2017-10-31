@@ -1,0 +1,27 @@
+/* Post **************************/
+
+.Post {
+    display: table;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.Post_icon {
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+    width: 50px;
+}
+
+.Post_content {
+    display: table-cell;
+    padding-left: 15px;
+}
+
+.Post__date {
+    float: right;
+}
+
+.Post__description {
+    margin-top: 2px;
+}

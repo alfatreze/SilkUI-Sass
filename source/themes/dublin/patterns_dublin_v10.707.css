@@ -1,0 +1,1295 @@
+/*
+    File: Patterns_Dublin
+    
+    1. Imports
+    2.1 Patterns > Content
+    2.2 Patterns > Controls
+    2.3 Patterns > Data
+    2.4 Patterns > Development
+    2.5 Patterns > Email
+    2.6 Patterns > Layout
+    2.7 Patterns > Mobile
+    2.8 Patterns > Navigation
+    2.9 Patterns > Responsive
+    2.10 Patterns > Structure
+    2.11 Patterns > Utilities
+    3. Usefull Classes
+*/
+
+
+/*------------------------------------*\
+              $1. Imports
+\*-------------------------------------*/
+
+
+/* Moved font import to theme template (starter app) */
+
+
+/*------------------------------------*\
+        $2.1 Patterns > Content
+\*------------------------------------*/
+
+
+/* Accordion **************************/
+
+.AccordionVertical {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.AccordionVertical_item.open>.AccordionVertical__header {
+    border-top: 2px solid #d7a909;
+    padding-top: 10px;
+}
+
+.AccordionVertical_item.open>.AccordionVertical__header>.AccordionVertical___icon>.fa {
+    background-color: #9ebdd0;
+    border: 1px solid #9ebdd0;
+    color: #fff;
+}
+
+
+/* Alerts **********************************/
+
+.Alert {
+    border-radius: 3px;
+}
+
+.Alert.Info {
+    background-color: #5485a3;
+    border-color: #5485a3;
+}
+
+.Alert.Success {
+    background-color: #73a354;
+    border-color: #73a354;
+}
+
+.Alert.Error {
+    background-color: #bb5858;
+    border-color: #bb5858;
+}
+
+.Alert.Warning {
+    background-color: #bba758;
+    border-color: #bba758;
+}
+
+
+/* Balloon ******************************/
+
+.Balloon {
+    border: 1px solid #dddedf;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px 2px rgba(50, 50, 50, .1);
+}
+
+
+/* Cards ******************************/
+
+.Card {
+    background-color: #fff;
+    border: 1px solid #dddedf;
+    border-radius: 4px;
+    padding: 0;
+}
+
+
+/* CardSimple ******************************/
+
+.CardSimple {
+    padding: 10px;
+}
+
+
+/* CardSimpleImage ******************************/
+
+.CardSimpleImage img {
+    border: 0;
+}
+
+.CardSimpleImage .Card_Image img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.CardSimpleImage .Card_Text {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.CardSimpleImage .Card_Actions {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* CardLeftImage ******************************/
+
+.CardLeftImage .Left .Card_Image img {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+
+/* Panel ******************************/
+
+.Panel {
+    background-color: #fff;
+    border: 1px solid #dddedf;
+    border-radius: 4px;
+}
+
+.Panel_header,
+.Panel_footer {
+    border-bottom: 1px solid #dddedf;
+}
+
+.Panel_header {
+    border: 0;
+}
+
+.Panel_footer {
+    background-color: #e5e5e5;
+    border-top: 1px solid #dddedf;
+    box-shadow: inset 0 4px 6px -6px rgba(0, 0, 0, .2);
+    padding: 10px 20px;
+}
+
+
+/*  Post ******************************/
+
+.Post_icon img {
+    border: 2px solid #d7a909;
+}
+
+.Post_content {
+    width: auto;
+}
+
+.Post__label {
+    font-weight: 400;
+}
+
+.Post__description {
+    color: #666;
+    margin-top: 0;
+}
+
+.Panel .Post:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+/* Panel -> Post ******************************/
+
+.Panel .Post {
+    border-bottom: 1px solid #dcddde;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Panel .Post:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+/* Section ******************************/
+
+.Section_header {
+    min-height: 42px;
+    padding-bottom: 8px;
+}
+
+.tablet .Section_header,
+.phone .Section_header {
+    min-height: 48px;
+}
+
+
+/* SectionExpandable ******************************/
+
+.SectionExpandable {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+    padding: 12px 12px 0 12px;
+}
+
+.SectionExpandable_header {
+    border-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.SectionExpandable__icon.Heading2 {
+    width: 35px;
+}
+
+.SectionExpandable__title {
+    border-right: 1px solid #ccc;
+}
+
+.SectionExpandable_content {
+    border-radius: 0;
+}
+
+.SectionExpandable__icon.Heading2>.fa {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    color: #999;
+    font-size: 22px;
+    height: 22px;
+    margin-right: 3px;
+    width: 22px;
+}
+
+.expanded .SectionExpandable__icon.Heading2>.fa {
+    background-color: #9ebdd0;
+    border: 1px solid #9ebdd0;
+    border-radius: 22px;
+    color: #fff;
+    height: 22px;
+    margin-right: 10px;
+    width: 22px;
+}
+
+
+/*  Panel -> SectionExpandable ******************************/
+
+.Panel .SectionExpandable {
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.Panel .SectionExpandable_header {
+    border-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.Panel .SectionExpandable__icon.Heading2 {
+    width: 35px;
+}
+
+.Panel .SectionExpandable__title {
+    border-right: 1px solid #ccc;
+}
+
+.Panel .SectionExpandable_content {
+    border-radius: 0;
+}
+
+.Panel .SectionExpandable__icon.Heading2>.fa {
+    background-color: transparent;
+    border: 1px solid #9ebdd0;
+    border-radius: 22px;
+    color: #48687c;
+    height: 22px;
+    line-height: 1.3;
+    margin-right: 3px;
+    width: 22px;
+}
+
+.Panel .expanded .SectionExpandable__icon.Heading2>.fa {
+    background-color: #9ebdd0;
+    border: 1px solid #9ebdd0;
+    border-radius: 22px;
+    color: #fff;
+    height: 22px;
+    line-height: 1.3;
+    margin-right: 10px;
+    width: 22px;
+}
+
+
+/* Separator ******************************/
+
+.Separator {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #dfdfdf;
+    margin: 20px 0;
+}
+
+
+/* Tooltipster ******************************/
+
+.tooltipster-arrow-bottom span,
+.tooltipster-arrow-bottom-right span,
+.tooltipster-arrow-bottom-left span {
+    border-bottom: 8px solid;
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    top: -7px;
+}
+
+
+/*------------------------------------*\
+        $2.2 Patterns > Controls
+\*------------------------------------*/
+
+
+/* ButtonGroup ******************************/
+
+.ButtonGroup_button.Button {
+    border-radius: 0;
+    border-right-width: 0;
+    cursor: pointer;
+    margin: 0;
+    min-width: 40px;
+}
+
+.ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.ButtonGroup_button.Button:last-child {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.ButtonGroup_button.Button.active {
+    background: #e4e4e4;
+    box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+.ButtonGroup_button.Button:hover {
+    background: #efefef;
+}
+
+.phone .ButtonGroup_button.Button:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.phone .ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.phone .ButtonGroup_button.Button.active {
+    border-right-width: 1px;
+}
+
+.phone .NoResponsive>.ButtonGroup .ButtonGroup_button.Button:first-child {
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0;
+}
+
+.phone .NoResponsive>.ButtonGroup .ButtonGroup_button.Button:last-child {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 3px;
+}
+
+
+/* Calendar **************************/
+
+.pika-table th {
+    border-bottom: 0;
+}
+
+.pika-prev:after,
+.pika-next:after {
+    color: #d7a909;
+    top: 1px;
+}
+
+.pika-prev,
+.pika-next {
+    height: 48px;
+}
+
+.pika-title {
+    border-bottom: 2px solid #d7a909;
+}
+
+.is-selected .pika-button {
+    background-color: #48687c;
+}
+
+.has-event .pika-button:after {
+    background-color: #48687c;
+}
+
+.pika-lendar .Calendar-navBtn {
+    height: 48px;
+}
+
+
+/* Calendar DEPRECATED **************************/
+
+.Calendar-dayNames {
+    border-bottom: 0;
+    border-top: 2px solid #d7a909;
+}
+
+.Calendar-navBtn>div {
+    color: #d7a909;
+}
+
+.Calendar-day-selected,
+.Calendar-day-selected:hover {
+    background: #48687c;
+    color: #fff;
+}
+
+.Calendar-time-down,
+.Calendar-time-up,
+.Calendar-time-am {
+    color: #d7a909;
+}
+
+
+/* Dropdown ******************************/
+
+.DropdownMenu .PH>a {
+    color: #999;
+    font-weight: 400;
+}
+
+.DropdownMenu .PH>a:hover {
+    color: #999;
+}
+
+
+/* Dropdown: ButtonDropdown ******************************/
+
+.ButtonDropdown .ButtonDropdown_text {
+    padding-right: 8px;
+}
+
+.ButtonDropdown .ButtonDropdown_icon>.fa {
+    border-left: 1px solid #ccc;
+    padding-left: 8px;
+}
+
+
+/* InputWithIcons **************************/
+
+.InputWithIcons.Right .InputIcon {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.InputWithIcons .InputIcon {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+
+/* File Upload **************************/
+
+.FileUpload {
+    border-radius: 4px;
+}
+
+
+/* Select2 ******************************/
+
+.select2-search input[type="text"] {
+    margin-top: 4px;
+}
+
+.select2-container-open .select2-choice .select2-arrow b,
+.select2-dropdown-open .select2-choice div b {
+    background-position: -18px 4px;
+}
+
+.select2-container .select2-choice {
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-radius: 4px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    color: #48687c;
+    height: 32px;
+    line-height: 30px;
+}
+
+.select2-container .select2-choice span {
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.select2-container .select2-choice .select2-arrow,
+.select2-container .select2-choice div {
+    background: transparent;
+    border-left: 0;
+    border-radius: 0;
+}
+
+.select2-container .select2-choice .select2-arrow b,
+.select2-container .select2-choice div b {
+    background: none;
+    display: inline-block;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.select2-container .select2-choice .select2-arrow b:after,
+.select2-container .select2-choice div b:after {
+    content: "\f0d7";
+}
+
+.select2-container-active.select2-dropdown-open .select2-choice {
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.select2-container-multi.select2-container-active .select2-choices {
+    border: 1px solid #999;
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.select2-container-multi .select2-choices {
+    box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .06);
+    border-radius: 4px;
+}
+
+
+/* ToggleButton ******************************/
+
+.ToggleButton {
+    background-color: #dcddde;
+    border-color: rgba(0, 0, 0, .05);
+    border-radius: 30px;
+    height: 32px;
+}
+
+.ToggleButton_label:after {
+    border-color: rgba(0, 0, 0, .05);
+    border-radius: 10px;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    height: 18px;
+    width: 20px;
+}
+
+.ToggleButton_label.changed:after {
+    border-radius: 10px;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, .05);
+    height: 18px;
+    left: 24px;
+    width: 20px;
+}
+
+.ToggleButton.changed {
+    background-color: #82b660;
+    border-color: rgba(0, 0, 0, .05);
+}
+
+
+/*------------------------------------*\
+        $2.3 Patterns > Data
+\*------------------------------------*/
+
+
+/* Badges ******************************/
+
+.Badge {
+    border: 1px solid #fff;
+}
+
+
+/* Counter ******************************/
+
+.Counter {
+    border-radius: 3px;
+}
+
+
+/* IconBadge ******************************/
+
+.IconBadge_number {
+    background-color: #f1c40f;
+}
+
+
+/* ProgressBar ******************************/
+
+.Progress {
+    border-radius: 4px;
+    height: 18px;
+}
+
+.Progress span {
+    top: -2px;
+}
+
+.Progress_bar {
+    background-image: -webkit-linear-gradient(bottom left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(bottom left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(bottom left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(to top left, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+
+
+/* Tiles ******************************/
+
+.Tile {
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(50, 50, 50, .2);
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+a .Tile:hover {
+    box-shadow: none;
+    -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
+}
+
+.TileIcon_text,
+.TileNumber_text,
+.TileIconText_label {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.TileIconText_label.Heading2 {
+    color: inherit;
+    font-size: 16px;
+    text-align: left;
+}
+
+.TilleIconText_text {
+    text-align: left;
+}
+
+
+/*------------------------------------*\
+        $2.7. Patterns > Mobile
+\*------------------------------------*/
+
+
+/* ListItem ******************************/
+
+a:hover>.ListItem {
+    background-color: #f0f0f0;
+}
+
+a>.ListItem.active,
+a:active>.ListItem {
+    background-color: #f0f0f0;
+}
+
+
+/* ListItemGroup ******************************/
+
+.ListItemGroup {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.ListItemGroup a:first-child:hover .ListItem {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.ListItemGroup a:last-child:hover .ListItem {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+/*------------------------------------*\
+        $2.8 Patterns > Navigation
+\*------------------------------------*/
+
+
+/* NavigationBar: Horizontal ******************************/
+
+.NavigationBar a,
+.NavigationBar a:link,
+.NavigationBar a:visited {
+    color: #c7c7c7;
+}
+
+.desktop .NavigationBar a:hover {
+    text-decoration: none;
+}
+
+.desktop .NavigationBar a:hover,
+.desktop .NavigationBar a:link:hover {
+    color: #3e5154;
+}
+
+.NavigationBar a.Active {
+    color: #3e5154;
+}
+
+.desktop .NavigationBar a:hover:after,
+.desktop .NavigationBar a:link:hover:after,
+.NavigationBar a.Active:after {
+    background-color: #d7a909;
+}
+
+.NavigationBar a.Active:not(.IE8):before {
+    border-bottom: 4px solid #d7a909;
+}
+
+
+/* NavigationBar: Vertical ******************************/
+
+.desktop .NavigationBar.Vertical a:hover,
+.desktop .NavigationBar.Vertical a:link:hover,
+.NavigationBar.Vertical a.Active,
+.NavigationBar.Vertical a:link.Active {
+    border-color: #d7a909;
+}
+
+.NavigationBar.Vertical a.Active:not(.IE8):before {
+    border-left: 4px solid #d7a909;
+}
+
+.phone .NavigationBar .InlineDropdown:active,
+.phone .NavigationBar .InlineDropdown:link:active,
+.tablet .NavigationBar .InlineDropdown:active,
+.tablet .NavigationBar .InlineDropdown:link:active,
+.phone .NavigationBar a:active,
+.phone .NavigationBar a:link:active,
+.tablet .NavigationBar a:active,
+.tablet .NavigationBar a:link:active {
+    color: #3e5154;
+}
+
+.phone .NavigationBar .InlineDropdown:active:after,
+.phone .NavigationBar .InlineDropdown:link:active:after,
+.tablet .NavigationBar .InlineDropdown:active:after,
+.tablet .NavigationBar .InlineDropdown:link:active:after,
+.phone .NavigationBar a:active:after,
+.phone .NavigationBar a:link:active:after,
+.tablet .NavigationBar a:active:after,
+.tablet .NavigationBar a:link:active:after {
+    background-color: #d7a909;
+}
+
+
+/* TabsClient ******************************/
+
+.Tabs__tab {
+    background: transparent;
+    color: #999;
+    font-weight: 600;
+    padding: 8px 12px;
+}
+
+.Tabs_body {
+    background-color: #fff;
+}
+
+.Tabs__tab.active {
+    border-bottom-color: transparent;
+    border-top: 2px solid #d7a909;
+    color: #253b4a;
+    padding: 7px 12px;
+}
+
+.Tabs .PH:empty {
+    display: none;
+}
+
+
+/* Wizard ******************************/
+
+.WizardStep.ActiveStep {
+    background: #253b4a;
+}
+
+.WizardParent {
+    border-radius: 4px;
+}
+
+.WizardStep.ActiveStep a,
+.WizardStep.ActiveStep a:link {
+    color: #fff;
+}
+
+.WizardStep.Past {
+    background: #355264;
+}
+
+.WizardStep.Past a,
+.WizardStep.Past a:link {
+    color: #fff;
+}
+
+.WizardStep a,
+.WizardStep a:link {
+    text-decoration: none;
+}
+
+.WizardStep a,
+.WizardStep a:link,
+.WizardStep a[disabled="disabled"],
+.WizardStep a[disabled="disabled"]:hover {
+    color: #333;
+}
+
+.WizardStep:first-of-type {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.WizardStep:last-of-type {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.WizardStep.Past:before {
+    border-bottom-color: #355264;
+    border-top-color: #355264;
+}
+
+.WizardStep.ActiveStep:before {
+    border-bottom-color: #253b4a;
+    border-top-color: #253b4a;
+}
+
+
+/*------------------------------------*\
+      $3 Usefull Classes
+\*------------------------------------*/
+
+
+/* Buttons ******************************/
+
+.Button {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-radius: 4px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+    color: #48687c;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+}
+
+a.Button {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-radius: 4px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+    color: #48687c;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+}
+
+input.Button {
+    line-height: 30px;
+}
+
+.desktop button:hover,
+.desktop a.Button:hover {
+    background-color: #efefef;
+}
+
+
+/* Default Action Button ******************************/
+
+.Button.ButtonDefault,
+.Button.Is_Default {
+    background-color: #d7a909;
+    border-bottom: 2px solid #b79008;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #d7a909;
+    color: #fff;
+    text-shadow: none;
+}
+
+.desktop .Button.ButtonDefault:hover,
+.desktop .Button.Is_Default:hover {
+    background-color: #e9bd24;
+    border-bottom: 2px solid #c6a11f;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #e9bd24;
+}
+
+a.Button:active,
+.ButtonDropdown_button.Button:active {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.desktop .Button.Success:hover:active,
+.desktop .Button.Danger:hover:active,
+.desktop .Button.Is_Default:hover:active,
+.Button.Success:active,
+.Button.Danger:active,
+.Button.Is_Default:active {
+    border: 1px solid transparent;
+    border-left: none;
+    border-right: none;
+}
+
+
+/* Cancel Action ******************************/
+
+.Button.Cancel {
+    background-color: transparent;
+    border: 1px solid #48687c;
+    box-shadow: none;
+    color: #48687c;
+}
+
+.desktop .Button.Cancel:hover {
+    background-color: transparent;
+    border-color: #69899d;
+    color: #69899d;
+}
+
+
+/* Success Action ******************************/
+
+.Button.Success {
+    background-color: #73a354;
+    border-bottom: 2px solid #628b47;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #73a354;
+    color: #fff;
+}
+
+.desktop .Button.Success:hover {
+    background-color: #82b660;
+    border-bottom: 2px solid #6f9b52;
+    border-top: 1px solid #82b660;
+}
+
+
+/* Danger Action ******************************/
+
+.Button.Danger {
+    background-color: #bb5858;
+    border-bottom: 2px solid #9f4b4b;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #bb5858;
+    color: #fff;
+}
+
+.desktop .Button.Danger:hover {
+    background-color: #d56565;
+    border-bottom: 2px solid #b55656;
+    border-top: 1px solid #d56565;
+}
+
+
+/* Link Button ******************************/
+
+.Button.Link {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: none;
+    color: #48687c;
+}
+
+.desktop .Button.Link:hover {
+    background-color: transparent;
+    border: 1px solid #69899d;
+    color: #69899d;
+}
+
+.Button.Loading:before,
+.Button.Loading[disabled]:before,
+.Button.Loading:disabled:before {
+    background-image: url(/WebPatterns/img/loadingdublin02.GIF);
+}
+
+.Button.Is_Default.Loading:before,
+.Button.Is_Default.Loading[disabled]:before,
+.Button.Is_Default.Loading:disabled:before,
+.Button.ButtonDefault.Loading:before,
+.Button.ButtonDefault.Loading[disabled]:before,
+.Button.ButtonDefault.Loading:disabled:before {
+    background-image: url(/WebPatterns/img/loadingdublin01.GIF);
+}
+
+.Button.Small {
+    font-size: 11px;
+    height: 26px;
+    line-height: 24px;
+    min-width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Button.Icon {
+    min-width: 0;
+}
+
+.Button.Icon span.fa {
+    margin-left: 0;
+}
+
+
+/* Colors: Background and Text ******************************/
+
+.Red {
+    background-color: #cd6a5d;
+}
+
+.Text_red {
+    color: #cd6a5d;
+}
+
+.Green {
+    background-color: #73a354;
+}
+
+.Text_green {
+    color: #73a354;
+}
+
+.Blue {
+    background-color: #5080b6;
+}
+
+.Text_blue {
+    color: #5080b6;
+}
+
+.DarkBlue {
+    background-color: #30495a;
+}
+
+.Text_darkblue {
+    color: #30495a;
+}
+
+.Silver {
+    background-color: #dcddde;
+}
+
+.Text_silver {
+    color: #dcddde;
+}
+
+.Gray {
+    background-color: #7f8c8d;
+}
+
+.Text_gray {
+    color: #7f8c8d;
+}
+
+.Black {
+    background-color: #292929;
+}
+
+.Text_black {
+    color: #292929;
+}
+
+
+/* Text Classes ******************************/
+
+.Heading1 {
+    color: #253b4a;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.Heading2 {
+    color: #253b4a;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.Heading3 {
+    color: #253b4a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.Heading4 {
+    color: #253b4a;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+span.Heading1,
+span.Heading2,
+span.Heading3,
+span.Heading4 {
+    display: block;
+}
+
+.Heading1.Text_white,
+.Heading2.Text_white,
+.Heading3.Text_white,
+.Heading4.Text_white {
+    color: #fff;
+}
+
+.Heading1.Text_yellow,
+.Heading2.Text_yellow,
+.Heading3.Text_yellow,
+.Heading4.Text_yellow {
+    color: #f1c40f;
+}
+
+.Heading1.Text_orange,
+.Heading2.Text_orange,
+.Heading3.Text_orange,
+.Heading4.Text_orange {
+    color: #f39c12;
+}
+
+.Heading1.Text_red,
+.Heading2.Text_red,
+.Heading3.Text_red,
+.Heading4.Text_red {
+    color: #cd6a5d;
+}
+
+.Heading1.Text_darkRed,
+.Heading2.Text_darkRed,
+.Heading3.Text_darkRed,
+.Heading4.Text_darkRed {
+    color: #c0392b;
+}
+
+.Heading1.Text_plum,
+.Heading2.Text_plum,
+.Heading3.Text_plum,
+.Heading4.Text_plum {
+    color: #9b59b6;
+}
+
+.Heading1.Text_darkplum,
+.Heading2.Text_darkplum,
+.Heading3.Text_darkplum,
+.Heading4.Text_darkplum {
+    color: #8e44ad;
+}
+
+.Heading1.Text_green,
+.Heading2.Text_green,
+.Heading3.Text_green,
+.Heading4.Text_green {
+    color: #73a354;
+}
+
+.Heading1.Text_lightGreen,
+.Heading2.Text_lightGreen,
+.Heading3.Text_lightGreen,
+.Heading4.Text_lightGreen {
+    color: #2ecc71;
+}
+
+.Heading1.Text_turquoise,
+.Heading2.Text_turquoise,
+.Heading3.Text_turquoise,
+.Heading4.Text_turquoise {
+    color: #1abc9c;
+}
+
+.Heading1.Text_blue,
+.Heading2.Text_blue,
+.Heading3.Text_blue,
+.Heading4.Text_blue {
+    color: #5080b6;
+}
+
+.Heading1.Text_darkblue,
+.Heading2.Text_darkblue,
+.Heading3.Text_darkblue,
+.Heading4.Text_darkblue {
+    color: #30495a;
+}
+
+.Heading1.Text_silver,
+.Heading2.Text_silver,
+.Heading3.Text_silver,
+.Heading4.Text_silver {
+    color: #dcddde;
+}
+
+.Heading1.Text_silver,
+.Heading2.Text_silver,
+.Heading3.Text_silver,
+.Heading4.Text_silver {
+    color: #7f8c8d;
+}
+
+.Text_Error {
+    color: #bb5858;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.Text_Note {
+    color: #888;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.Label {
+    border-radius: 3px;
+}
+
+
+/* OS PopUps ******************************/
+
+div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+    background: #253b4a;
+}
+
+
+/* RichWidget Tabs*/
+
+.tablet .Tabs_TabOff,
+.tablet li.Tabs_TabOff,
+.phone .Tabs_TabOff,
+.phone li.Tabs_TabOff {
+    width: 32px;
+}
+
+
+/* ExcludeFromPickers: AccordionVertical, AccordionVertical___icon, AccordionVertical__header, AccordionVertical_item, active, ActiveStep, 
+ActiveStepa, Badge, Balloon, ButtonDropdown, ButtonDropdown_button, ButtonDropdown_icon, ButtonDropdown_text, button, ButtonGroup_button, calendar, 
+calendarPattern, calendarPatternt, calendarPatterntr, Card, Card_Actions, Card_Imageimg, Card_Text, CardLeftImage, CardSimple, CardSimpleImage, 
+CardSimpleImageimg, changed, Counter, day, daynames, desktop, desktopa, desktopButton, DropdownMenu, expanded, fa, hilite, IconBadge_number, 
+IconDropdown, Iconspan, ie8, Info, InlineDropdown, Is_Default, ListItem, ListItemGroup, Loading, mini, name, NavigationBar, open, OpenSans_Bold,
+OpenSans_Italic, OpenSans_Regular, OpenSans_Semibold, Oswald_Bold, Oswald_Light, Oswald_Regular, Panel, Panel_footer, Panel_header, Past, 
+PatternsControls, PatternsData, PatternsMobile, PatternsNavigation, PH, phone, Post, Post__description, Post__label, Post_content, Post_iconimg, 
+Progress, Progress_bar, Progressspan, Section_header, SectionExpandable, SectionExpandable__icon, SectionExpandable__title, SectionExpandable_content, 
+SectionExpandable_header, select2-choice, select2-choicediv, select2-choicedivb, select2-choicespan, select2-container, select2-dropdown-open, 
+select2-search, selected, Separator, tablet, Tabs, Tabs__tab, Tabs_body, Tile, TileIcon_text, TileIconText_label, TileNumber_text, TilleIconText_text, 
+TitleMonth, TitleYear, ToggleButton, ToggleButton_label, Vertical, WizardParent, WizardStep */

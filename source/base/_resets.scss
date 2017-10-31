@@ -1,0 +1,99 @@
+
+/*------------------------------------*\
+    $0. Resets
+
+    File: Patterns_SilkUI
+    Version: 10.0.707
+\*-------------------------------------*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+html,
+body,
+div,
+span,
+a,
+img,
+ul,
+li,
+form,
+table,
+tbody,
+thead,
+tr,
+th,
+td {
+    border: 0;
+    -moz-box-sizing: border-box; //   Add this rule for old Firefox
+    box-sizing: border-box;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+a,
+select,
+fieldset,
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+    font-family: Arial, Helvetica, Meiryo, sans-serif;
+}
+
+.startHidden {
+    display: none;
+    -servicestudio-display: block;
+    * {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    &[cellSpacing] {
+        border-collapse: separate;
+    }
+}
+
+td,
+textarea {
+    vertical-align: top;
+}
+
+img {
+    vertical-align: top;
+    border-width: 0;
+}
+
+th {
+    text-align: left;
+}
+
+* {
+    box-sizing: border-box;
+    &:focus {
+        outline: none;
+    }
+}
+
+.ListRecords>ul {
+    padding-left: 40px;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}

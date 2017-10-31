@@ -1,0 +1,72 @@
+/* InputWithIcons **************************/
+
+.InputWithIcons {
+    position: relative;
+    input {
+        &[type="text"],
+        &[type="password"],
+        &[type="datetime"],
+        &[type="datetime-local"],
+        &[type="date"],
+        &[type="month"],
+        &[type="time"],
+        &[type="week"],
+        &[type="number"],
+        &[type="email"],
+        &[type="url"],
+        &[type="search"],
+        &[type="tel"],
+        &[type="color"] {
+            padding-left: 48px;
+            width: 100%;
+        }
+    }
+    &.Right {
+        input {
+            &[type="text"],
+            &[type="password"],
+            &[type="datetime"],
+            &[type="datetime-local"],
+            &[type="date"],
+            &[type="month"],
+            &[type="time"],
+            &[type="week"],
+            &[type="number"],
+            &[type="email"],
+            &[type="url"],
+            &[type="search"],
+            &[type="tel"],
+            &[type="color"] {
+                padding-left: 12px;
+                padding-right: 48px;
+                width: 100%;
+            }
+        }
+        .InputIcon {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            left: auto;
+            right: 1px;
+        }
+    }
+    .InputIcon {
+        background-color: #e6e6e6;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        height: 30px;
+        left: 1px;
+        line-height: 30px;
+        padding: 0 10px;
+        pointer-events: none;
+        position: absolute;
+        top: 1px;
+    }
+}
+
+.tablet .InputWithIcons .InputIcon,
+.phone .InputWithIcons .InputIcon {
+    height: 36px;
+    line-height: 36px;
+}

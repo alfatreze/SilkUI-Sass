@@ -1,0 +1,45 @@
+/*
+    File: Patterns_SilkUI
+    Version: 10.0.707
+/*
+
+/*------------------------------------*\
+        $1. General Properties
+\*-------------------------------------*/
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    color: #151515;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #125f90;
+    text-decoration: none;
+    &:link,
+    &:visited {
+        color: #125f90;
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    &[disabled="disabled"] {
+        color: #ccc;
+        text-decoration: none;
+        &:hover {
+            color: #ccc;
+            text-decoration: none;
+        }
+    }
+}
+
+div[onclick] {
+    cursor: pointer;
+}

@@ -1,0 +1,309 @@
+
+/* Buttons **************************/
+// Originally from useful section
+
+.Button {
+    background-color: #cfcfcf;
+    border: 1px solid #999;
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 30px;
+    margin-left: 10px;
+    min-width: 80px;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.Button {
+    background-color: #cfcfcf;
+    border: 1px solid #999;
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 30px;
+    margin-left: 10px;
+    min-width: 80px;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    span.fa {
+        margin-right: 5px;
+    }
+}
+
+
+/* margin icon on button **************************/
+
+.desktop {
+    .Button:hover,
+    a.Button:hover {
+        background-color: #e2e2e2;
+        text-decoration: none;
+    }
+}
+
+.Button {
+    &.FullWidth {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    &[disabled],
+    &:disable {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #ccc;
+    }
+    &.ButtonDefault,
+    &.Is_Default {
+        background-color: #125f90;
+        border-color: #0d4d75;
+        color: #fff;
+        text-shadow: none;
+    }
+}
+
+
+/* Default Action Button **************************/
+
+.desktop .Button {
+    &.ButtonDefault:hover,
+    &.Is_Default:hover {
+        background-color: #499acd;
+        border-color: #125f90;
+    }
+}
+
+.Button.Cancel {
+    background-color: #fff;
+    border-color: #0d4d75;
+    color: #125f90;
+}
+
+.desktop .Button.Cancel:hover {
+    background-color: #fff;
+    border-color: #499acd;
+    color: #499acd;
+}
+
+.Button.Success {
+    background-color: #a9c264;
+    border-color: #96ad58;
+    color: #fff;
+}
+
+.desktop .Button.Success:hover {
+    background-color: #c0dc74;
+    border-color: #b3ce68;
+}
+
+.Button.Danger,
+a.ActionDelete {
+    background-color: #e09d90;
+    border-color: #df3a01;
+    color: #fff;
+}
+
+.desktop .Button.Danger:hover {
+    background-color: #a6331b;
+}
+
+.Button.Link {
+    background-color: #fff;
+    border-color: #fff;
+    color: #369;
+}
+
+.desktop .Button.Link:hover {
+    background-color: #fff;
+    border-color: #499acd;
+    color: #499acd;
+}
+
+.Button.Small,
+.Panel__Actions .Button,
+.Section_Actions .Button {
+    font-size: 11px;
+    height: 26px;
+    line-height: 24px;
+    min-width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Button {
+    &.Icon {
+        min-width: 0;
+        span.fa {
+            margin: 0;
+        }
+    }
+    &.Loading {
+        &:before,
+        &[disabled]:before,
+        &:disabled:before {
+            background-image: url(/WebPatterns/img/loadinggrey.GIF);
+            background-size: 16px 16px;
+            content: "";
+            display: inline-block;
+            height: 16px;
+            margin-right: 5px;
+            margin-top: -2px;
+            vertical-align: middle;
+            width: 16px;
+        }
+    }
+    &.Is_Default.Loading {
+        &:before,
+        &[disabled]:before,
+        &:disabled:before {
+            background-image: url(/WebPatterns/img/loading.GIF);
+        }
+    }
+    &.ButtonDefault.Loading {
+        &:before,
+        &[disabled]:before,
+        &:disabled:before {
+            background-image: url(/WebPatterns/img/loading.GIF);
+        }
+    }
+    &.Small.Loading:before {
+        margin-top: 4px;
+    }
+    &.Loading {
+        &.Icon:before {
+            margin-right: 0;
+        }
+        span.fa {
+            display: none;
+        }
+    }
+}
+
+
+/* Responsive Context **************************/
+
+.phone .Button,
+.tablet .Button,
+.phone a.Button,
+.tablet a.Button {
+    height: 38px;
+    line-height: 36px;
+    text-decoration: none;
+}
+
+.phone .Button.Small,
+.tablet .Button.Small {
+    height: 30px;
+    line-height: 28px;
+}
+
+
+
+///// End buttons
+
+/* Styles for Disabled Buttons  */
+
+.Button {
+    &[disabled],
+    &:disabled,
+    &.Is_Default[disabled],
+    &.ButtonDefault[disabled],
+    &.Is_Default:disabled,
+    &.ButtonDefault:disabled {
+        background-color: #ccc;
+        border: 0;
+        box-shadow: none;
+        color: #999;
+        pointer-events: none;
+    }
+    &.Danger {
+        &[disabled],
+        &:disabled {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+            pointer-events: none;
+        }
+    }
+    &.Success {
+        &[disabled],
+        &:disabled {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+            pointer-events: none;
+        }
+    }
+    &.Link {
+        &[disabled],
+        &:disabled {
+            background-color: transparent;
+            color: #999;
+        }
+    }
+    &.Cancel {
+        &[disabled],
+        &:disabled {
+            background-color: transparent;
+            border: 1px solid #ccc;
+            border-color: #ccc;
+            color: #999;
+        }
+    }
+}
+
+.desktop .Button {
+    &.Is_Default {
+        &[disabled]:hover,
+        &:disabled:hover {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+        }
+    }
+    &[disabled]:hover,
+    &:disabled:hover {
+        background-color: #ccc;
+        border: 0;
+        box-shadow: none;
+        color: #999;
+    }
+    &.Cancel {
+        &[disabled]:hover,
+        &:disabled:hover {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+        }
+    }
+    &.Danger {
+        &[disabled]:hover,
+        &:disabled:hover {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+        }
+    }
+    &.Success {
+        &[disabled]:hover,
+        &:disabled:hover {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+        }
+    }
+}

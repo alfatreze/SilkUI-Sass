@@ -1,0 +1,31 @@
+/* Tooltip **************************/
+
+.tooltipstered {
+    cursor: help;
+    display: inline-block;
+}
+
+.TooltipWithCounter {
+    display: block;
+}
+
+.tooltipstered.balloon {
+    cursor: pointer;
+}
+
+.tooltip_style {
+    background-color: #2a2a2a;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    .tooltipster-content {
+        font-size: 14px;
+        line-height: 16px;
+        overflow: hidden;
+        padding: 8px 10px;
+    }
+}
+
+.tooltipster-base {
+    z-index: 15;
+}

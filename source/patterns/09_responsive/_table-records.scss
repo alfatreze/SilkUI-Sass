@@ -1,0 +1,168 @@
+
+/* TableRecordsResponsive **************************/
+
+.phone .TableRecordsResponsive .TableRecords {
+    border: 1px solid #dcddde;
+    padding-top: 0;
+    td {
+        display: block;
+        padding-left: 100px;
+        padding-right: 10px;
+        position: relative;
+    }
+    tr td div {
+        font-size: 14px;
+        text-align: left;
+        .Counter {
+            &.Small .Counter_number {
+                font-size: 18px;
+            }
+            &.Medium .Counter_number {
+                font-size: 24px;
+            }
+            &.Large .Counter_number {
+                font-size: 42px;
+            }
+        }
+        .Progress {
+            &.Medium .Progress_bar {
+                font-size: 10px;
+            }
+            &.Large .Progress_bar {
+                font-size: 20px;
+            }
+        }
+        .Tile {
+            &.Small {
+                .TileIcon_icon {
+                    font-size: 30px;
+                }
+                .TileIcon_text {
+                    font-size: 16px;
+                }
+            }
+            &.Medium {
+                .TileIcon_icon {
+                    font-size: 60px;
+                }
+                .TileIcon_text {
+                    font-size: 22px;
+                }
+            }
+            &.Large {
+                .TileIcon_icon {
+                    font-size: 70px;
+                }
+                .TileIcon_text {
+                    font-size: 28px;
+                }
+            }
+        }
+        .TileIcon_icon {
+            font-size: 48px;
+        }
+        .TileIcon_text {
+            font-size: 16px;
+        }
+        .Tile {
+            &.Small .TileIconText_icon {
+                font-size: 36px;
+            }
+            &.Medium .TileIconText_icon {
+                font-size: 72px;
+            }
+            &.Large .TileIconText_icon {
+                font-size: 88px;
+            }
+        }
+        .TileIconText_icon {
+            font-size: 60px;
+        }
+        .TileIconText_right .Heading2 {
+            font-size: 22px;
+        }
+        .Tile {
+            &.Small .TileIconText_right .TilleIconText_text {
+                font-size: 16px;
+            }
+            &.Medium .TileIconText_right .TilleIconText_text {
+                font-size: 22px;
+            }
+            &.Large .TileIconText_right .TilleIconText_text {
+                font-size: 28px;
+            }
+        }
+        .TileIconText_right .TilleIconText_text {
+            font-size: 16px;
+        }
+        .Small .TileNumber_number {
+            font-size: 18px;
+        }
+        .Tile {
+            &.Small .TileNumber_text {
+                font-size: 14px;
+            }
+            &.Medium {
+                .TileNumber_number {
+                    font-size: 48px;
+                }
+                .TileNumber_text {
+                    font-size: 20px;
+                }
+            }
+            &.Large {
+                .TileNumber_number {
+                    font-size: 62px;
+                }
+                .TileNumber_text {
+                    font-size: 20px;
+                }
+            }
+        }
+        .TileNumber_number {
+            font-size: 45px;
+        }
+        .TileNumber_text {
+            font-size: 14px;
+        }
+        .Blank_icon {
+            font-size: 80px;
+        }
+    }
+    .silkui_TableRecords_Label {
+        font-size: 12px;
+        font-weight: 600;
+        left: 15px;
+        position: absolute;
+        width: 80px;
+        word-wrap: break-word;
+    }
+    .TableRecords_OddRow {
+        background-color: #f4f4f4;
+    }
+    .TableRecords_OddLine,
+    .TableRecords_EvenLine {
+        border: none;
+    }
+    td {
+        padding: 10px;
+    }
+}
+
+.TableRecordsResponsive .TableRecords td:before {
+    display: none;
+}
+
+.phone .TableRecordsResponsive .TableRecords td {
+    &.TableRecords_OddLine,
+    &.TableRecords_EvenLine {
+        cursor: default;
+    }
+}
+
+
+/* FIX FOR TABLE'S WHEN REFRESHED BY AJAX WITH VERTICAL SLIDE*/
+
+span[id*="TableAjaxRfrsh"] {
+    width: 100%;
+}

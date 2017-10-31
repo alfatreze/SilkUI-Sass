@@ -1,0 +1,10 @@
+html .Content.ThemeGrid_Wrapper,
+html .tablet .Content.ThemeGrid_Wrapper {
+    -servicestudio-top: 0;
+    -servicestudio-left: 0;
+    -servicestudio-padding: 20px;
+}
+
+html .phone .Content.ThemeGrid_Wrapper {
+    -servicestudio-padding: 10px 0;
+}

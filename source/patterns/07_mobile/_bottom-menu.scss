@@ -1,0 +1,58 @@
+
+/* BottomMenu **************************/
+// Moved from useful clesses
+
+.BottomMenu_wrapper {
+    background-color: #fff;
+    border-color: #ddd;
+    border-top-style: solid;
+    border-top-width: 1px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    a {
+        color: #111;
+        display: table-cell;
+        height: 50px;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 1%;
+    }
+}
+
+.BottomMenu_item {
+    color: #111;
+    display: table-cell;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 1%;
+}
+
+.BottomMenu_wrapper a:hover {
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+.BottomMenu_item.active {
+    background-color: black;
+    color: #fff;
+}
+
+.BottomMenu__text {
+    display: block;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.BottomMenu_item .fa {
+    position: relative;
+    top: 3px;
+}
+
+.BottomMenu_wrapper a,
+.BottomMenu_item {
+    -servicestudio-width: 90%;
+}
