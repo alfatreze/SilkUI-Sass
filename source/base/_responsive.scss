@@ -13,3 +13,43 @@
 .tablet.landscape .ShowOnlyOnResponsiveTable {
     display: none;
 }
+
+
+
+/// Breakpoints usecase example
+// Map with much breakpoints
+$breakpoints: (
+    small: 320px,
+    medium: 600px,
+    large: 768px
+);
+ 
+// Respond-To Mixin
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+         
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+     
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+
+// Sass
+.m-tabs {
+    background-color: #f2f2f2;
+     
+    @include respond-to(medium) {
+        background-color: #666;
+    }
+}
+
+// Output
+.m-tabs {
+    background-color: #f2f2f2;
+}
+@media screen and (min-width: 600px) {
+    background-color: #666;
+}

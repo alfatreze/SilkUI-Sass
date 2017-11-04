@@ -204,8 +204,8 @@ OUTPUT
 
   
 // Get nested colors from the map
-@function setcolor($scheme, $tone: base) {
-  @return map-get(map-get($colorscheme, $scheme), $tone);
+@function setcolor($map-name, $scheme, $tone: 'base') {
+  @return map-get(map-get($map-name, $scheme), $tone);
 }
 
 // Get deep map

@@ -2,150 +2,222 @@
 /* Buttons **************************/
 // Originally from useful section
 
-.Button {
-    background-color: #cfcfcf;
-    border: 1px solid #999;
-    color: #999;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    height: 32px;
-    line-height: 30px;
-    margin-left: 10px;
-    min-width: 80px;
-    padding: 0 15px;
-    text-align: center;
-    text-decoration: none;
-}
+// This map should automate building standard buttons
+$buttons: (
+    "": "orange", // Default button
+    "Is_Default": "orange",
+    "Success": "green",
+    "Danger": "red",
+    "Cancel": "orange",
+    "Link": "orange",
+);
 
+// map currently lists all button vasriants
+// not actually used anywhere
+$buttons-map: (
+    "": "orange", // Default button
+    "Is_Default": "orange",
+    "Success": "green",
+    "Danger": "red",
+    "Cancel": "orange",
+    "Link": "orange",
+    "Disabled": "green",
+    "Small": "red",
+    "Icon": "red",
+    "Load": "red"
+);
+
+
+// Generate standard buttons
+@each $name, $value in $buttons {
+    // Use function to capitalize each word
+	.#{pascalize($name)} {
+        // Get nested map name and color from function
+        background-color: $value;
+        color: $value;
+	}
+} 
+
+
+// Button defaults
+.Button,
 a.Button {
     background-color: #cfcfcf;
     border: 1px solid #999;
-    color: #999;
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
     height: 32px;
     line-height: 30px;
     margin-left: 10px;
     min-width: 80px;
     padding: 0 15px;
+    color: #999;
+    font-size: 14px;
     text-align: center;
     text-decoration: none;
-    span.fa {
-        margin-right: 5px;
+
+    // disabled state
+    // originally not included in a.Button class, only .Button
+    &[disabled],
+    &:disabled {
+        background-color: #ccc;
+        border: 0;
+        box-shadow: none;
+        color: #999;
+        pointer-events: none;
     }
-}
 
-
-/* margin icon on button **************************/
-
-.desktop {
-    .Button:hover,
-    a.Button:hover {
-        background-color: #e2e2e2;
-        text-decoration: none;
-    }
-}
-
-.Button {
-    &.FullWidth {
-        display: block;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-    }
+    /*
+    // Duplicated rule 
+    // altough there are differences in the properties has been removed
     &[disabled],
     &:disable {
         background-color: #fff;
         border: 1px solid #ccc;
         color: #ccc;
     }
+    */
+
+    @if ($desktop) { // check if desktop is true
+
+        .desktop & {
+            &:hover {
+                background-color: #e2e2e2;
+                text-decoration: none;
+            }
+        }
+
+        // Originally did not included ButtonDefault class for disabled status
+        .desktop & {
+            &[disabled]:hover,
+            &:disabled:hover {
+                background-color: #ccc;
+                border: 0;
+                box-shadow: none;
+                color: #999;
+            }
+        }
+        
+    }
+
+    @if ($tablet) { // check if desktop is true
+        
+        .tablet & {
+            // Copied from same class which included both phone & tablet
+            height: 38px;
+            line-height: 36px;
+            // text-decoration: none; // inherited not needed
+
+            &[disabled]:hover,
+            &:disabled:hover {
+                background-color: #ccc;
+                border: 0;
+                box-shadow: none;
+                color: #999;
+            }
+        }
+        
+    }
+
+    @if ($phone) { // check if desktop is true
+        
+        .phone & {
+            // Copied from same class which included both phone & tablet
+            height: 38px;
+            line-height: 36px;
+            // text-decoration: none; // inherited not needed
+
+            &[disabled]:hover,
+            &:disabled:hover {
+                background-color: #ccc;
+                border: 0;
+                box-shadow: none;
+                color: #999;
+            }
+        }
+        
+    }
+
+        // Validate exact icon use case ???
+    // Should this be with the icon class?
+    span.fa {
+        margin-right: 5px;
+    }
+}
+
+/*// Removed and separated into individual properties for phone and tablet
+.phone .Button,
+.phone a.Button,
+.tablet .Button,
+.tablet a.Button {
+    height: 38px;
+    line-height: 36px;
+    text-decoration: none;
+}*/
+
+
+/* Default Action Button **************************/
+/* margin icon on button **************************/
+
+// Is there really a need to bind the hover to the .desktop class?
+// THey won't show on mobile any way...
+
+.Button {
+
+    // Default Button
     &.ButtonDefault,
     &.Is_Default {
         background-color: #125f90;
         border-color: #0d4d75;
         color: #fff;
         text-shadow: none;
+
+        // Copied from base button styles
+        &[disabled],
+        &:disabled {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+            pointer-events: none;
+        }
+
+        @if ($desktop) { // check if desktop is true
+            
+            // Moved from base button
+            // Here it does not target 'a.Button' anymore...
+            .desktop & {
+                &:hover {
+                    background-color: #499acd;
+                    border-color: #125f90;
+                }
+            }
+
+            // Originally did not included ButtonDefault class for disabled status
+            .desktop & {
+                &[disabled]:hover,
+                &:disabled:hover {
+                    background-color: #ccc;
+                    border: 0;
+                    box-shadow: none;
+                    color: #999;
+                }
+            }
+        }
     }
-}
 
-
-/* Default Action Button **************************/
-
-.desktop .Button {
-    &.ButtonDefault:hover,
-    &.Is_Default:hover {
-        background-color: #499acd;
-        border-color: #125f90;
-    }
-}
-
-.Button.Cancel {
-    background-color: #fff;
-    border-color: #0d4d75;
-    color: #125f90;
-}
-
-.desktop .Button.Cancel:hover {
-    background-color: #fff;
-    border-color: #499acd;
-    color: #499acd;
-}
-
-.Button.Success {
-    background-color: #a9c264;
-    border-color: #96ad58;
-    color: #fff;
-}
-
-.desktop .Button.Success:hover {
-    background-color: #c0dc74;
-    border-color: #b3ce68;
-}
-
-.Button.Danger,
-a.ActionDelete {
-    background-color: #e09d90;
-    border-color: #df3a01;
-    color: #fff;
-}
-
-.desktop .Button.Danger:hover {
-    background-color: #a6331b;
-}
-
-.Button.Link {
-    background-color: #fff;
-    border-color: #fff;
-    color: #369;
-}
-
-.desktop .Button.Link:hover {
-    background-color: #fff;
-    border-color: #499acd;
-    color: #499acd;
-}
-
-.Button.Small,
-.Panel__Actions .Button,
-.Section_Actions .Button {
-    font-size: 11px;
-    height: 26px;
-    line-height: 24px;
-    min-width: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.Button {
+    // Icon
     &.Icon {
         min-width: 0;
+
         span.fa {
             margin: 0;
         }
     }
+    
+    // Loading Button
     &.Loading {
+
         &:before,
         &[disabled]:before,
         &:disabled:before {
@@ -159,7 +231,17 @@ a.ActionDelete {
             vertical-align: middle;
             width: 16px;
         }
+
+        &.Icon:before {
+            margin-right: 0;
+        }
+        
+        span.fa {
+            display: none;
+        }
     }
+    
+    &.ButtonDefault.Loading,
     &.Is_Default.Loading {
         &:before,
         &[disabled]:before,
@@ -167,91 +249,17 @@ a.ActionDelete {
             background-image: url(/WebPatterns/img/loading.GIF);
         }
     }
-    &.ButtonDefault.Loading {
-        &:before,
-        &[disabled]:before,
-        &:disabled:before {
-            background-image: url(/WebPatterns/img/loading.GIF);
-        }
-    }
+    
     &.Small.Loading:before {
         margin-top: 4px;
     }
-    &.Loading {
-        &.Icon:before {
-            margin-right: 0;
-        }
-        span.fa {
-            display: none;
-        }
-    }
-}
 
-
-/* Responsive Context **************************/
-
-.phone .Button,
-.tablet .Button,
-.phone a.Button,
-.tablet a.Button {
-    height: 38px;
-    line-height: 36px;
-    text-decoration: none;
-}
-
-.phone .Button.Small,
-.tablet .Button.Small {
-    height: 30px;
-    line-height: 28px;
-}
-
-
-
-///// End buttons
-
-/* Styles for Disabled Buttons  */
-
-.Button {
-    &[disabled],
-    &:disabled,
-    &.Is_Default[disabled],
-    &.ButtonDefault[disabled],
-    &.Is_Default:disabled,
-    &.ButtonDefault:disabled {
-        background-color: #ccc;
-        border: 0;
-        box-shadow: none;
-        color: #999;
-        pointer-events: none;
-    }
-    &.Danger {
-        &[disabled],
-        &:disabled {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-            pointer-events: none;
-        }
-    }
-    &.Success {
-        &[disabled],
-        &:disabled {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-            pointer-events: none;
-        }
-    }
-    &.Link {
-        &[disabled],
-        &:disabled {
-            background-color: transparent;
-            color: #999;
-        }
-    }
+    // Action & State Buttons
     &.Cancel {
+        background-color: #fff;
+        border-color: #0d4d75;
+        color: #125f90;
+    
         &[disabled],
         &:disabled {
             background-color: transparent;
@@ -259,51 +267,168 @@ a.ActionDelete {
             border-color: #ccc;
             color: #999;
         }
+    
+        @if ($desktop) { // check if desktop is true
+            
+            .desktop &:hover {
+                //background-color: #fff;
+                border-color: #499acd;
+                color: #499acd;
+            }
+
+            .desktop & {
+                &[disabled]:hover,
+                &:disabled:hover {
+                    background-color: #ccc;
+                    border: 0;
+                    box-shadow: none;
+                    color: #999;
+                }
+            }
+        
+        }
+    }
+    
+    &.Success {
+        background-color: #a9c264;
+        border-color: #96ad58;
+        color: #fff;
+    
+        &[disabled],
+        &:disabled {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+            pointer-events: none;
+        }
+    
+        @if ($desktop) { // check if desktop is true
+            
+            .desktop &:hover {
+                background-color: #c0dc74;
+                border-color: #b3ce68;
+            }
+
+            .desktop & {
+                &[disabled]:hover,
+                &:disabled:hover {
+                    background-color: #ccc;
+                    border: 0;
+                    box-shadow: none;
+                    color: #999;
+                }
+            }
+        }
+    }
+    
+    
+    &.Danger {
+        background-color: #e09d90;
+        border-color: #df3a01;
+        color: #fff;
+    
+        &[disabled],
+        &:disabled {
+            background-color: #ccc;
+            border: 0;
+            box-shadow: none;
+            color: #999;
+            pointer-events: none;
+        }
+    
+        @if ($desktop) { // check if desktop is true
+            
+            .desktop &:hover {
+                background-color: #a6331b;
+            }
+
+            .desktop & {
+                &[disabled]:hover,
+                &:disabled:hover {
+                    background-color: #ccc;
+                    border: 0;
+                    box-shadow: none;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    &.Link {
+        background-color: #fff;
+        border-color: #fff;
+        color: #369;
+    
+        &[disabled],
+        &:disabled {
+            background-color: transparent;
+            color: #999;
+        }
+    
+        @if ($desktop) { // check if desktop is true
+            
+            .desktop &:hover {
+                background-color: #fff;
+                border-color: #499acd;
+                color: #499acd;
+            }
+        }
+    }
+       
+    // Modifiers
+    &.Small {
+        font-size: 11px;
+        height: 26px;
+        line-height: 24px;
+        min-width: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        // RESPONSIVE
+
+        @if ($tablet) {
+            // separated from same original class 
+            // which targeted .phone and tablet
+            height: 30px;
+            line-height: 28px;
+        }
+
+        @if ($phone) {
+            // separated from same original class
+            // which targeted .phone and tablet
+            height: 30px;
+            line-height: 28px;
+        }
+    }
+
+    &.FullWidth {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    // Contextual Buttons
+    .Panel__Actions &,
+    .Section_Actions & {
+        // Same properties as .Button.Small
+        // originally part of same class
+        font-size: 11px;
+        height: 26px;
+        line-height: 24px;
+        min-width: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
-.desktop .Button {
-    &.Is_Default {
-        &[disabled]:hover,
-        &:disabled:hover {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-        }
-    }
-    &[disabled]:hover,
-    &:disabled:hover {
-        background-color: #ccc;
-        border: 0;
-        box-shadow: none;
-        color: #999;
-    }
-    &.Cancel {
-        &[disabled]:hover,
-        &:disabled:hover {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-        }
-    }
-    &.Danger {
-        &[disabled]:hover,
-        &:disabled:hover {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-        }
-    }
-    &.Success {
-        &[disabled]:hover,
-        &:disabled:hover {
-            background-color: #ccc;
-            border: 0;
-            box-shadow: none;
-            color: #999;
-        }
-    }
+
+
+// duplicated the class from .Button.Danger, a.ActionDelete {} 
+// should validate types of actions and evaluate individual components
+a.ActionDelete {
+    background-color: #e09d90;
+    border-color: #df3a01;
+    color: #fff;
 }

@@ -3,17 +3,27 @@
     Version: 10.0.707
 /*
 
+
 /*------------------------------------*\
         $1. General Properties
 \*-------------------------------------*/
+// _config.scss
+$font: (
+    color: #151515,
+    //family: (Arial, Helvetica),
+    size: 14px,
+    //line-height: 1.4
+  );
+
 
 html {
     -webkit-text-size-adjust: 100%;
 }
 
 body {
-    color: #151515;
-    font-size: 14px;
+    color: map-get($font, color);
+    font-size: map-get($font, size);
+
     font-weight: normal;
     margin: 0;
     padding: 0;

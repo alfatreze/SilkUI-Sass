@@ -1,0 +1,87 @@
+// RESPONSIVE
+// ------------------------------------------------------
+
+$desktop: true; // global setting to conditionally create desktop classes
+$tablet:  true; // global setting to conditionally create tablet classes
+$phone:  true; // global setting to conditionally create phone classes
+
+
+// COLORS
+// ------------------------------------------------------
+
+// Neutrals List
+//    bg: background-color
+//    color: text on bg color
+//    text: .Page text color
+
+$color-map-neutrals: (
+    "transparent": (
+        bg: $color--transparent,
+        color: $text-color--light,
+        ),
+    "white": (
+        bg:$color--white,
+        color: $text-color--main,
+        text: $color--white,
+        ),
+    "silver": (
+        bg:#ecf0f1,
+        color: $text-color--light,
+        text: #bdc3c7,
+        ),
+    "gray": (
+        bg: $color--gray,
+        color: $color--white,
+        text:$color--gray,
+        ),
+    "black": (
+        bg:$text-color--main,
+        color: $color--white,
+        text: $text-color--main,
+        ),
+);
+
+
+// Color List
+//    base: base color
+//    light: lighter version of base
+//    dark: darker version of base
+
+$color-map: (
+    'green': (
+        'base': $color--green,
+        'light': $color--green__light,
+        ),
+    'yellow': ( 
+        'base': $color--yellow,
+        ),
+    'orange': ( 
+        'base': $color--orange,
+        ),
+    'red': (
+        'base': $color--red,
+        'dark': $color--red__dark,
+        ),
+    'blue': (
+        'base': $color--blue,
+        'dark': $color--blue__dark,
+        ),
+    'turquoise': ( 
+        'base': $color--turquoise,
+        ),
+    'plum': (
+        'base': $color--plum,
+        'dark': $color--plum__dark,
+        ),
+);
+
+
+// TYPOGRAPHY
+// ------------------------------------------------------
+
+
+
+// BUTTONS
+// ------------------------------------------------------
+
+

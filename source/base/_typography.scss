@@ -53,31 +53,33 @@ span {
     text-decoration: underline !important;
 }
 
-.Text_small {
-    font-size: .8em !important;
-}
+.Text {
 
-.Text_large {
-    font-size: 1.2em !important;
-}
+    &_small {
+        font-size: .8em !important;
+    }
 
-.Text_uppercase {
-    text-transform: uppercase !important;
-}
+    &_large {
+        font-size: 1.2em !important;
+    }
 
-.Text_shadow {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
+    &_uppercase {
+        text-transform: uppercase !important;
+    }
 
-.Text_Note {
-    color: #888;
-    font-size: 12px;
-}
+    &_shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
 
-.Text_Error {
-    color: #c7331f;
-}
+    &_Note {
+        color: #888;
+        font-size: 12px;
+    }
 
+    &_Error {
+        color: #c7331f;
+    }
+}
 .Note {
     color: #888;
 }
@@ -119,6 +121,6 @@ span {
 }
 
 .Text_AlignBaseline {
-    /* Empty class that needs to be applied to text to align it with inputs and buttons in Google Chrome 
-  (create spans that reset vertical-align to baseline)*/
+ // Empty class that needs to be applied to text to align it with inputs and buttons in Google Chrome 
+ // (create spans that reset vertical-align to baseline)
 }

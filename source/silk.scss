@@ -3,6 +3,7 @@
 // config
 @import 'base/functions';
 @import 'base/variables';
+@import 'base/settings';
 
 // definition 
 @import 'base/resets';
@@ -14,6 +15,7 @@
 @import 'elements/validation';
  
 @import 'patterns/01_content/00_defs';
+@import 'patterns/02_controls/00_defs';
 
 @import 'widgets/widgets'; 
 

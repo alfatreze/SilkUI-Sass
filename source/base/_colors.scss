@@ -1,70 +1,12 @@
 /* Colors: Background and Text **************************/
 // originally from useful classes section
 
-// Neutrals List
-//    bg: background-color
-//    color: text on bg color
-//    text: .Page text color
-$color-map-neutrals: (
-    "transparent": (
-        bg: transparent,
-        color: #666
-        ),
-    "white": (
-        bg:#fff,
-        color: #333,
-        text: #fff
-        ),
-    "silver": (
-        bg:#ecf0f1,
-        color: #666,
-        text: #bdc3c7
-        ),
-    "gray": (
-        bg:#7f8c8d,
-        color: #fff,
-        text:#7f8c8d
-        ),
-    "black": (
-        bg:#333,
-        color: #fff,
-        text: #333
-        )
-);
-
-
-// Color List
-$color-map: (
-    "green": (
-        base: $color--green,
-        light: $color--green__light
-        ),
-    "yellow": ( 
-        base: $color--yellow 
-        ),
-    "orange": ( 
-        base: $color--orange 
-        ),
-    "red": (
-        base: $color--red,
-        dark: $color--red__dark
-        ),
-    "blue": (
-        base: $color--blue,
-        dark: $color--blue__dark
-        ),
-    "turquoise": ( 
-        base: $color--turquoise 
-        ),
-    "plum": (
-        base: $color--plum,
-        dark: $color--plum__dark 
-        )
-);
+// Merge color and neutral maps
+$color-map-all: map-merge($color-map, $color-map-neutrals);
 
 
 // Generate Neutral Colors from map
-@each $name, $value in $color-map-neutrals{
+@each $name, $value in $color-map-neutrals {
     // Use function to capitalize each word
 	.#{pascalize($name)} {
         // Get nested map name and color from function
@@ -75,13 +17,14 @@ $color-map: (
 
 
 // Generate Background Colors from map
-@each $name, $value in $color-map{
+@each $color, $hue in $color-map {
     // Remove hifens and Capitalize each word
-	.#{pascalize($name)} {
-        background-color: map-deep-get($color-map,$name,base);
+	.#{pascalize($color)} {
+        background-color: map-deep-get($color-map,$color,base);
         color: $color--white;
 	}
 } 
+
 
 /* Page Text */
 // Generate Text Colors from Map
@@ -93,7 +36,7 @@ $color-map: (
     color: #fff;
 }
 
-@each $name, $value in $color-map-neutrals{
+@each $name, $value in $color-map-neutrals {
     // Remove dashes
     .Page .Text_#{remove-dash($name)}{
         color: map-deep-get($color-map-neutrals,$name,text);
@@ -101,7 +44,7 @@ $color-map: (
 } 
 
 
-@each $name, $value in $color-map{
+@each $name, $value in $color-map {
     // Remove dashes
     .Page .Text_#{remove-dash($name)},
 
@@ -109,7 +52,7 @@ $color-map: (
 
     // Generate camelCase
     .Page .Text_#{camelize($name)}{
-        color: $value;
+        color: map-deep-get($color-map, $name, base);;
     }
 }
 
@@ -131,7 +74,7 @@ $color-map-chart: (
 );
 
 // Generate Chart Colors from map
-@each $name, $value in $color-map-chart{
+@each $name, $value in $color-map-chart {
     .Chart_#{$name} {
         color: $value;
     }
