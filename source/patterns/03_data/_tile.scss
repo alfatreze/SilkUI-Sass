@@ -15,8 +15,36 @@
         display: -moz-deck;
     }
 
+    // Row
+    .Row {
+        display: table-row;
+    }
+    
+    // href tile
+    a & {
+        text-decoration: none;
+    }
+
+    // InfoTooltip
+    .InfoTooltip {
+        margin: 0;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .fa-fw {
+        width: auto;
+    }
+
+    // Icon
+    &.TileIcon {
+        padding: 10px 0 10px;
+    }
+
+    // Sizes
     &.Small {
-        // Firefox - initial flexbox implementation should be removed
+        // Firefox - initial flexbox implementation. should be removed
         display: -moz-box; 
         -moz-box-align: center;
         -moz-box-pack: center;
@@ -24,68 +52,104 @@
         line-height: 20px;
         min-height: 80px;
         width: 100%;
+
+        .InfoTooltip {
+            font-size: 10px;
+            right: 2px;
+            top: 2px;
+        }
+        .TileIcon_icon {
+            font-size: 30px;
+        }
+        .TileIcon_text {
+            font-size: 16px;
+        }
+        .TileIconText_icon {
+            font-size: 36px;
+        }
+        .TileIconText_right {
+            font-size: 16px;
+        }
+        .TileNumber_number {
+            font-size: 18px;
+        }
+        .TileNumber_text {
+            font-size: 14px;
+        }
     }
 
     &.Medium {
-        // Firefox - initial flexbox implementation should be removed
+        // Firefox - initial flexbox implementation. should be removed
         display: -moz-box;
         -moz-box-align: center;
 
         min-height: 180px;
-        width: 100%;        
+        width: 100%;  
+        
+        .TileIcon_icon {
+            font-size: 60px;
+        }
+        .TileIcon_text {
+            font-size: 22px;
+        }
+        .TileIconText_icon {
+            font-size: 72px;
+        }
+        .TileIconText_right {
+            font-size: 22px;
+        }
+        .TileNumber_number {
+            font-size: 48px;
+        }
+        .TileNumber_text {
+            font-size: 20px;
+        }
     }
 
     &.Large {
-        // Firefox - initial flexbox implementation should be removed
+        // Firefox - initial flexbox implementation. should be removed
         display: -moz-box;
         -moz-box-align: center;
         -moz-box-pack: center;
 
         min-height: 280px;
         width: 100%;
+
+        .TileIcon_icon {
+            font-size: 70px;
+        }
+        .TileIcon_text {
+            font-size: 28px;
+        }
+        .TileIconText_icon {
+            font-size: 88px;
+        }
+        .TileIconText_right {
+            font-size: 28px;
+        }
+        .TileNumber_number {
+            font-size: 62px;
+        }
+        .TileNumber_text {
+            font-size: 20px;
+        }
+
+        // ie fix: version ???
+        // issue: ???
+        .ie & {
+            .TileNumber_number {
+                height: 50%;
+                vertical-align: bottom;
+            }
+            .TileNumber_text {
+                height: 50%;
+                vertical-align: top;
+            }
+        }
     }
 }
 
-.Tile .Row {
-    display: table-row;
-}
-
-a .Tile {
-    text-decoration: none;
-}
-
-.ie .Tile.Large {
-    .TileNumber_number {
-        height: 50%;
-        vertical-align: bottom;
-    }
-    .TileNumber_text {
-        height: 50%;
-        vertical-align: top;
-    }
-}
-
-
-/* Tile: InfoTooltip **************************/
-
-.Tile {
-    .InfoTooltip {
-        margin: 0;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-    }
-    &.Small .InfoTooltip {
-        font-size: 10px;
-        right: 2px;
-        top: 2px;
-    }
-    &.TileIcon {
-        padding: 10px 0 10px;
-    }
-}
-
-
+// Icon
 .TileIcon_icon {
     display: table-cell;
     font-size: 48px;
@@ -97,35 +161,6 @@ a .Tile {
     font-size: 16px;
     vertical-align: middle;
 }
-
-
-.Tile {
-    &.Small {
-        .TileIcon_icon {
-            font-size: 30px;
-        }
-        .TileIcon_text {
-            font-size: 16px;
-        }
-    }
-    &.Medium {
-        .TileIcon_icon {
-            font-size: 60px;
-        }
-        .TileIcon_text {
-            font-size: 22px;
-        }
-    }
-    &.Large {
-        .TileIcon_icon {
-            font-size: 70px;
-        }
-        .TileIcon_text {
-            font-size: 28px;
-        }
-    }
-}
-
 
 .TileIconText_icon {
     display: table-cell;
@@ -141,35 +176,7 @@ a .Tile {
     vertical-align: middle;
 }
 
-
-.Tile {
-    &.Small {
-        .TileIconText_icon {
-            font-size: 36px;
-        }
-        .TileIconText_right {
-            font-size: 16px;
-        }
-    }
-    &.Medium {
-        .TileIconText_icon {
-            font-size: 72px;
-        }
-        .TileIconText_right {
-            font-size: 22px;
-        }
-    }
-    &.Large {
-        .TileIconText_icon {
-            font-size: 88px;
-        }
-        .TileIconText_right {
-            font-size: 28px;
-        }
-    }
-}
-
-
+// Number
 .TileNumber_number {
     display: table-cell;
     font-size: 45px;
@@ -180,34 +187,4 @@ a .Tile {
 .TileNumber_text {
     display: table-cell;
     vertical-align: top;
-}
-
-
-.Small .TileNumber_number {
-    font-size: 18px;
-}
-
-.Tile {
-    &.Small .TileNumber_text {
-        font-size: 14px;
-    }
-    &.Medium {
-        .TileNumber_number {
-            font-size: 48px;
-        }
-        .TileNumber_text {
-            font-size: 20px;
-        }
-    }
-    &.Large {
-        .TileNumber_number {
-            font-size: 62px;
-        }
-        .TileNumber_text {
-            font-size: 20px;
-        }
-    }
-    .fa-fw {
-        width: auto;
-    }
 }

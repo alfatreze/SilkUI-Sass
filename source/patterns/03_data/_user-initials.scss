@@ -1,31 +1,41 @@
 
 /* UserInitials **************************/
 
+// width/height should be removed 
+// validate component if it is ever built without size class
 .UserInitials {
     border-radius: 50%;
     height: 22px;
     width: 22px;
-    &.Small {
-        border-radius: 50%;
-        height: 22px;
-        width: 22px;
-    }
+
+    // Should be separated for base/ .small
+    // or removed from one of them 
     span,
     &.Small span {
         font-size: 10px;
     }
+
+    &.Small {
+        // border-radius: 50%; // already inherited
+        height: 22px; // same as base...
+        width: 22px; // same as base...
+    }
+
     &.Medium {
         height: 40px;
         width: 40px;
+
         span {
             font-size: 16px;
             font-weight: bold;
             line-height: 2.6em;
         }
     }
+
     &.Large {
         height: 80px;
         width: 80px;
+
         span {
             font-size: 34px;
             font-weight: bold;
@@ -33,9 +43,3 @@
         }
     }
 }
-
-
-/* UserInitials: Medium **************************/
-
-
-/* UserInitials: Large **************************/
