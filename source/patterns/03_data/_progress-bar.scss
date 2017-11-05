@@ -7,16 +7,29 @@
     overflow: hidden;
     text-align: left;
     width: 100%;
+
     &.Small {
         height: 8px;
     }
+
     &.Medium {
         font-size: 10px;
         height: 16px;
     }
+
     &.Large {
         font-size: 20px;
         height: 32px;
+    }
+
+    span {
+        display: table-cell;
+        vertical-align: middle;
+        
+        @if ($studio) {
+           -servicestudio-line-height: 1em; 
+        }
+        
     }
 }
 
@@ -26,24 +39,23 @@
     display: table;
     height: 100%;
     text-align: center;
-    -webkit-transition: width .6s ease;
+    //-webkit-transition: width .6s ease;
     transition: width .6s ease;
-    -servicestudio-width: 50%;
+    
+    @if ($studio) {
+       -servicestudio-width: 50%; 
+    }
+    
 }
-
-.Progress span {
-    display: table-cell;
-    vertical-align: middle;
-    -servicestudio-line-height: 1em;
-}
-
 
 /* ProgressBar: Tooltipster Context **************************/
 
 .tooltipster-content {
+
     .Counter {
         padding: 10px 5px;
     }
+
     .Counter_number {
         line-height: 45px;
     }

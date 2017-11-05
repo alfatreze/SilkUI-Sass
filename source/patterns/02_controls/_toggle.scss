@@ -8,9 +8,16 @@
     border-width: 1px;
     height: 30px;
     outline: 1px solid transparent;
-    -webkit-transition: outline-color .3s ease-out;
+    // -webkit-transition: outline-color .3s ease-out;
     transition: outline-color .3s ease-out;
     width: 54px;
+
+    &.changed {
+        background-color: #a9c264;
+        background-image: none;
+        border-color: #dcdcdc; // Why the slight change in color
+        color: #444; // ??? not really used for anytihng
+    }
 }
 
 .ToggleButton_label {
@@ -21,6 +28,7 @@
     position: relative;
     transition: left .15s ease-out;
     width: 50px;
+
     &:after {
         background-color: #fff;
         border-color: #dcdcdc;
@@ -36,32 +44,32 @@
         transition: left .15s ease-out;
         width: 15px;
     }
+
+    // Disabled multiple repeated inheritable properties
     &.changed:after {
-        background-color: #fff;
-        content: "";
-        display: block;
-        height: 15px;
+        //background-color: #fff;
+        //content: "";
+        //display: block;
+        //height: 15px;
         left: 30px;
-        position: absolute;
-        top: 5px;
-        -webkit-transition: left .15s ease-out;
-        transition: left .15s ease-out;
-        width: 15px;
+        //position: absolute;
+        //top: 5px;
+        // -webkit-transition: left .15s ease-out;
+        //transition: left .15s ease-out;
+        //width: 15px;
     }
+
     input {
         opacity: 0;
         position: absolute;
         z-index: -1;
-        -servicestudio-margin-left: 25px;
-        -servicestudio-margin-top: 6px;
-        -servicestudio-opacity: 1;
-        -servicestudio-position: relative;
-    }
-}
 
-.ToggleButton.changed {
-    background-color: #a9c264;
-    background-image: none;
-    border-color: #dcdcdc;
-    color: #444;
+        @if ($studio) {
+            -servicestudio-margin-left: 25px;
+            -servicestudio-margin-top: 6px;
+            -servicestudio-opacity: 1;
+            -servicestudio-position: relative;
+        }
+
+    }
 }

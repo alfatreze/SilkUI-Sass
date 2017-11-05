@@ -3,20 +3,14 @@
 .Modal {
     display: block;
     z-index: 100;
-    -servicestudio-display: block;
-    -servicestudio-padding-top: 40px;
-    -servicestudio-position: relative;
-    -servicestudio-z-index: 14;
-}
 
-body.ModalOpened {
-    .Modal {
-        display: block;
+    @if ($studio) {
+        -servicestudio-display: block;
+        -servicestudio-padding-top: 40px;
+        -servicestudio-position: relative;
+        -servicestudio-z-index: 14;
     }
-    .ModalBackground {
-        background-color: rgba(0, 0, 0, 0.15);
-        display: block;
-    }
+    
 }
 
 .ModalBackground {
@@ -27,21 +21,22 @@ body.ModalOpened {
     position: fixed;
     right: 0;
     top: 0;
-    -webkit-transition: all .3s ease;
+    //-webkit-transition: all .3s ease;
     transition: all .3s ease;
     z-index: 10;
-    -servicestudio-position: static;
-}
 
-.phone .ModalBackground {
-    display: none;
-}
+    @if ($studio) {
+        -servicestudio-position: static;
+    }
 
-body.ModalOpened .ModalContainer {
-    display: block;
-    -webkit-transform: translateX(-50%) translateY(0) translateZ(0);
-    -ms-transform: translateX(-50%) translateY(0) translateZ(0);
-    transform: translateX(-50%) translateY(0) translateZ(0);
+    // Responsive context
+    @if ($phone) {
+        // Hide on phones
+        .phone & {
+            display: none;
+        }
+    }
+    
 }
 
 .ModalContainer {
@@ -58,20 +53,24 @@ body.ModalOpened .ModalContainer {
     padding: 30px 20px;
     position: fixed;
     text-align: center;
-    -webkit-transform: translateX(-50%) translateY(100%) translateZ(0);
-    -ms-transform: translateX(-50%) translateY(100%) translateZ(0);
+    //-webkit-transform: translateX(-50%) translateY(100%) translateZ(0);
+    //-ms-transform: translateX(-50%) translateY(100%) translateZ(0);
     transform: translateX(-50%) translateY(100%) translateZ(0);
-    -webkit-transition: all .3s;
+    //-webkit-transition: all .3s;
     transition: all .3s;
     width: 100%;
     z-index: 11;
-    -servicestudio--webkit-transform: none;
-    -servicestudio-display: block;
-    -servicestudio-left: 0;
-    -servicestudio-margin-left: auto;
-    -servicestudio-margin-right: auto;
-    -servicestudio-position: relative;
-    -servicestudio-transform: none;
+
+    @if ($studio) {
+        -servicestudio--webkit-transform: none;
+        -servicestudio-display: block;
+        -servicestudio-left: 0;
+        -servicestudio-margin-left: auto;
+        -servicestudio-margin-right: auto;
+        -servicestudio-position: relative;
+        -servicestudio-transform: none;
+    }
+    
     table {
         &.EditRecord,
         &.ShowRecord {
@@ -79,13 +78,27 @@ body.ModalOpened .ModalContainer {
             text-align: left;
         }
     }
+
     &.done {
         bottom: 0;
     }
+
     .Heading1 {
         margin-bottom: 20px;
         margin-top: 0;
     }
+
+    // Responsive context
+    @if ($phone) {
+        // Hide on phones
+        .phone & {
+            height: 100%;
+            z-index: 22;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch; // ???
+        }
+    }    
+
 }
 
 .ModalMessage {
@@ -93,20 +106,32 @@ body.ModalOpened .ModalContainer {
     margin-bottom: 20px;
 }
 
+// Opened
 .ModalOpened {
     overflow: hidden;
+
     .calendar,
     .calendarPattern {
         z-index: 9999;
     }
 }
 
+// Why target body ???
+body.ModalOpened {
 
-/* Responsive Context **************************/
+    .Modal {
+        display: block;
+    }
+    
+    .ModalBackground {
+        background-color: rgba(0, 0, 0, 0.15);
+        display: block;
+    }
 
-.phone .ModalContainer {
-    height: 100%;
-    overflow-y: scroll;
-    z-index: 22;
-    -webkit-overflow-scrolling: touch;
+    .ModalContainer {
+        display: block;
+        transform: translateX(-50%) translateY(0) translateZ(0);
+        //-webkit-transform: translateX(-50%) translateY(0) translateZ(0);
+        //-ms-transform: translateX(-50%) translateY(0) translateZ(0);
+    }
 }

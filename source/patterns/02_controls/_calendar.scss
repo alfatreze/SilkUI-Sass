@@ -171,6 +171,34 @@
     text-align: center;
     background-color: transparent;
     border: 1px solid #fff;
+
+    &:hover {
+        background: #ccc;
+    }
+
+    // class order was originally inverted '.class' .pika-button
+    .is-today {
+        color: #333;
+        font-weight: bold;
+    }
+    
+    .is-selected {
+        color: #fff;
+        font-weight: bold;
+        background: #666;
+    }
+    
+    .is-disabled {
+        pointer-events: none;
+        cursor: default;
+        opacity: .2 !important;
+        background-color: #f1f1f1;
+        color: #666;
+    }
+
+    .is-outside-current-month {
+        opacity: .7;
+    }
 }
 
 .pika-week {
@@ -178,33 +206,6 @@
     padding: 5px !important;
     opacity: 0.5;
     border-right: 1px solid #ccc;
-}
-
-.is-today .pika-button {
-    color: #333;
-    font-weight: bold;
-}
-
-.is-selected .pika-button {
-    color: #fff;
-    font-weight: bold;
-    background: #666;
-}
-
-.is-disabled .pika-button {
-    pointer-events: none;
-    cursor: default;
-    opacity: .2 !important;
-    background-color: #f1f1f1;
-    color: #666;
-}
-
-.is-outside-current-month .pika-button {
-    opacity: .7;
-}
-
-.pika-button:hover {
-    background: #ccc;
 }
 
 .pika-time-section {

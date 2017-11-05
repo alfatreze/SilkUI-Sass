@@ -1,62 +1,77 @@
 /* Carousel **************************/
+//
+// https://owlcarousel2.github.io/OwlCarousel2/
+//
+// version ???? 
 
 .owl-theme .owl-controls {
     margin-top: 10px;
     text-align: center;
+
     .owl-buttons div {
         background: #aaa;
         border-radius: 50%;
         color: #fff;
         display: inline-block;
-        filter: Alpha(Opacity=50);
-        /*IE7 fix*/
+        // *display: inline; // IE7 life-saver
         font-size: 12px;
         height: 25px;
         line-height: 25px;
         margin-top: -20px;
         opacity: .5;
+        // filter: Alpha(Opacity=50); // IE7 fix
         top: 50%;
         width: 25px;
-        *display: inline;
-        /*IE7 life-saver */
+
     }
+
     &.clickable .owl-buttons div:hover {
-        filter: Alpha(Opacity=100);
-        /*IE7 fix*/
-        opacity: 1;
         text-decoration: none;
+        opacity: 1;
+        // filter: Alpha(Opacity=100); // IE7 fix
     }
+
     .owl-page {
         display: inline-block;
+        // *display: inline; // IE7 life-saver
         zoom: 1;
-        *display: inline;
-        /*IE7 life-saver */
+
         span {
             background: #aaa;
             border-radius: 20px;
             display: block;
-            filter: Alpha(Opacity=50);
-            /*IE7 fix*/
             height: 10px;
             margin: 10px 10px;
             opacity: .5;
+            // filter: Alpha(Opacity=50); // IE7 fix
             width: 10px;
         }
+        
         &.active span {
-            filter: Alpha(Opacity=100);
-            /*IE7 fix*/
             opacity: 1;
+            // filter: Alpha(Opacity=100); // IE7 fix
         }
     }
+
     &.clickable .owl-page:hover span {
-        filter: Alpha(Opacity=100);
-        /*IE7 fix*/
         opacity: 1;
+        // filter: Alpha(Opacity=100); // IE7 fix
     }
 }
 
 .owl-carousel {
+    display: none;
+    position: relative;
+    width: 100%;
+    -ms-touch-action: pan-y;
+
     .owl-wrapper {
+        display: none;
+        position: relative;
+        transform: translate3d(0px, 0px, 0px);
+        //-webkit-transform: translate3d(0px, 0px, 0px);
+        //-ms-transform: translate3d(0px, 0px, 0px);
+
         &:after {
             clear: both;
             content: ".";
@@ -65,46 +80,43 @@
             line-height: 0;
             visibility: hidden;
         }
-        display: none;
-        position: relative;
-        -webkit-transform: translate3d(0px, 0px, 0px);
-        -ms-transform: translate3d(0px, 0px, 0px);
-        transform: translate3d(0px, 0px, 0px);
     }
-    display: none;
-    position: relative;
-    width: 100%;
-    -ms-touch-action: pan-y;
+
     .owl-wrapper-outer {
         cursor: pointer;
         overflow: hidden;
         position: relative;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
+        //-webkit-user-select: none;
+        //-moz-user-select: none;
+        //-ms-user-select: none;
         user-select: none;
         width: 100%;
+        
         &.autoHeight {
-            -webkit-transition: height 500ms ease-in-out;
+            //-webkit-transition: height 500ms ease-in-out;
             transition: height 500ms ease-in-out;
         }
     }
+
     .owl-item {
         float: left;
     }
 }
 
 .owl-controls {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    //-webkit-user-select: none;
+    //-moz-user-select: none;
+    //-ms-user-select: none;
+
+
     .owl-page,
     .owl-buttons div {
         cursor: pointer;
     }
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+
 }
 
 .owl-prev.fa.fa-fw.fa-angle-left {

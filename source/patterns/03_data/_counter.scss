@@ -3,6 +3,42 @@
 
 .Counter {
     text-align: center;
+
+    // Auto size
+    &.Auto {
+        height: 80px;
+
+        .Counter_number {
+            font-size: 24px;
+        }
+    }
+
+    // Small
+    &.Small {
+        height: 50px;
+
+        .Counter_number {
+            font-size: 18px;
+        }
+    }
+
+    // Medium
+    &.Medium {
+        height: 80px;
+
+        .Counter_number {
+            font-size: 24px;
+        }
+    }
+
+    // Large
+    &.Large {
+        height: 160px;
+
+        .Counter_number {
+            font-size: 42px;
+        }
+    }
 }
 
 .Counter_row {
@@ -24,39 +60,3 @@
     right: 0;
     top: 0;
 }
-
-.Counter {
-    &.Auto {
-        height: 80px;
-        .Counter_number {
-            font-size: 24px;
-        }
-    }
-    &.Small {
-        height: 50px;
-        .Counter_number {
-            font-size: 18px;
-        }
-    }
-    &.Medium {
-        height: 80px;
-        .Counter_number {
-            font-size: 24px;
-        }
-    }
-    &.Large {
-        height: 160px;
-        .Counter_number {
-            font-size: 42px;
-        }
-    }
-}
-
-
-/* Counter: Small **************************/
-
-
-/* Counter: Medium **************************/
-
-
-/* Counter: Large **************************/

@@ -4,9 +4,6 @@ ol.List,
 ul.List {
     margin-top: 10px;
     padding-left: 26px;
-}
 
-ol.List li,
-ul.List li {
-    padding-bottom: 10px;
+    li { padding-bottom: 10px; }
 }

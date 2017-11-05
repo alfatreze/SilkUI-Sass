@@ -1,9 +1,10 @@
 
 
 // config
-@import 'base/functions';
 @import 'base/variables';
 @import 'base/settings';
+@import 'base/functions';
+@import 'base/mixins';
 
 // definition 
 @import 'base/resets';
@@ -16,6 +17,7 @@
  
 @import 'patterns/01_content/00_defs';
 @import 'patterns/02_controls/00_defs';
+@import 'patterns/03_data/00_defs';
 
 @import 'widgets/widgets'; 
 
@@ -23,7 +25,8 @@
 
 // Unsure if it needs to be included for processing by the outsystems platform
 
-/* ExcludeFromPickers: AccordionVertical, AccordionVertical___icon, button, AccordionVertical___title, AccordionVertical__content, 
+/*
+ExcludeFromPickers: AccordionVertical, AccordionVertical___icon, button, AccordionVertical___title, AccordionVertical__content, 
 AccordionVertical__header, AccordionVertical_item, active, Active, ActiveStep, ActiveStep:before, ampm, arrangeHorizontal, arrangeVertical, 
 Auto, autoHeight, Badge, Balloon, Balloon__heading, Balloon_content, Balloon_footer, Blank, Blank_action, Blank_desc, Blank_icon, Blank_row, 
 Blank_wrapper, BottomMenu__text, BottomMenu_item, BottomMenu_wrapper, Box, Breadcrumbs, ButtonDropdown, ButtonDropdown_button, ButtonDropdown_text, 
@@ -48,5 +51,6 @@ Tabs_body, Tabs_header, Tabs_TabBody, Tabs_TabOff, Tabs_TabOn, Tabs_Wrapper, Til
 TileNumber_text, title, TitleMonth, TitleYear, ToggleButton, ToggleButton_label, tooltip_style, tooltip-content, tooltipster-arrow-border, tooltipster-arrow-bottom, tooltipster-arrow-bottom-left, 
 tooltipster-arrow-bottom-right, tooltipster-content, tooltipstered, ui-slider-handle, ui-slider-handle:before, ui-slider-range, ui-state-active, UserInitials, ValidationMessage, 
 Vertical, WizardParent, WizardStep, os-internal-ui-autocomplete, active, balloon, Expanded, ListNavigation_CurrentPageNumber, ListNavigation_DisabledPrevious,
-ListNavigation_Ellipsis, ListNavigation_PageNumber, ListNavigation_Previous, os-internal-ui-state-hover, weekend, Panel__Actions, TableRecords_ExpandedRow, time, off, on*/
+ListNavigation_Ellipsis, ListNavigation_PageNumber, ListNavigation_Previous, os-internal-ui-state-hover, weekend, Panel__Actions, TableRecords_ExpandedRow, time, off, on
+*/
 

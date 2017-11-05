@@ -1,7 +1,29 @@
 /* InputWithIcons **************************/
+$input-type-map:(
+    text: 'text',
+    password: 'password',
+    datetime: 'datetime',
+    datetime-local: 'datetime-local',
+    date: 'date',
+    month: 'month',
+    time: 'time',
+    week: 'week',
+    number: 'number',
+    email: 'email',
+    url: 'url',
+    search: 'search',
+    tel: 'tel',
+    color: 'color',
+);
+
+//
+// Write function to output string list
+// of input type to construct the classes
+//
 
 .InputWithIcons {
     position: relative;
+
     input {
         &[type="text"],
         &[type="password"],
@@ -21,6 +43,7 @@
             width: 100%;
         }
     }
+
     &.Right {
         input {
             &[type="text"],
@@ -51,6 +74,7 @@
             right: 1px;
         }
     }
+
     .InputIcon {
         background-color: #e6e6e6;
         border-bottom-left-radius: 0;
@@ -63,6 +87,7 @@
         position: absolute;
         top: 1px;
     }
+
 }
 
 .tablet .InputWithIcons .InputIcon,

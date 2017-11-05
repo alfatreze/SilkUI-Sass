@@ -4,22 +4,25 @@
     background-color: #e4e4e4;
     margin: 20px 0;
     padding: 20px;
-}
 
-.phone .Box {
-    padding: 10px;
-}
-
-.Section .Box {
-    margin: 20px 0;
-    padding: 10px;
-}
-
-.Box {
     &:first-child {
         margin-top: 0;
     }
+
     .Columns:last-child .Column {
         margin-bottom: 0;
     }
+
+    .Section {
+        margin: 20px 0;
+        padding: 10px;
+    }
+
+    // Responsive properties
+    @if ($phone) {
+        .phone .Box {
+            padding: 10px;
+        }
+    }
+
 }

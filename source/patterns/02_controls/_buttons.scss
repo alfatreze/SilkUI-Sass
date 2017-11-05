@@ -156,11 +156,8 @@ a.Button {
 }*/
 
 
-/* Default Action Button **************************/
-/* margin icon on button **************************/
-
 // Is there really a need to bind the hover to the .desktop class?
-// THey won't show on mobile any way...
+// THey won't show on mobile any way... not really a big optimization!
 
 .Button {
 
@@ -205,55 +202,7 @@ a.Button {
             }
         }
     }
-
-    // Icon
-    &.Icon {
-        min-width: 0;
-
-        span.fa {
-            margin: 0;
-        }
-    }
     
-    // Loading Button
-    &.Loading {
-
-        &:before,
-        &[disabled]:before,
-        &:disabled:before {
-            background-image: url(/WebPatterns/img/loadinggrey.GIF);
-            background-size: 16px 16px;
-            content: "";
-            display: inline-block;
-            height: 16px;
-            margin-right: 5px;
-            margin-top: -2px;
-            vertical-align: middle;
-            width: 16px;
-        }
-
-        &.Icon:before {
-            margin-right: 0;
-        }
-        
-        span.fa {
-            display: none;
-        }
-    }
-    
-    &.ButtonDefault.Loading,
-    &.Is_Default.Loading {
-        &:before,
-        &[disabled]:before,
-        &:disabled:before {
-            background-image: url(/WebPatterns/img/loading.GIF);
-        }
-    }
-    
-    &.Small.Loading:before {
-        margin-top: 4px;
-    }
-
     // Action & State Buttons
     &.Cancel {
         background-color: #fff;
@@ -375,7 +324,57 @@ a.Button {
             }
         }
     }
-       
+
+    // Icon
+    &.Icon {
+        min-width: 0;
+
+        span.fa {
+            margin: 0;
+        }
+    }
+    
+    // Loading Button
+    &.Loading {
+
+        &:before,
+        &[disabled]:before,
+        &:disabled:before {
+            background-image: url(/WebPatterns/img/loadinggrey.GIF);
+            background-size: 16px 16px;
+            content: "";
+            display: inline-block;
+            height: 16px;
+            margin-right: 5px;
+            margin-top: -2px;
+            vertical-align: middle;
+            width: 16px;
+        }
+
+        &.Icon:before {
+            margin-right: 0;
+        }
+        
+        // Hide fontawesome icons when loading is used
+        span.fa {
+            display: none;
+        }
+    }
+    
+    &.ButtonDefault.Loading,
+    &.Is_Default.Loading {
+        &:before,
+        &[disabled]:before,
+        &:disabled:before {
+            background-image: url(/WebPatterns/img/loading.GIF);
+        }
+    }
+    
+    &.Small.Loading:before {
+        margin-top: 4px;
+    }
+
+     
     // Modifiers
     &.Small {
         font-size: 11px;
@@ -422,7 +421,6 @@ a.Button {
         padding-right: 10px;
     }
 }
-
 
 
 // duplicated the class from .Button.Danger, a.ActionDelete {} 

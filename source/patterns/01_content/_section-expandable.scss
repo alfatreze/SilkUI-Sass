@@ -4,8 +4,27 @@
     margin-top: 0;
 }
 
+// Is this only for SE or should be in Panel partial ?
 .Panel_content.nopadding {
     padding: 0;
+}
+
+.SectionExpandable {
+
+    &.autoheight .SectionExpandable_content {
+        display: block;
+        height: auto !important;
+        -webkit-transition: 0;
+        transition: 0;
+    }
+
+    &.expanded .SectionExpandable_content {
+        display: block;
+        height: auto;
+        overflow: visible;
+        padding: 10px;
+        visibility: visible;
+    }
 }
 
 .SectionExpandable_header {
@@ -17,16 +36,12 @@
     width: 100%;
 }
 
-.SectionExpandable.expanded .SectionExpandable_header {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 .SectionExpandable__title.Heading2 {
     display: table-cell;
     min-width: 100px;
     text-align: left;
     vertical-align: middle;
+
     span.fa {
         margin-right: 5px;
     }
@@ -39,12 +54,6 @@
     width: 16px;
 }
 
-.SectionExpandable.expanded .SectionExpandable__icon {
-    -webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-}
-
 .SectionExpandable_content {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -54,24 +63,27 @@
     margin-top: 0;
     overflow: hidden;
     padding: 0 10px;
-    -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    //-webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
     transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
     visibility: visible;
-    -servicestudio-height: auto;
+
+    @if ($studio) {
+        -servicestudio-height: auto;
+    }
 }
 
-.SectionExpandable {
-    &.autoheight .SectionExpandable_content {
-        display: block;
-        height: auto !important;
-        -webkit-transition: 0;
-        transition: 0;
+.SectionExpandable.expanded {
+
+    .SectionExpandable_header {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
-    &.expanded .SectionExpandable_content {
-        display: block;
-        height: auto;
-        overflow: visible;
-        padding: 10px;
-        visibility: visible;
+
+    .SectionExpandable__icon {
+        transform: rotate(-180deg);
+        //-webkit-transform: rotate(-180deg);
+        //-ms-transform: rotate(-180deg);
     }
 }
+
+

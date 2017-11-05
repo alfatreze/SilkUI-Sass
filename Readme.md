@@ -1,4 +1,19 @@
-** References
+## TODO
+Evaluate if I should keep everything highly modular and decouple all outsystems base camponents from Silk UI,
+Probably the same for every independent module, ex: richwidgets.
+
+
+## Setup
+Detail how to install and setup the framework
+
+## Workflow
+Detail the worflow with 2 use cases
+
+- Server based: have files on an online fileserver and use css import in Service Studio to load the compiled css. Should also be able to use dropbox ??? Not sure if it will be able to work anymore unless it's dropbox pro.
+
+- local based: compile css locally and copy manually to service studio
+
+## References
 
 https://silkui.outsystems.com/Patterns_Web.aspx#Web_UsefulClasses_Background Colors
 

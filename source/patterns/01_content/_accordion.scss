@@ -1,97 +1,36 @@
+
 /* AccordionVertical **************************/
 
 .AccordionVertical {
     border: 1px solid #ddd;
+
+    // Inside no padding elements like Panel
+    .nopadding & {
+        border: none;
+    }
 }
 
 
-/* Inside no padding elements like Panel */
-
-.nopadding .AccordionVertical {
-    border: none;
-}
-
+// Item
 .AccordionVertical_item {
     border-top: 1px solid #ddd;
+
     &:first-child {
         border-top: 0;
     }
-    &.open>.AccordionVertical__header {
+
+    &.open > .AccordionVertical__header {
         font-weight: 600;
     }
-}
 
-.AccordionVertical__header {
-    &:hover {
-        cursor: pointer;
-    }
-    display: table;
-    padding: 12px 14px;
-    width: 100%;
-}
-
-.AccordionVertical___title {
-    color: #253b4a;
-    display: table-cell;
-    font-size: 14px;
-    line-height: 22px;
-    width: 100%;
-    >div {
-        display: inline-block;
-        margin-right: 5px;
-    }
-}
-
-.AccordionVertical___icon {
-    border-left: 1px solid #ccc;
-    display: table-cell;
-    padding-left: 10px;
-    vertical-align: middle;
-    -servicestudio-width: 30px;
-    >.fa {
-        background-color: transparent;
-        border: 1px solid #ccc;
-        border-radius: 22px;
-        color: #999;
-        font-size: 20px;
-        height: 22px;
-        width: 22px;
-    }
-}
-
-.AccordionVertical_item.open>.AccordionVertical__header>.AccordionVertical___icon>.fa {
-    background-color: transparent;
-    border: 1px solid #666;
-    border-radius: 22px;
-    color: #666;
-    height: 22px;
-    -webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    width: 22px;
-}
-
-.AccordionVertical__content {
-    border-color: #ddd;
-    box-sizing: content-box;
-    display: block;
-    height: 0;
-    overflow: hidden;
-    padding: 0 17px;
-    -webkit-transition: height .5s ease, padding .5s ease;
-    transition: height .5s ease, padding .5s ease;
-    visibility: visible;
-    -servicestudio-height: auto;
-}
-
-.AccordionVertical_item {
-    &.open>.AccordionVertical__content {
+    &.open > .AccordionVertical__content {
         border-top: 1px solid #ddd;
         height: auto;
         padding: 17px;
         visibility: visible;
     }
-    &.autoheight>.AccordionVertical__content {
+
+    &.autoheight > .AccordionVertical__content {
         height: auto !important;
         overflow: visible;
         padding: 17px;
@@ -100,6 +39,81 @@
     }
 }
 
+
+// Header
+.AccordionVertical__header {
+    display: table;
+    padding: 12px 14px;
+    width: 100%;
+
+    &:hover { cursor: pointer; }
+}
+
+// Title
+.AccordionVertical___title {
+    color: #253b4a;
+    display: table-cell;
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+
+    > div {
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+
+// Icon
+.AccordionVertical___icon {
+    border-left: 1px solid #ccc;
+    display: table-cell;
+    padding-left: 10px;
+    vertical-align: middle;
+
+    @if ($studio) {
+        -servicestudio-width: 30px;
+    }
+
+    > .fa {
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 22px;
+        color: #999;
+        font-size: 20px;
+        height: 22px;
+        width: 22px;
+
+        // Accordion open
+        .AccordionVertical_item.open > .AccordionVertical__header > & {
+            background-color: transparent;
+            border: 1px solid #666;
+            border-radius: 22px;
+            color: #666;
+            height: 22px;
+            //-webkit-transform: rotate(-180deg);
+            //-ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+            width: 22px;
+        }
+    }
+}
+
+// Content
+.AccordionVertical__content {
+    border-color: #ddd;
+    box-sizing: content-box;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 0 17px;
+    //-webkit-transition: height .5s ease, padding .5s ease;
+    transition: height .5s ease, padding .5s ease;
+    visibility: visible;
+
+    @if ($studio) {
+        -servicestudio-height: auto;
+    }
+}
 
 /* Rules when accordion item is envolved by span */
 

@@ -8,10 +8,42 @@
     position: relative;
     text-align: center;
     width: 100%;
-}
 
-.firefox .Tile {
-    display: -moz-deck;
+    // Fix for firefox
+    // cannot find reference to property value!!!
+    .firefox & {
+        display: -moz-deck;
+    }
+
+    &.Small {
+        // Firefox - initial flexbox implementation should be removed
+        display: -moz-box; 
+        -moz-box-align: center;
+        -moz-box-pack: center;
+
+        line-height: 20px;
+        min-height: 80px;
+        width: 100%;
+    }
+
+    &.Medium {
+        // Firefox - initial flexbox implementation should be removed
+        display: -moz-box;
+        -moz-box-align: center;
+
+        min-height: 180px;
+        width: 100%;        
+    }
+
+    &.Large {
+        // Firefox - initial flexbox implementation should be removed
+        display: -moz-box;
+        -moz-box-align: center;
+        -moz-box-pack: center;
+
+        min-height: 280px;
+        width: 100%;
+    }
 }
 
 .Tile .Row {
@@ -20,36 +52,6 @@
 
 a .Tile {
     text-decoration: none;
-}
-
-.Tile {
-    &.Small {
-        /* Firefox */
-        display: -moz-box;
-        line-height: 20px;
-        min-height: 80px;
-        width: 100%;
-        /* Firefox needs this */
-        -moz-box-align: center;
-        -moz-box-pack: center;
-    }
-    &.Medium {
-        /* Firefox */
-        display: -moz-box;
-        min-height: 180px;
-        width: 100%;
-        /* Firefox needs this */
-        -moz-box-align: center;
-    }
-    &.Large {
-        /* Firefox */
-        display: -moz-box;
-        min-height: 280px;
-        width: 100%;
-        /* Firefox needs this */
-        -moz-box-align: center;
-        -moz-box-pack: center;
-    }
 }
 
 .ie .Tile.Large {
@@ -84,11 +86,6 @@ a .Tile {
 }
 
 
-/* Tile: InfoTooltip IF Small **************************/
-
-
-/* Tile: TileIcon **************************/
-
 .TileIcon_icon {
     display: table-cell;
     font-size: 48px;
@@ -101,8 +98,6 @@ a .Tile {
     vertical-align: middle;
 }
 
-
-/* TileIcon IF Small **************************/
 
 .Tile {
     &.Small {
@@ -132,14 +127,6 @@ a .Tile {
 }
 
 
-/* TileIcon IF Medium **************************/
-
-
-/* TileIcon IF Large **************************/
-
-
-/* Tile: TileIconText **************************/
-
 .TileIconText_icon {
     display: table-cell;
     font-size: 60px;
@@ -154,8 +141,6 @@ a .Tile {
     vertical-align: middle;
 }
 
-
-/* Tile: TileIconText_icon IF Small **************************/
 
 .Tile {
     &.Small {
@@ -185,14 +170,6 @@ a .Tile {
 }
 
 
-/* Tile: TileIconText_icon IF Medium **************************/
-
-
-/* Tile: TileIconText_icon IF Large **************************/
-
-
-/* Tile: TileNumber **************************/
-
 .TileNumber_number {
     display: table-cell;
     font-size: 45px;
@@ -205,8 +182,6 @@ a .Tile {
     vertical-align: top;
 }
 
-
-/* Tile: TileNumber IF Small **************************/
 
 .Small .TileNumber_number {
     font-size: 18px;
@@ -236,9 +211,3 @@ a .Tile {
         width: auto;
     }
 }
-
-
-/* Tile: TileNumber IF Medium **************************/
-
-
-/* Tile: TileNumber IF Large **************************/

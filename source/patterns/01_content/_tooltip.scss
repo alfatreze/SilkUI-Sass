@@ -1,4 +1,9 @@
 /* Tooltip **************************/
+// 
+// Tooltipstered jquery plugin
+// http://iamceege.github.io/tooltipster/
+//
+// version ???
 
 .tooltipstered {
     cursor: help;
@@ -18,6 +23,7 @@
     border: 0;
     border-radius: 0;
     color: #fff;
+    
     .tooltipster-content {
         font-size: 14px;
         line-height: 16px;
@@ -28,4 +34,17 @@
 
 .tooltipster-base {
     z-index: 15;
+}
+
+
+/* Info **************************/
+
+// Validate if infact uses tooltipstered aswell
+
+.InfoTooltip {
+    margin: 0 10px;
+
+    @if ($studio) {
+        -servicestudio-color: silver;
+    }
 }

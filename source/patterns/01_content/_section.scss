@@ -2,6 +2,7 @@
 
 .Section {
     margin: 20px 0 0;
+
     &:first-child {
         margin-top: 0;
     }
@@ -14,20 +15,29 @@
     min-height: 38px;
     padding-bottom: 5px;
     width: 100%;
-}
 
-.tablet .Section_header,
-.phone .Section_header {
-    min-height: 44px;
+    // Responsive context
+    @if ($tablet) == true or ($phone) == true {
+        .tablet &,
+        .phone & {
+            min-height: 44px;
+        }
+    }
+
 }
 
 .Section__title.Heading2 {
     display: table-cell;
     min-width: 100px;
     vertical-align: middle;
+
     span.fa {
         margin-right: 5px;
     }
+}
+
+.Section_content {
+    padding-top: 10px;
 }
 
 .Section__actions {
@@ -35,12 +45,9 @@
     min-width: 100px;
     text-align: right;
     vertical-align: middle;
-    >* {
+
+    > * {
         float: right;
         margin-left: 10px;
     }
-}
-
-.Section_content {
-    padding-top: 10px;
 }

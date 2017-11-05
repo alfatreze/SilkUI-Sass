@@ -1,10 +1,11 @@
 // RESPONSIVE
 // ------------------------------------------------------
 
-$desktop: true; // global setting to conditionally create desktop classes
-$tablet:  true; // global setting to conditionally create tablet classes
-$phone:  true; // global setting to conditionally create phone classes
+$desktop: true !default; // global setting to conditionally create desktop classes
+$tablet:  true !default; // global setting to conditionally create tablet classes
+$phone:  true !default; // global setting to conditionally create phone classes
 
+$studio: true !default; // service studio specific prefixes. Should disable for production code. Validate if removed by autoprefixer
 
 // COLORS
 // ------------------------------------------------------
@@ -72,6 +73,30 @@ $color-map: (
     'plum': (
         'base': $color--plum,
         'dark': $color--plum__dark,
+        ),
+);
+
+
+// Alerts
+//
+// patterns / 01_content / alert.scss
+
+$alert-color-map: (
+    'info': (
+        'bg': #62b6d1,
+        'border': #009bd0,
+        ),
+    'success': ( 
+        'bg': #a9c264,
+        'border': #97ae58,
+        ),
+    'error': ( 
+        'bg': #e09d90,
+        'border': #d87c69,
+        ),
+    'warning': (
+        'bg': #f5c459,
+        'border': #c78e10,
         ),
 );
 

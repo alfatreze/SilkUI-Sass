@@ -14,8 +14,12 @@
     text-align: left;
     top: 115%;
     z-index: 15;
-    -servicestudio-position: relative;
-    .PH>a {
+
+    @if ($studio) {
+        -servicestudio-position: relative;
+    }
+    
+    .PH > a {
         color: #125f90;
         display: block;
         line-height: 32px;
@@ -30,7 +34,7 @@
     }
 }
 
-.open>.DropdownMenu {
+.open > .DropdownMenu {
     display: block;
 }
 

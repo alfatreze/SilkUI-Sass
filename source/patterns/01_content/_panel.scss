@@ -13,18 +13,23 @@
     width: 100%;
 }
 
-.Panel_header> {
-    div {
+.Panel_header {
+
+    > div {
         width: 60%;
     }
-    .Panel__actions {
+
+    > .Panel__actions {
         width: 100%;
     }
 }
 
 .Panel_content {
     padding: 10px;
-    -servicestudio-min-height: 150px;
+
+    @if ($studio) {
+        -servicestudio-min-height: 150px;
+    }    
 }
 
 .Panel_footer {
