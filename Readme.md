@@ -29,6 +29,8 @@ https://stackoverflow.com/questions/44144513/how-to-create-a-dynamic-color-list-
 
 https://stackoverflow.com/questions/8533432/creating-or-referencing-variables-dynamically-in-sass
 
+https://blog.adam-marsden.co.uk/set-up-sass-lint-with-gulp-c7de427717ea 
+
 ----
 
 ** Frameworks to investigate
